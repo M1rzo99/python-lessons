@@ -9,7 +9,7 @@ Created on Sat May 16 15:02:45 2026
 # else = agar shunday bo'lmasa, bu shartni bajar
 # if asosan true bo'lsa
 # else asosan false bo'lsa
-avtolar = ["audi","bmw","kia","gelikGT","GM"]
+#avtolar = ["audi","bmw","kia","gelikGT","GM"]
 for avto in avtolar:
     if avto == "audi":
         print(avto.upper())    
@@ -61,14 +61,14 @@ else:
   # print("Siz hali 18 ga to'lmagansiz,kirish mn em
           
 # login uzunligi
-login = input("Yangi login yarating:  ")
+#login = input("Yangi login yarating:  ")
 if len(login) <=5:
     print("Login 5 harfdan katta bo'lishi shart!")       
 else:
     print(f"{login.title()} nomli Yangi login yaratilindi!")
           
 # Yoshni aniqlash
-yil = int(input("Tug'ilgan yilingizni kiriting:  "))
+#yil = int(input("Tug'ilgan yilingizni kiriting:  "))
 if 2026-yil<18:
     print(f"{2026-yil} Yoshda ekansiz")
     print("Kirish mn emas!")
@@ -79,22 +79,54 @@ else:
           
           
 # Bir qatorlik if/else
-ysh = int(input("Yoshingizni kiriting:\n>>"))
-if ysh>65: print("Siz 65 yoshdan katta ekansiz!")
-else: print("Siz 65 yoshdan kichik ekansz!")
+#ysh = int(input("Yoshingizni kiriting:\n>>"))
+#if ysh>65: print("Siz 65 yoshdan katta ekansiz!")
+#lse: print("Siz 65 yoshdan kichik ekansz!")
 
           
 
-          
+          #10 dars amaliyot
+#1 Yangi cars = ['toyota', 'mazda', 'hyundai', 'gm', 'kia'] degan ro'yxat tuzing, ro'yxat elementlarining birinchi harfini katta qilib konsolga chqaring. GM uchun ikkala harfni katta qiling.
+#avtolara = ["audi","bmw","kia","gelikGT","gym"]
+#for avsto in avtolara:
+  #  if avsto.lower() == "bmw":
+   #     print(f"{avsto.upper()}")
+  #  else:
+   #     print(avsto)
 
-          
+#2 Yuqoridagi mashqni teng emas (!=) operatori yordamida bajaring. 
+avtolar = ["audi","bmw","kia","gelikGT","GM"]
+for avto in avtolar:
+    if avto != "audi":
+        print(avto.title())    
+    else:
+        print(avto.upper())
+        
+#3 Foydalanuvchi login ismini so'rang. Agar login admin bo'lsa, "Xush kelibsiz, Admin. Foydalanuvchilar ro'yxatini ko'rasizmi?" xabarini konsolga chiqaring. Aks holda, "Xush kelibsiz, {foydalanuvchi_ismi}!"  matnini konsolga chiqaring.
+foy = input("Sizning login ismingiz nima?\n>>>")
+if foy.lower() == "admin":
+    print("Foydalanuchilar ro'yhatini ko'rasizmi?")
+else: 
+    print(f"Xush kelibsiz {foy.title()}!")
 
+#4 Foydalanuvchidan 2 ta son kiritishni so'rang. Agar ikki son bir-biriga teng bo'lsa, "Sonlar teng" ekan degan yozuvni konsolga chiqaring.
+son1 = int(input("1-sonni kiriting:\n>>"))
+son2 = int(input("2-sonni kiriting:\n>>"))
 
+if son1==son2:
+    print("Sonlar bir birga teng")
+else:
+    print(f"birinchi son {son1}, ikkinchi son {son2} dir")
+    
+son3 = int(input("istalgan son kiriting:\n>>"))
 
-          
-
-          
+if son3.sort(-son3):
+    print(f"Musbat son {son3}")
+else:
+    print(f"Manfiy son {son3} dir")
+    
+    
+    
      
-     
-     
+    
  
