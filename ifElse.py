@@ -118,12 +118,19 @@ if son1==son2:
 else:
     print(f"birinchi son {son1}, ikkinchi son {son2} dir")
     
+#5 Foydalanuvchidan istalgan son kiritishni so'rang. Agar son manfiy bo'lsa konsolga "Manfiy son", agar musbat bo'lsa "Musbat son" degan xabarni chiqaring
 son3 = int(input("istalgan son kiriting:\n>>"))
 
-if son3.sort(-son3):
-    print(f"Musbat son {son3}")
+if son3<0:
+    print(f"manfiy son {son3}")
 else:
-    print(f"Manfiy son {son3} dir")
+    print(f"musbat son {son3} dir")
+#6 Foydalanuvchidan son kiritishni so'rang, agar son musbat bo'lsa uning ildizini hisoblab konsolga chiqaring. Agar son manfiy bo'lsa, "Musbat son kiriting" degan xabarni chiqaring. 
+son4 = int(input("istalgan son kiriting:\n>>"))
+if son4>0:
+    print(f"{son4} ning ildizi, {son4**0.5} ga teng")
+else: 
+    print("Hozirgi son manfiy,Musbat son kiritng!")
     
     
     
