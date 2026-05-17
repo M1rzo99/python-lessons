@@ -124,6 +124,11 @@ if buyur:
             print(f"Menuda bunday taom yo'q!")
 else:
     print("Sizning savatchangiz bo'sh!") # Yani buyur=[] shunnday holatda savatcha bo'sh qaytadi
+    
+
+
+# Amaliyot
+
  
 
 
