@@ -5,116 +5,141 @@ Created on Thu May 21 21:15:14 2026
 
 @author: mirzo
 """
+
+
+# Nesting - ro'yhatni ichida lug'atni saqlash yoki lug'atni ichida ro'yhatni saqlash
+
+# Yuzlab lug'atlarni bitta listga joylab,ularni hoxlagan joyda kam code yozib foydalana olamiz
 car0 = {
-        'model':'lacetti',
-        'rang':'oq',
-        'yil':2018,
-        'narh':13000,
-        'km':50000,
-        'korobka':'avtomat'
-        }
-
+       'model':'audi',
+       'rang':'qora',
+       'yili':2025,
+       'km':10,
+       'narx':33000,
+       'karobka':'avtomat'
+       }
 car1 = {
-        'model':'nexia 3',
-        'rang':'qora',
-        'yil':2015,
-        'narh':9000,
-        'km':89000,
-        'korobka':'mexanika'
-        }
-
+       'model':'bmw',
+       'rang':'qora',
+       'yili':2021,
+       'km':9000,
+       'narx':50000,
+       'karobka':'avtomat'
+       }
 car2 = {
-        'model':'gentra',
-        'rang':'qizil',
-        'yil':2019,
-        'narh':15000,
-        'km':20000,
-        'korobka':'mexanika'
-        }
+       'model':'damas',
+       'rang':'oq',
+       'yili':2023,
+       'narx':10000,
+       'km':321,
+       'karobka':'avtomat'
+       }
 
-car = car0
-print(f"{car['model'].title()},\
-  {car['rang']} rang,\
-  {car['yil']}-yil, {car['narh']}$")
-
-car = car1
-print(f"{car['model'].title()},\
-  {car['rang']} rang,\
-  {car['yil']}-yil, {car['narh']}$")
-
-car = car2
-print(f"{car['model'].title()},\
-  {car['rang']} rang,\
-  {car['yil']}-yil, {car['narh']}$")  
-  
-  
-cars = [car0, car1, car2]
+# agar biz oddiy yo'l bilan lug'atlarni print qilsak har bir valueni chaqirish kk bo'ladi
+# bu jarayonni qisqartirish un esa, lug'atlarni bitta list ga joylab, list orqali chaqirishdir.
+cars = [car0,car1,car2]
 for car in cars:
-    print(f"{car['model'].title()}, "
-          f"{car['rang']} rang, "
-          f"{car['yil']}-yil, {car['narh']}$")
-    
-    
-    
-    
-malibus=[] # Malibu mashinalari uchun bo'sh ro'yxat yaratdik
+    print(f"{car['model'].title()},"
+          f"{car['rang'].title()},yili {car['yili']}"
+          f" va {car['karobka'].title()}"
+        )
+
+# endi lug'atga index orqali ham murojat qilishimiz mn.Va lug'atdagi elementga pastdagidek murojat qilishimiz mn
+print(cars[0]['km'])
+
+# Pastda for tsikli yordamida lug'atlar yaratdik va unga qiymatlarni berib chiqdik
+malibus = []
 for n in range(10):
-    new_car = { # har bir yangi mashina uchun lug'at yaratamiz
-        'model':'malibu',
-        'rang':None, # rangi noaniq
-        'yil':2020,
-        'narh':None, # narhi belgilanmagan
-        'km':0,
-        'korobka':'avto'
+    new_car = {
+        'model':'Gelik',
+        'rang':None,
+        'yili':2023,
+        'narx':None,
+        'km':321,
+        'karobka':'avtomat'
         }
-    malibus.append(new_car) # yangi lug'atni ro'yxatga qo'shamiz
+    malibus.append(new_car)
+
+
     
-    #LUG'AT ICHIDA RO'YXAT
-    
-    dasturchilar = {
-    'ali':['python','c++'],
-    'vali':['html','css','js'],
-    'hasan':['php','sql'],
-    'husan':['python','php'],
-    'maryam':['c++','c#']
+
+# Yuqoirda rang qismini ochiq qoldirganmiz vashularga rang bera oalmiz
+for malibu in malibus[:3]:
+    malibu['rang']='qora'
+for malibu in malibus[3:6]:
+    malibu['rang'] = 'qizil'
+for malibu in malibus[6:]:
+    malibu['rang'] = 'sariq'
+
+
+for malibu in malibus[4:7]:
+    malibu["karobka"]="mex"
+# mashina karobkasi holatidan kelib chiqib narh berlgilaymiz
+for malibu in malibus:
+    if malibu['karobka']=='avtomat':
+        malibu['narx'] = 50000
+    else:
+        malibu['narx'] = 70000
+print(malibus)
+
+
+# lug'at ichida ro'yhat
+# bir kalitga bir nechta qiymat berish talab qilinganda, qiymatlarni ro'yhat ko'rinishda yozish o'rinlidir
+dasturchilar = {
+    "Mirzo":['Js','python'],
+    "Nodir":['html','js','css'],
+    "Nurik":['php','C++'],
+    "Maryam":['django','go']
+    }
+for ism,tillar in dasturchilar.items():
+    print(f"\n{ism.title()} quyidagi dasturlash tillarini biladi:",end='')
+    for til in tillar:
+        # python functionda har bir matndan so'ng yangi qator tashalydi.Buni oldini olish un
+        #print(string,end() methodidan foydalanishimz mumkin) 
+        print(f"{til.upper()}\n")
+
+
+# lug'at ichida lug'at
+
+hamkasblar = {
+    "ali":{'familya':"valiyev",
+        "yili":1990,
+        'malumoti':"oliy",
+        'tillar':['python','js']
+        },
+    "vali":{'familya':"aliyev",
+        "yili":2000,
+        'malumoti':"oliy emas",
+        'tillar':['Go','Django']
+        }
     }
 
-for ism, tillar in dasturchilar.items():
-    print(f"\n{ism.title()} quyidagi dasturlash tillarini biladi:")
-    for til in tillar:
-        print(til.upper())
-        
-        
-        
-for ism, tillar in dasturchilar.items():
-    print(f"\n{ism.title()} quyidagi dasturlash tillarini biladi:", end='')
-    for til in tillar:
-        print(f'{til.upper()} ', end='')
-        
-        
-        
-hamkasblar = {
-    'ali':{'familiya':'valiyev',
-           'tyil':1995,
-           'malumot':'oliy',
-           'tillar':['python','c++']
-           },
-    'vali':{'familiya':'aliyev',
-            'tyil':2001,
-            'malumot':"o'rta-maxsus",
-            'tillar':['html', 'css', 'js']},
-    'hasan':{'familiya':'husanov',
-             'tyil':1999,
-             'malumot':'maxsus',
-             'tillar':['python','php']}
-}
 
-for ism, info in hamkasblar.items():
-    print(f"\n{ism.title()} {info['familiya'].title()}, "
-          f"{info['tyil']}-yilda tug'ilgan. "
-          f"Ma'lumoti: {info['malumot']}. \n"
-          "Quyidagi dasturlash tillarini biladi:")
+for ismm,info in hamkasblar.items():
+    print(f"{ismm.title()} {info['familya'].title()},"
+          f"{info['yili']}-yilda tug'ilgan."
+          f"Ma'lumoti {info['malumoti'].title()},\n"
+          "quyidagi dasturlash tilarni biladi:"
+          )
     for til in info['tillar']:
         print(til.upper())
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
