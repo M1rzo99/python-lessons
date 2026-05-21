@@ -101,7 +101,7 @@ print(type(toys))
     
 #amaliyot
 
-anglar = {"qizil", "oq", "yashil"}
+ranglar = {"qizil", "oq", "yashil"}
 ranglar.add("sariq")
 ranglar.update(["ko'k", "qora", "pushti"])
 
