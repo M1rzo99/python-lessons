@@ -69,5 +69,52 @@ for n in range(10):
         }
     malibus.append(new_car) # yangi lug'atni ro'yxatga qo'shamiz
     
+    #LUG'AT ICHIDA RO'YXAT
+    
+    dasturchilar = {
+    'ali':['python','c++'],
+    'vali':['html','css','js'],
+    'hasan':['php','sql'],
+    'husan':['python','php'],
+    'maryam':['c++','c#']
+    }
+
+for ism, tillar in dasturchilar.items():
+    print(f"\n{ism.title()} quyidagi dasturlash tillarini biladi:")
+    for til in tillar:
+        print(til.upper())
+        
+        
+        
+for ism, tillar in dasturchilar.items():
+    print(f"\n{ism.title()} quyidagi dasturlash tillarini biladi:", end='')
+    for til in tillar:
+        print(f'{til.upper()} ', end='')
+        
+        
+        
+hamkasblar = {
+    'ali':{'familiya':'valiyev',
+           'tyil':1995,
+           'malumot':'oliy',
+           'tillar':['python','c++']
+           },
+    'vali':{'familiya':'aliyev',
+            'tyil':2001,
+            'malumot':"o'rta-maxsus",
+            'tillar':['html', 'css', 'js']},
+    'hasan':{'familiya':'husanov',
+             'tyil':1999,
+             'malumot':'maxsus',
+             'tillar':['python','php']}
+}
+
+for ism, info in hamkasblar.items():
+    print(f"\n{ism.title()} {info['familiya'].title()}, "
+          f"{info['tyil']}-yilda tug'ilgan. "
+          f"Ma'lumoti: {info['malumot']}. \n"
+          "Quyidagi dasturlash tillarini biladi:")
+    for til in info['tillar']:
+        print(til.upper())
     
     
