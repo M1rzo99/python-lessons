@@ -67,24 +67,107 @@ Created on Wed May 27 14:15:42 2026
 
 # remove(qiymat) - biz bergan qiymatni o'chirib beradi
 # while orqali bizni shu nomdagi qancha element bo'lsa hammasini o'chiramz
-cars = ["lacetti","gentra","BWM","gentra","audi","gentra"]
-car_o = ["gentra","lacetti"]
-for car in car_o:
-        while car in cars:
-            cars.remove(car)
-print(cars)
+# cars = ["lacetti","gentra","BWM","gentra","audi","gentra"]
+# car_o = ["gentra","lacetti"]
+# for car in car_o:
+#         while car in cars:
+#             cars.remove(car)
+# print(cars)
 # yuqoridagi tsiklda toki cars degan ro'yhatda biz bergan qiymat tugagunga qadar tugaydi
 
 # Tasavvur qiling bizda 1 ro'yhat bor va uni ustida amallar bajarib, 2- ro'yhatga joylamoqchimiz. shu payt bizga while juda qo'l keladi
 # quyidagi qo'yhatda,talabalar ro'yhati bor,talablar ro'yhati tugagunga qadar sikl aylanadi.pop() yordamida talabalarni sug'urib olamiz.
 
-talaba = ["Hasan","Husan","Ilxom","Jumadurdi","Tohir"]
-bah_talaba = {}
-while talaba:
-    talab = talaba.pop()
-    baho = input(f"{talab.title()} ning bahosini kiriting: ")
-    print(f"{talab.title()} baholandi")
-    bah_talaba[talab]= baho
+# talaba = ["Hasan","Husan","Ilxom","Jumadurdi","Tohir"]
+# bah_talaba = {}
+# while talaba:
+#     talab = talaba.pop()
+#     baho = input(f"{talab.title()} ning bahosini kiriting: ")
+#     print(f"{talab.title()} baholandi")
+#     bah_talaba[talab]= baho
+
+# amalaiyot
+
+#1. Foydalanuvchidan buyurtma qabul qiluvchi dastur yozing. Mahsulotlar nomini birma-bir qabul qilib, yangi ro'yxatga joylang
+
+# print("Foydalanuvchidan buyurtma qabul qiladigan dastur")
+# foy_royhat = []
+# n=1
+# while True:
+#     intf = input(f"{n} - Nima buyurtma berasiz? ")
+#     foy_royhat.append(intf)
+#     yana = input("Yana buyurtma berasizmi? (yes/no)")
+#     if yana == "yes":
+#         n +=1
+#         continue
+#     else:
+#         break
+# print("Buyurtmalar ro'yhati: ")
+# for intf in foy_royhat:
+#     print(intf.title())
+
+#2.e-bozor uchun mahsulotlar va ularning narhlari lug'atini shakllantiruvchi dastur yozing. Foydalanuvchidan lug'atga bir nechta elementlar (mahsulot va uning narhi) kiritishni so'rang.
+    
+# print("Siz adminsiz, dasturga mahsulot va narh qo'sha olasiz!")
+# foy_royhat = {}
+# n=1
+# while True:
+#     intf = input(f"{n} - Nima mahsulot qo'shasiz? ")
+#     intf_1 = input(f"{intf.title()} - narxini belgilang:  ")
+#     intf_2 = int(intf_1)
+#     foy_royhat[intf] = intf_2
+#     yana = input("Yana mahsulot qo'shasizmi? (yes/no)")
+#     if yana == "yes":
+#         n +=1
+#         continue
+#     else:
+#         break
+    
+# print("Mahsulotlar ro'yhati: ")
+# for intf in foy_royhat:
+#     print(f"{intf.title()}ning narhi - {intf_2} so'm")
+
+#3.Yuqoridagi ikki dasturni jamlaymiz. Foydalanuvchi buyurtmasi ro'yxatidagi har bir mahsulotni e-bozordagi mahsulotlar bilan solishitiring (tayyor ro'yxat ishlatishingiz mumkin). Agar mahsuot e-bozorda mavjud bo'lsa mahuslot narhini chiqaring, aks holda "Bizda bu mahsulot yo'q" degan xabarni kor'sating.
+
+# Tayyor e-bozor lug'ati
+ebozor = {
+    "olma": 5000,
+    "non": 3000,
+    "sut": 8000,
+    "tuxum": 12000,
+    "guruch": 15000
+}
+
+# Buyurtma qabul qilish
+print("=== BUYURTMA ===")
+buyurtma = []
+n = 1
+while True:
+    mahsulot = input(f"{n} - Nima buyurtma berasiz? ").lower().strip()
+    buyurtma.append(mahsulot)
+    yana = input("Yana buyurtma berasizmi? (yes/no): ").lower().strip()
+    if yana == "yes":
+        n += 1
+    else:
+        break
+
+# Narxlarni solishtirish
+print("\n=== BUYURTMA NATIJASI ===")
+jami = 0
+for mahsulot in buyurtma:
+    if mahsulot in ebozor:
+        narh = ebozor[mahsulot]
+        jami += narh
+        print(f"{mahsulot.title()} — {narh} so'm")
+    else:
+        print(f"{mahsulot.title()} — Bizda bu mahsulot yo'q!")
+
+print(f"\nJami to'lov: {jami} so'm")
+
+
+
+
+
 
 
 
