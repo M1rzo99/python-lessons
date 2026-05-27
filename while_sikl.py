@@ -48,18 +48,18 @@ Created on Sat May 23 23:15:22 2026
     
 #5. Katta dasturlarda bir emas,bir nechta shartlarni tekshirish va ulardan biri bajarilganda dastur to'xtash talab qilinshi mn, shunda flag(0'zgaruvchan ishora) dan foydalanamiz
 
-print("Kiritilgan sonni kvadratini qaytaruvchi dastur.")
-savol = "Istalgan sonni kiriting"
-savol += "(Dastur to'xtashi un 'exit' deb yozing)"
-ishora = True
-while ishora:
-    nat = input(savol)
-    if nat == "exit":
-        ishora = False
-    else:
-        print(float(nat)**2)
+#print("Kiritilgan sonni kvadratini qaytaruvchi dastur.")
+#savol = "Istalgan sonni kiriting"
+#savol += "(Dastur to'xtashi un 'exit' deb yozing)"
+#ishora = True
+#while ishora:
+ #   nat = input(savol)
+ #   if nat == "exit":
+ #       ishora = False
+ #   else:
+ #       print(float(nat)**2)
 
-print("Dastur to'xtadi!")
+#print("Dastur to'xtadi!")
 
 #5.Break operatori for siklini to'xtatish un ham ishlatilinadi
 # while sikli ichida bir nechta break operatori bo'lishi ham mumkin
@@ -93,3 +93,85 @@ while soni<10:
 #noto'g'ri shart,o'zgarmas qiymat, kodlar ketma-ketligidagi xatoliklar va hkz.
 
 # abadiy codeni to'xtatish un ctrl + c ni bosamiz
+
+
+
+#  Amaliyot
+#1.Foydalanuvchidan yaxshi ko'rgan kitoblarini kiritishni so'rang. Foydalanuvchi stop so'zini yozishi bilan dasturni to'xtating
+
+#print("Foydalanuvchining sevimli kitoblarini ko'rsatadigan program.")
+#savol = "Sevimli kitobingizni kiriting"
+#savol += "(Dastur to'xtashi un 'stop' deb yozing)"
+#ishora = True
+#while ishora:
+ #   kitob = input(savol)
+ #   if kitob == "stop":
+ #       ishora = False
+ #   else:
+ #       print(f"Sevimli kitobingizni nomi: {kitob.title()} ekan.Bu juda Yaxshi kitob\n")
+
+#print("Dastur to'xtadi!")
+
+#2.Muzeyga chipta narhi foydalanuvchining yoshiga bog'liq: 7 dan yoshlarga - 2000 so'm, 7-18 gacha 3000 so'm, 18-65 gacha 10000 so'm, 65 dan kattalarga bepul. Shunday while tsikl yozingki, dastur foydalanuvchi yoshini so'rasin va chipta narhini chiqarsin. Foydalanuvchi exit yoki quit deb yozganda dastur to'xtasin (ikkita shartni ham tekshiring).
+
+##print("Bu dastur yoshga qarab, chipta narxini belgilab beradi.")
+#prompt = "\nYoshingizni kiriting (to'xtatish uchun 'exit' yoki 'quit'): "
+
+#while True:
+#    yoshi = input(prompt).strip().lower()
+    
+    # chiqish sharti
+#    if yoshi in ("exit","quit"):
+#        print("Dastur to'xtatildi, Xayr")
+#        break
+    
+    # Raqam ekanligi
+#    if not yoshi.isdigit():
+#        print("Iltimos faqat son kiriting")
+#        continue
+#    yosh = int(yoshi)
+    
+    # Narxni aniqlash
+#    if yosh <7:
+   #     price =1000
+#    elif yosh <= 18:
+  #      price=2000
+#    elif yosh <=65:
+#        price=3000
+  #  else:
+  #      price = 0
+  #      print(f"Siz {yosh} dasiz va sizga kirish Bepul")
+   #     continue
+ #   print(f"Siz {yosh} yoshdasiz - chipta narxi: {price} so'm")
+
+#.isdigit() — stringdagi barcha belgilar raqam ekanini tekshiradi.
+#.strip() — stringning bosh va oxiridagi bo'sh joylarni olib tashlaydi.
+
+
+#3.Quyidagi dasturda bir nechta mantiqiy xatolar bor. Jumladan, xusisiy holatlarda tsikl abadiy qaytarilib qolmoqda. Xatolarni to'g'rilay olasizmi?
+
+
+savol ="Kiritilgan sonning ildizini qaytaruvchi dastur.\n"
+savol += "Musbat son kiriting "
+savol += "(dasturni to'xtatish uchun 'exit' deb yozing): "
+
+while True:
+    qiymat = input(savol).strip().lower()
+    
+    if qiymat in ("exit"):
+        print("Dastur Yakulnadi,Xayr")
+        break
+    
+    if not qiymat.isdigit():
+        print("Iltimos faqat raqam kiriting")
+        continue
+    qiymati = int(qiymat)
+    if qiymati<0:
+        break
+    else:
+        ildiz = float(qiymat)**(0.5)
+        print(f"{qiymat} ning ildizi {ildiz} ga teng\n")
+
+
+
+
