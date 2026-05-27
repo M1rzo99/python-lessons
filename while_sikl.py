@@ -48,20 +48,48 @@ Created on Sat May 23 23:15:22 2026
     
 #5. Katta dasturlarda bir emas,bir nechta shartlarni tekshirish va ulardan biri bajarilganda dastur to'xtash talab qilinshi mn, shunda flag(0'zgaruvchan ishora) dan foydalanamiz
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+print("Kiritilgan sonni kvadratini qaytaruvchi dastur.")
+savol = "Istalgan sonni kiriting"
+savol += "(Dastur to'xtashi un 'exit' deb yozing)"
+ishora = True
+while ishora:
+    nat = input(savol)
+    if nat == "exit":
+        ishora = False
+    else:
+        print(float(nat)**2)
+
+print("Dastur to'xtadi!")
+
+#5.Break operatori for siklini to'xtatish un ham ishlatilinadi
+# while sikli ichida bir nechta break operatori bo'lishi ham mumkin
+sonlar = list(range(1,11))
+for son in sonlar:
+    if son == 5:#son 5 ga teng bo'lsa kod to'xtaydi
+        break
+    print(f"{son} ning kvadrati {son **2} ga teng\n")
+
+
+#6. continiue operatori esa aksincha, malum bir shart bajarilinganda bir bergan qiymatni sakrab o'tish un berilgan
+sonlar = list(range(1,11))
+for son in sonlar:
+    if son == 5:#son 5 ga teng bo'lsa kod to'xtaydi
+        continue
+    print(f"{son} ning kvadrati {son **2} ga teng")
+
+# Y8uqoridagi qiymatda 5 soniga kelganda 5 ni ko'rsatmasdan davom etib ketadi
+
+soni = 0
+while soni<10:
+    soni +=1
+    if soni%2!=0: #10  gacha bo'lgan juft sonlarni ko'rish un 
+    #if soni%2==0: #10  gacha bo'lgan toq sonlarni ko'rish un 
+        continue
+    else:
+        print(soni)
+        
+#7. ABadiy tsikl tuzoqi
+# Abadiy tsikl - mantiqiy xatolar sabab yuzaga keladi
+#noto'g'ri shart,o'zgarmas qiymat, kodlar ketma-ketligidagi xatoliklar va hkz.
+
+# abadiy codeni to'xtatish un ctrl + c ni bosamiz
