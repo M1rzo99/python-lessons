@@ -6,7 +6,7 @@
 # @author: mirzo
 # """
 
-# Funkaiya  - malum bir vazifani bajarishga mo'ljallangan kodlar yig'indisi.
+# Funksiya  - malum bir vazifani bajarishga mo'ljallangan kodlar yig'indisi.
 
 # Biz shu paytgacha bir nechta functionlardan foydalanaib keldik:
 # range(1,20) malum bir oraliqdagi sonlarni yaratish un
@@ -32,17 +32,21 @@
 
 
 # DocString  - biz yozgan functionimiz haqioda malumot hisoblanadi. Dasturchi bir function yozsa,shu fufnction haqida malumot berish kerak. 
+# def salom_ber(ism):
+#     """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
+#     print(f"Assalom alaykum, hurmatli {ism.title()}!")
+# salom_ber("Mirzo")
+
+# Quyidagi buyruq orqali functionimiz haqida malumotlarni olsak bo'ladi.
+print(salom_ber.__doc__)
+
+# Functionga bir necha bor murojat qilish
 
 def salom_ber(ism):
     """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
     print(f"Assalom alaykum, hurmatli {ism.title()}!")
 salom_ber("Mirzo")
-
-
-
-print(salom_ber.__doc__)
-
-
+salom_ber("Latif")
 
 
 
