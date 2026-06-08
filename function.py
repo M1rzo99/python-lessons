@@ -47,9 +47,31 @@ def salom_ber(ism):
     print(f"Assalom alaykum, hurmatli {ism.title()}!")
 salom_ber("Mirzo")
 salom_ber("Latif")
+# Biz function tuzib, unni bir nechta marta takror ishlatsak bo'ladi.Tepadagidek.
 
 
+# Argument va Parameter
+# Function yaratishda, qavs ichida berilgan,funciton to'g'ri ihslashi un uzatiladigan qiymat parameter ddi. 
+# Yuqoridagi misolda ism, salom_ber functionini parametri hisoblanadi
 
+# Foydalanuvchi functionga murojat qilishda functionga uzatiladigan qiymat esa argument deb ataladi.
+#salom_ber("hasan") kodida "hasan" bu argumentdir.
+
+# Funcitonga bir nechta argument uzatish mn:
+    #1. To'g'ri tartibda uzatish:
+     # Function parametrlari qaysi tartibda yozilgan bo'lsa,argumentlar ham aynana shu ketma-ketlikda uzatilishi kerak.
+    # Quyidagi functionda foydalanuvchining ism va familiyasini parametr sifatida qabul qilib, ularni jamlab uzatishi kerak.
+def toliq_ism(ism,fam):
+    """ FOydalanuvchi ism va familiyasini chiqardadigan funksiya"""
+    print(f"FOydalanuvchi ismi: {ism.title()}\n"
+          f"FOydalanuvchi familiyasi: {fam.title()}")
+toliq_ism("Mirzo","SHomuratov")
+    
+def toliq_ism(ism,yosh):
+    """ FOydalanuvchi ism va yoshini chiqardadigan funksiya"""
+    print(f"FOydalanuvchi ismi: {ism.title()}, {2026-yosh} yoshda")
+toliq_ism("Mirzo",1999)
+    #
 
 
 
