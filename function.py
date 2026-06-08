@@ -15,7 +15,43 @@
 
 #Funksiyalar turlicha bo'ladi. Sizdan qiymat qabul qilib,qabul qilgan qiymat ustida turlixil amallarni bajaradi, foydalanuvchidan umuman qiymat qabul qilmaydigan functionlar ham bor.
 
-def salom_ber():
-    """Salom beruvchi funksiya"""
-    print("Assalom alaykum!")
-salom_ber()
+# def salom_ber():
+#     """Salom beruvchi funksiya"""
+#     print("Assalom alaykum!")
+# salom_ber()
+
+
+# Function foydalanuvchi ismini qabul qilib,uning ismi bilan murojat qilsin.
+
+# def salom_ber(ism):
+#     """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
+#     print(f"Assalom alaykum, hurmatli {ism.title()}!")
+# salom_ber("Mirzo")
+# agar function ishklatishda unga qiymat bermasak salom_ber() xatolik yuzaga keladi
+
+
+
+# DocString  - biz yozgan functionimiz haqioda malumot hisoblanadi. Dasturchi bir function yozsa,shu fufnction haqida malumot berish kerak. 
+
+def salom_ber(ism):
+    """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
+    print(f"Assalom alaykum, hurmatli {ism.title()}!")
+salom_ber("Mirzo")
+
+
+
+print(salom_ber.__doc__)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
