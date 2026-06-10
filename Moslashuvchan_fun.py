@@ -48,3 +48,24 @@ Yuqoridagi funksiyamiz kamida 2 ta parametr qabul qiladi (x va y) va birinchi ik
 Copy
 print(summa(2))
 Netija: TypeError: summa() missing 1 required positional argument: 'y'
+
+**kwargs USULI
+Agar funksiyaga kalit so'z - qiymat ko'rinishidagi argumentlarni uzatish talab qilinsa, va bunday parametrlar soni noma'lum bo'lsa, argument oldidan ikkita yulduzcha qo'yiladi (**kwargs).
+**kwargs — keyword arguments (kalit so'zli argumentlar)
+
+Copy
+def avto_info(kompaniya,model,**malumotlar):
+    """Avto haqidagi ma'lumotlarni lug'at ko'rinishdia qaytaruvchi funksiya"""
+    malumotlar['kompaniya']=kompaniya
+    malumotlar['model']=model
+    return malumotlar
+Yuqoridagi funksiyamiz kompaniya va model degan ikki qiymatni qabul qiladi, undan keyin esa funksiyaga istalgancha parametr uzatish mumkin.  Bunday funksiyaga parametrlar kalitso'z=qiymat ko'rinishida uzatiladi.
+Funksiya ichida avval foydalanuvchi kiritgan qo'shimcha qiymatlardan iborat malumotlar deb nomlangan lug'at shakllantiriladi. Undan keyin esa majburiy parametrlarni lug'atga qo'shamiz. 
+
+Copy
+avto1 = avto_info("GM", "malibu", rang='qora', yil=2018)
+avto2 = avto_info("Kia", "K5", rang='qizil', narh=35000)
+
+Copy
+print(avto2)
+Natija: {'rang': 'qizil', 'narh': 35000, 'kompaniya': 'Kia', 'model': 'K5'}
