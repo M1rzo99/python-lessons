@@ -38,15 +38,15 @@
 # salom_ber("Mirzo")
 
 # Quyidagi buyruq orqali functionimiz haqida malumotlarni olsak bo'ladi.
-print(salom_ber.__doc__)
+# print(salom_ber.__doc__)
 
 # Functionga bir necha bor murojat qilish
 
-def salom_ber(ism):
-    """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
-    print(f"Assalom alaykum, hurmatli {ism.title()}!")
-salom_ber("Mirzo")
-salom_ber("Latif")
+# def salom_ber(ism):
+#     """Foydalanuvchi ismini qabul qilib,Salom beruvchi funksiya"""
+#     print(f"Assalom alaykum, hurmatli {ism.title()}!")
+# salom_ber("Mirzo")
+# salom_ber("Latif")
 # Biz function tuzib, unni bir nechta marta takror ishlatsak bo'ladi.Tepadagidek.
 
 
@@ -67,82 +67,63 @@ def toliq_ism(ism,fam):
           f"FOydalanuvchi familiyasi: {fam.title()}")
 toliq_ism("Mirzo","SHomuratov")
     
-def toliq_ism(ism,yosh):
-    """ FOydalanuvchi ism va yoshini chiqardadigan funksiya"""
-    print(f"FOydalanuvchi ismi: {ism.title()}, {2026-yosh} yoshda")
-toliq_ism("Mirzo",1999)
-
     #2.KALIT SO'Z BILAN UZATISH
-Yuqoridagi kabi holatlarning oldini olish uchun argumentlarni parametr nomi bilan qo'shib uzatishimiz mumkin. Buning uchun funksiyaga o'zgartirish kiritish talab qilinmaydi.
+#Yuqoridagi kabi holatlarning oldini olish uchun argumentlarni parametr nomi bilan qo'shib uzatishimiz mumkin. Buning uchun funksiyaga o'zgartirish kiritish talab qilinmaydi.
 
-Copy
-yosh_hisobla(tugilgan_yil=1997, ism='olim')
-Natija: Olim 23 yoshda
-Yuoqirdagi misolda funksiyani chaqirishda biz parametrlar ketma-ketligiga rioya qilmagan bo'lsakda, argumentlarni parametr_nomi=qiymat ko'rinishida yozganimiz sababli funksiya to'g'ri ishladi. 
-Huddi shu kabi yuqoridagi toliq_ism funksiyasiga murojat qilishimiz mumkin:
+def toliq_ism(ism='Mirzo',yili=1999):
+    """ FOydalanuvchi ism va yoshini chiqardadigan funksiya"""
+    print(f"FOydalanuvchi ismi: {ism.title()}, {2026-yili} yoshda")
+toliq_ism()
 
-Copy
-toliq_ism(familiya='hakimov',ism='olim')
-Natija:
-Foydalanuvchi ismi: Olim
-Foydalanuvchi familiyasi: Hakimov
-Kalit so'z usulidan foydalanganda parametr nomi to'g'ri yozilganiga ahamiyat bering.
-STANDART QIYMAT
-Funksiya yaratishda, istalgan parametr uchun standart qiymat ko'rsatib ketishimiz mumkin. Agar foydalanuvchi shu parametr uchun qiymat (argument) kiritmasa, funksiya bajarilishi jarayonida standart qiymat ishlatiladi. Standart qiymatni funksiya yaratish vaqtidaparametr = qiymat ko'rinishida beriladi.
 
-Copy
-def yosh_hisobla(tugilgan_yil, joriy_yil=2020): # joriy yil uchun st.qiymat 2020
-    """Foydalanuvchi tug'ilgan yilidan uning yoshini hisoblaydi"""
-    print(f"Siz {joriy_yil-tugilgan_yil} yoshdasiz")
-Yuqoridagi misolda biz joriy_yil parametriga 2020 standart qiymatini berib ketdik. 
-Funksiya yaratishda, standart qiymatga ega parametrlar doim oxirida yozilishi kerak. Aks holda xatolik yuzaga keladi.
-Keling avval funksiyani ikkala argument bilan chaqiramiz:
+#3. standart qiymat bilan uzastish
+# funksiya yaratishda,istalgan parametr un standart qiymat ko'rsatib ketishimiz mn.Agar foydalanuvchi shu parametr un argument kiritmasa,
+# funksiya bajarilinayotgandan shu standart qiymatni ishlatadi.
 
-Copy
-yosh_hisobla(1995,2020)
-Natija: Siz 25 yoshdasiz
-Endi esa faqat bitta argument (tugilgan_yil) bilan chaqiramiz:
+# def yosh_hisobla(tug_yil,joriy_yil=2026):
+#     """ Foydalanuvchi tugilgan yilidan uning yoshini hisoblaydi"""
+#     print(f"Siz {joriy_yil - tug_yil} yoshdasiz hazrat!")
+# yosh_hisobla(1999)
 
-Copy
-yosh_hisobla(1993)
-Natija: Siz 27 yoshdasiz
-Bu safar foydalanuvchi joriy_yil ni kiritmagani sababli, standart qiymat, 2020 ishlatildi. 
-FUNKSIYAGA MUROJAT QILISHDA XATOLIKLAR
-Funksiyalarga murojat qilishda turli xatoliklarga yo'l qo'shimiz tabiiy. Bunday holatlarda Python qaytargan xatoni sinchiklab o'qib, xato qayerdaligini topishimiz va uni to'g'rilashimiz zarur. Quyida men avvalroq yaratgan funksiyalarimizni xato usullar bilan chaqiraman. Xato nimada ekanini topa olasizmi?
+#AMALIYOT
+#1.Foydalanuvchi ismi va yoshini so'rab, uning tug'ilgan yilini hisoblaydigan funksiya yozing.
+def ism_yosh_korsat(ism,yosh):
+    """ Foydalanuvchi ismi va yoshini so'rab, uning tug'ilgan yilini hisoblaydigan funksiya"""
+    print(f"{ism.title()}, sizning yilingiz {2026-yosh} dir hazrat!")
+ism_yosh_korsat('Mirzo', 27)
 
-Copy
-def yosh_hisobla(tugilgan_yil, joriy_yil=2020):
-    """Foydalanuvchi tug'ilgan yilidan uning yoshini hisoblaydi"""
-    print(f"Siz {joriy_yil-tugilgan_yil} yoshdasiz")
-    
-tyil = input("Tug'ilgan yilingizni kiriting: ")
-yosh_hisobla(tyil)
-Natija: TypeError: unsupported operand type(s) for -: 'int' and 'str'
+#2.Foydalanuvchidan son olib, uning kvadrati va kubini konsolga chiqaruvchi funksiya yozing.
+def kv_kub_aniqla(son):
+    """Foydalanuvchidan son olib, uning kvadrati va kubini konsolga chiqaruvchi funksiya """
+    print(f"{son} ning kvadrati {son**2} dir.Va "
+          f"{son} ning kubi {son**3} dir.")
+kv_kub_aniqla(2)   
 
-Copy
-def yosh_hisobla(tugilgan_yil, joriy_yil):
-    """Foydalanuvchi tug'ilgan yilidan uning yoshini hisoblaydi"""
-    print(f"Siz {joriy_yil-tugilgan_yil} yoshdasiz")
+#3.Foydalanuvchidan son olib, son juft yoki toqligini konsolga chiqaruvchi funksiya yozing.
+def juft_toq_aniqla(son):
+    """Foydalanuvchidan son olib, son juft yoki toqligini konsolga chiqaruvchi funksiya"""
+    son=0
+    if son ==1/0.5:
+        print("Juft son")
+    else:
+        print("Toq son")
+juft_toq_aniqla(1)
 
-yosh_hisobla(1993)
-Natija: TypeError: yosh_hisobla() missing 1 required positional argument: 'joriy_yil'
+#4.Foydalanuvchidan ikkita son olib, ulardan kattasini konsolga chiqaruvchi funksiya yozing. Agar sonlar teng bo'lsa "Sonlar teng" degan xabarni chiqaring.
+def son_katta_kichik_aniqla(son1,son2):
+    """Foydalanuvchidan ikkita son olib, ulardan kattasini konsolga chiqaruvchi funksiya """
+    son=0
+    if son1>=son2:
+        print(f"{son1} {son2} dan katta.")
+    elif son1<=son2:
+        print(f"{son2} {son1} dan kichik.")
+    else:
+        print("Sonlar bir-biriga teng.")
+son_katta_kichik_aniqla(1, 3)
 
-Copy
-def salom_ber():
-    """Salom beruvchi funksiya"""
-    print("Assalomu alaykum!")
 
-salom_ber('hasan')
-Natija: TypeError: salom_ber() takes 0 positional arguments but 1 was given
 
-Copy
-def toliq_ism(ism, familiya):
-    """Foydalanuvchi ism va familiyasini jamlab chiqaruvchi funksiya"""
-    print(f"Foydalanuvchi ismi: {ism.title()}\n"
-          f"Foydalanuvchi familiyasi: {familiya.title()}")
- 
- toliq_ism('olim hakimov')
-Natija: TypeError: toliq_ism() missing 1 required positional argument: 'familiya'
+
 
 
 
