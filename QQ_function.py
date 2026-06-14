@@ -52,8 +52,16 @@ for avto in avtolar:
         narx = "Nomalum"
     print(f"{avto['model']}, {avto['komponiya']}. Narxi:{narx}")
 
-
-
+# Funksiyadadn ro'yhat qaytaramiz
+# oraliq nomli function yasaymiz va functionimiz 2 son oralig'idagi sonlarni ro'yhat ko'rinishda qaytaradi.
+def oraliq (min,max):
+    sonlar=[] #bo'sh ro'yhat
+    while min<max:
+        sonlar.append(min)
+        min +=1
+    return sonlar
+    
+print(oraliq(0, 10))
 
 
 
