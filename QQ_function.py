@@ -54,25 +54,33 @@ for avto in avtolar:
 
 # Funksiyadadn ro'yhat qaytaramiz
 # oraliq nomli function yasaymiz va functionimiz 2 son oralig'idagi sonlarni ro'yhat ko'rinishda qaytaradi.
-def oraliq (min,max):
-    sonlar=[] #bo'sh ro'yhat
+def oraliq(min,max,qadam):
+    sonlar=[]
     while min<max:
         sonlar.append(min)
-        min +=1
+        min += qadam
     return sonlar
+print(oraliq(0,11,2))
+
+# FUNKSIYALARNI TSIKLDA ISHLATISH
+print("Saytimizdagi avtolar ro'yxatini shakllantiramiz.")
+avtolar=[] # salondagi avtolar uchun bo'sh ro'yxat
+while True:
+    print("\nQuyidagi ma'lumotlarni kiriting",end='')
+    kompaniya=input("Ishlab chiqaruvchi: ")
+    model=input("Modeli: ")
+    rangi=input("Rangi: ")
+    korobka=input("Korobka: ")
+    yili=input("Ishlab chiqarilgan yili: ")
+    narhi=input("Narhi: ")
     
-print(oraliq(0, 10))
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #Foydalanuvchi kiritdan ma'lumotlardan avto_info yordamida 
+    #lug'at shakllantirib, har bir lug'atni ro'yxatga qo'shamiz:
+    avtolar.append(avto_info(kompaniya, model, rangi, korobka, yili, narhi))
+    
+    # Yana avto qo'shish-qo'shmaslikni so'raymiz
+    javob = input("Yana avto qo'shasizmi? (yes/no): ")
+    if javob=='no':
+        break
+print(avtolar)
 
