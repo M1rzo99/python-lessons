@@ -84,3 +84,31 @@ while True:
         break
 print(avtolar)
 
+
+# Amaliyot
+
+#1. Foydanaluvchidan ismi, familiyasi, tug'ilgan yili, tug'ilgan joyi, email manzili va telefon raqamini qabul qilib, lug'at ko'rinishida qaytaruvchi funksiya yozing. Lug'atda foydalanuvchu yoshi ham bo'lsin. Ba'zi argumentlarni kiritishni ixtiyoriy qiling (masalan, tel.raqam, el.manzil
+
+
+def mijoz_info(ism, familiya, tyil, tjoy, email="", tel=None):
+    """Mijoz haqidagi ma'lumotlarni lug'at ko'rinishida qaytaruvchi funksiya"""
+    mijoz = {
+        "ism": ism,
+        "familiya": familiya,
+        "tyil": tyil,
+        "yoshi": 2020 - tyil,
+        "tjoy": tjoy,
+        "email": email,
+        "telefon": tel,
+    }
+    return mijoz
+
+
+
+
+
+
+
+
+
+
