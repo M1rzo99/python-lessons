@@ -127,7 +127,17 @@ def kattasi(x,y,z):
         max = z
     return max
    
+#3.Amaliyot 3 
+def katta_harf(matnlar):
+    matnlar = matnlar[:]
+    for i in range(len(matnlar)):
+        matnlar[i]=matnlar[i].title()
+    return matnlar
+ismlar = ["ali", "vali", "hasan", "husan"]
+yangi_ismlar = katta_harf(ismlar)
+print(ismlar)
 
+print(yangi_ismlar)
 
 
 
