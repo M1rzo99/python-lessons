@@ -23,7 +23,7 @@ print(baholar)
 # Ro'yhatga o'zgartirish kiritish
 # pop() - yordamida ro'yhatdan har bir elementni sug'urib ola bilamiz.
 #Yuqoridagi funksiya unga uzatilgan ro'yxat ichidagi talabalarning ismini 
-#.pop() yordamida sug'urib olgani uchun bizning asl ro'yxatimiz ham bo'shab qoldi. 
+#.pop() yordamida sug'urib olgani uchun bizning asl ro'yxatimiz ham bo'shab qoldi. Va ro'yhatning eng oxirgi elementini sug'iirb oladi.
 # E'tibor bering, funksiya tashqarisidagi va ichidagi ro'yxatlar ikki hil nomlangan bo'lsada (talabalar va ismlar), ikkalasi ham xotiradagi bitta ro'yxatga bog'langani sabab ulardan biriga o'zgartirish kiritilishi bilan, ikkinchisi ham o'zgaradi. 
 
 
@@ -36,4 +36,32 @@ print("Ro'yxatdan nusxa olishni bildiradi:")
 talabalar = ['ali', 'vali', 'hasan', 'husan']
 baholar = bahola(talabalar[:])
 print(talabalar)
+
+
+#Amaliyot
+
+#1.Amaliyot
+def katta_harf(matnlar):
+    for i in range(len(matnlar)):
+        matnlar[i] = matnlar[i].title()
+
+
+ismlar = ["ali", "vali", "hasan", "husan"]
+katta_harf(ismlar)
+print(ismlar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
