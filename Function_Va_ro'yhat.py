@@ -63,18 +63,16 @@
 # print(ismlar)
 
 #2.Amaliyot:Darsimiz davomida yozgan bahola funksiyasini .pop() metodidan foydalanmasdan va asl ro'yxatga o'zgartirish kiritmasdan faqat lug'at qaytaradigan qilib yozing.
-def katta_harf(matnlar):
-    matnlar = matnlar[:]
-    for i in range(len(matnlar)):
-        matnlar[i] = matnlar[i].title()
-    return matnlar
+# def katta_harf(matnlar):
+#     matnlar = matnlar[:]
+#     for i in range(len(matnlar)):
+#         matnlar[i] = matnlar[i].title()
+#     return matnlar
 
-ismlar = ["ali", "vali", "hasan", "husan"]
-yangi_ismlar = katta_harf(ismlar)
-print(ismlar)
-print(yangi_ismlar)
-
-
+# ismlar = ["ali", "vali", "hasan", "husan"]
+# yangi_ismlar = katta_harf(ismlar)
+# print(ismlar)
+# print(yangi_ismlar)
 
 
 
