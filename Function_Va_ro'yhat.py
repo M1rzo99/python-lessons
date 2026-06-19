@@ -8,17 +8,17 @@
 
 # Funksiyaga ro'yhat uzatish
 
-def bahola(ismlar):
-    baholar = {}
-    while ismlar:
-        ism = ismlar.pop()
-        baho = input(f"Talaba {ism.title()}ning bahosini kiriting: ")
-        baholar[ism]=baho
-    return baholar
+# def bahola(ismlar):
+#     baholar = {}
+#     while ismlar:
+#         ism = ismlar.pop()
+#         baho = input(f"Talaba {ism.title()}ning bahosini kiriting: ")
+#         baholar[ism]=baho
+#     return baholar
 
-talabalar = ['ali','vali','hasan','husan']
-baholar = bahola(talabalar)
-print(baholar)
+# talabalar = ['ali','vali','hasan','husan']
+# baholar = bahola(talabalar)
+# print(baholar)
 
 # Ro'yhatga o'zgartirish kiritish
 # pop() - yordamida ro'yhatdan har bir elementni sug'urib ola bilamiz.
@@ -32,42 +32,47 @@ print(baholar)
 #Agar funksiya asl ro'yxatga o'zgartirish kiritishini istamasangiz, funksiyaga ro'yxatning o'zini emas, uning nusxasini uzatish mumkin.
 # Buning uchun funksiya parametrini royxat_nomi[:] ko'rinishida yozish kifoya. 
 #Bunda [:] operatori ro'yxatdan nusxa olishni bildiradi:
-print("Ro'yxatdan nusxa olishni bildiradi:")
-talabalar = ['ali', 'vali', 'hasan', 'husan']
-baholar = bahola(talabalar[:])
-print(talabalar)
+# print("Ro'yxatdan nusxa olishni bildiradi:")
+# talabalar = ['ali', 'vali', 'hasan', 'husan']
+# baholar = bahola(talabalar[:])
+# print(talabalar)
 
 
 #Amaliyot
 
 #1.Amaliyot
-def katta_harf(matnlar):
-    for i in range(len(matnlar)):
-        matnlar[i] = matnlar[i].title()
+# def katta_harf(matnlar):
+#     for i in range(len(matnlar)):
+#         matnlar[i] = matnlar[i].title()
+# ismlar = ["ali", "vali", "hasan", "husan"]
+# katta_harf(ismlar)
+# print(ismlar)
+
+# len("salom")  - bir narsada necheta element borligini kok'rsatadi
+# 5 ta harf bor
+# range() - sonlar ketma-ketligini beradi, array bo'yicha. 0,1,2,3,4 shu ko'rinishda.
+# for dagi i esa, function har safar o'zgargandagi qiymat bo'ladi. U function aylanganda o'zgarib turadi
 
 
-ismlar = ["ali", "vali", "hasan", "husan"]
-katta_harf(ismlar)
-print(ismlar)
+#1.Amaliyot
+# def katta_harf(matnlar):
+#     for i in range(len(matnlar)):
+#         matnlar[i] = matnlar[i].title()
+# ismlar = ["ali", "vali", "hasan", "husan"]
+# katta_harf(ismlar[:])
+# print(ismlar)
 
-#2.Amaliyot
+#2.Amaliyot:Darsimiz davomida yozgan bahola funksiyasini .pop() metodidan foydalanmasdan va asl ro'yxatga o'zgartirish kiritmasdan faqat lug'at qaytaradigan qilib yozing.
 def katta_harf(matnlar):
     matnlar = matnlar[:]
     for i in range(len(matnlar)):
         matnlar[i] = matnlar[i].title()
     return matnlar
 
-
 ismlar = ["ali", "vali", "hasan", "husan"]
 yangi_ismlar = katta_harf(ismlar)
 print(ismlar)
 print(yangi_ismlar)
-
-
-
-
-
-
 
 
 
