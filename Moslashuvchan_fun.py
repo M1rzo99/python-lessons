@@ -11,14 +11,17 @@ Created on Wed Jun 10 22:05:52 2026
 # Pythonda istalgancha qiymat qabul qiluvchi function bor
 
 # *args usuli
-# Agar function qabul qiladigan parametrlar soni noaniq bnolsa va parametrlar yagona qiymat ko'rinishida uzatilsa, function yaratishda argumentdan oldin * qo'yiladi.
-def summa(*sonlar):
+# Agar function qabul qiladigan parametrlar soni noaniq bo'lsa va parametrlar yagona qiymat ko'rinishida uzatilsa, function yaratishda argumentdan oldin * qo'yiladi.
+def summa(*sonlar): # bitta argument beramiz va istalgancha parametr bersak bo'ladigan function
     """Kiritilgan sonlar yog'indisini hisoblaydi"""
     yigindi = 0
     for son in sonlar:
         yigindi +=son
     return yigindi
 print(summa(10,12)) 
+print(summa(1,2,3,40))
+
+# TUPLE - o'zgarmas ro'yhat hisoblanadi.
 
 # oraliq degan function. range functionni qo'lda yasaymiz
 def oraliq (min,max):
@@ -28,4 +31,44 @@ def oraliq (min,max):
         min +=1 # while tsikli har safar aylanganda unga +1 qo'shilsin
     return sonlar # va sonlar nomli listni qaytarsin(boshqa joylarda ham ishlatsa bo'ladigan qb)
 print(oraliq(0,11))
+
+# Agar biz argumentga majburiy ikkita qiymat bersak va qolganlarini args(*) orqali bersak, oldingi ikkita argumnetga qiymat berish majburiy
+def smma(x,y,*snlar):
+    """ Kiritilgan sonlar yig'indisni hisoblaydigan Function"""
+    return x+y+sum(snlar)
+print(smma(1,23,4,5))
+print(smma(10,23)) # Bu holatrda *snlar argumentiga hechg qanday parametr bermasak ham error chiqmaydi
+
+# **kwargs - keywords degan manoni bildiradi.
+# kalit so'zlik argumetlarni ham functionga uzatish mumkin *kwargs orqali.
+
+def avto_info(komp,model,**malumotlar):
+    """ Avto haqidagi malumotlarni lug'at ko'rinishida qaytaradigan funksiya"""
+    malumotlar['komp']=komp
+    malumotlar['model']=model
+    return(malumotlar)
+print(avto_info("GYM", "GELIK", rangi="Tyomniy",yili="eski"))
+# Yuqorida malumotlarni *kwargs shaklid auzatganda,ular ixtiyoriy bo'ladi. Parametr kiritsak ham bo'ladi, kiritmasak ham bo'ladi.
+# kwargs da functionni parametrlarini chaqirsak, oldin kwargsdagi malumotlar kelib chiqadi. Chunki bu function shudnay shaklda ishlaydi
+# malumotlar nomli list yaratadi va shu listga malumoatlarni joylaydi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
