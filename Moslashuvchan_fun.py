@@ -62,6 +62,27 @@ def sonlar_hoxish(*sonlari):
     return(soniz)
 print(sonlar_hoxish(2,4,3))
 
+#2.Amaliyot.Talabalar haqidagi ma'lumotlarini lug'at ko'rinishida qaytaruvchi funkisya yozing. Talabaning ismi va familiyasi majburiy argument, qolgan ma'lumotlar esa ixtiyoriy ko'rinishda istalgancha berilishi mumkin bo'lsin.
+
+def talaba_malumot(ism,yosh,**malumot):
+    """Talabalar haqidagi ma'lumotlarini lug'at ko'rinishida qaytaruvchi funkisya """
+    malumot['ism'] =ism
+    malumot['yosh']=yosh
+    return malumot
+print(talaba_malumot('Mirzo', 27, fam = "SHOMURATOV",nick="Mijo"))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
