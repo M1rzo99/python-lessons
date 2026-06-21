@@ -42,15 +42,25 @@ print(smma(10,23)) # Bu holatrda *snlar argumentiga hechg qanday parametr bermas
 # **kwargs - keywords degan manoni bildiradi.
 # kalit so'zlik argumetlarni ham functionga uzatish mumkin *kwargs orqali.
 
-def avto_info(komp,model,**malumotlar):
+def avto_info(komp,model,yili,**malumotlar):
     """ Avto haqidagi malumotlarni lug'at ko'rinishida qaytaradigan funksiya"""
     malumotlar['komp']=komp
     malumotlar['model']=model
+    malumotlar["yili"] = yili
     return(malumotlar)
-print(avto_info("GYM", "GELIK", rangi="Tyomniy",yili="eski"))
+print(avto_info("GYM", "GELIK",2019, rangi="Tyomniy",holati="eski"))
 # Yuqorida malumotlarni *kwargs shaklid auzatganda,ular ixtiyoriy bo'ladi. Parametr kiritsak ham bo'ladi, kiritmasak ham bo'ladi.
 # kwargs da functionni parametrlarini chaqirsak, oldin kwargsdagi malumotlar kelib chiqadi. Chunki bu function shudnay shaklda ishlaydi
 # malumotlar nomli list yaratadi va shu listga malumoatlarni joylaydi.
+
+# 1.Amaliyot - Istalgancha sonlarni qabul qilib, ularning ko'paytmasini qaytaruvchi funksiya yozing.
+def sonlar_hoxish(*sonlari):
+    """ Istalgancha sonlarni qabul qilib, ularning ko'paytmasini qaytaruvchi funksiya"""
+    soniz = 1
+    for son in sonlari:
+        soniz *=son
+    return(soniz)
+print(sonlar_hoxish(2,4,3))
 
 
 
