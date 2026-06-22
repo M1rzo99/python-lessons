@@ -17,15 +17,14 @@ Created on Thu Jun 11 20:31:24 2026
 # Modul yaratish un asosiy dasturiumizdagi functionlarni yangi faylga ko'chiramiz xolos.Modulga oson murojat qilishimiz un, faylimiz asosiy dastur bn bitta papkada bo'lgani avfzal.
 # Bunda adashib ketmaslik un loyihaning asosiy faylinii main.py deb noimlash o'rinli
 
-def avto_info(komponiya,model,rangi,karobka,yili,narhi=None):
-    """Avtomobil haqidagi malumotlarni lugat korinishida qaytaruvchi funksiya"""
-    avto={ "komponiya":komponiya,
-          "model":model,
-          "rangi":rangi,
-          "karobka":karobka,
-          "yili":yili,
-          "narhi":narhi
-        }
+def avto_info(kompaniya, model, rangi, korobka, yili, narhi=None):
+    """Avtomobil haqidagi ma'lumotlarni lug'at ko'rinishida qaytaruvchi funksiya"""
+    avto = {'kompaniya':kompaniya,
+            'model':model,
+            'rang':rangi,
+            'korobka':korobka,
+            'yil':yili,
+            'narh':narhi}
     return avto
 
 def avto_kirit():
@@ -54,3 +53,12 @@ def info_print(avto_info):
           f"{avto_info['model'].upper()}, {avto_info['korobka']} korobka, "
           f"{avto_info['yil']}-yil, {avto_info['narh']}$")
     
+    
+    
+    
+    
+    
+    
+
+
+
