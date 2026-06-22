@@ -6,24 +6,26 @@ Created on Thu Jun 11 20:31:24 2026
 @author: mirzo
 """
 
-MODUL NIMA?
-Funksiyaning qulayliklaridan biri, ko'p takrorlanadigan kodlarni funksiya ichida yashirishimiz va kerak bo'lgan murojat qilishimiz mumkinligida. Maqsadimiz dasturimizni ixcham va tushunarli qilib, kelajakda o'zimiz yoki boshqalar uchun ham "toza" kod qoldrisih. Bu yo'nalishda yana bir qadam qo'yib, dasturimizni modullarga ajratimshimiz mumkin. 
-Modul bu loyihamiz ichidagi alohida fayl bo'lib, dasturimiz davomida ishlatiladigan funskyalarni (va o'zgaruvchilarni) mana shu faylga joylab, ko'zdan yashirib qo'yishimiz mumkin. Bu bizga asosiy dasturimizdan chalg'imasdan kod yozish imkoniyatini beradi. 
-Modul va uning ichidagi funksiyalarni istalgan payt asosiy dasturimizga yuklab olishimiz, modullarni boshqa dasturchilar bilan ulashishimiz yoki kelajakda o'zimizning boshqa loyihalarimizda foydalanishimiz mumkin.
-Umuman olganda katta dasturlar bir nech o'nlab modullardan iborat bo'lishi tabiiy hol.
-MODUL YARATAMIZ
-Modul yaratish uchun asosiy dasturimizdagi funksiyalarni yangi faylga ko'chiramiz xolos. Modulga oson murojat qilishimiz uchun, faylimiz asosiy dasturimiz bilan bitta papkada bo'lgani afzal. Bunda adashib ketmaslik uchun, loyihangizning (dasturning) asosiy faylini main.py deb nomlash o'rinli. 
-Keling, biz ham avto_info_mod.py degan fayl yaratamiz va ichiga quyidagi 3 ta funksiyalarni joylaymiz:
+# 23.Modullar
 
-Copy
-def avto_info(kompaniya, model, rangi, korobka, yili, narhi=None):
-    """Avtomobil haqidagi ma'lumotlarni lug'at ko'rinishida qaytaruvchi funksiya"""
-    avto = {'kompaniya':kompaniya,
-            'model':model,
-            'rang':rangi,
-            'korobka':korobka,
-            'yil':yili,
-            'narh':narhi}
+# Functionni qulayliklaridna biri - ko'p takrorlanadigan kodlarni function ichiga yashirishimizva kerak bo'lganda murojat qilishiumiz mumkinligida.
+# Maqsad dasturimizni ihcham va tushunarli qilib,kelajakda o'zimiz va boshqalar un toza kod qoldirishimiz.
+
+# Modul bu - loyihamiz ichidagi alohida fayl bo'lib, dasturiumiz davomida ishlatilinadigan fayllarni va o'garuvchilarni manashu faylga joylab. ko'zdan yashirib qo'yishimiz mumkin.
+# Bu bizga asosiy dasturimizdan chalg'imasdan kod yozish imkonini beradi.
+
+# Modul yaratish un asosiy dasturiumizdagi functionlarni yangi faylga ko'chiramiz xolos.Modulga oson murojat qilishimiz un, faylimiz asosiy dastur bn bitta papkada bo'lgani avfzal.
+# Bunda adashib ketmaslik un loyihaning asosiy faylinii main.py deb noimlash o'rinli
+
+def avto_info(komponiya,model,rangi,karobka,yili,narhi=None):
+    """Avtomobil haqidagi malumotlarni lugat korinishida qaytaruvchi funksiya"""
+    avto={ "komponiya":komponiya,
+          "model":model,
+          "rangi":rangi,
+          "karobka":karobka,
+          "yili":yili,
+          "narhi":narhi
+        }
     return avto
 
 def avto_kirit():
@@ -51,31 +53,4 @@ def info_print(avto_info):
     print(f"{avto_info['rang'].title()} {avto_info['kompaniya'].upper()} "
           f"{avto_info['model'].upper()}, {avto_info['korobka']} korobka, "
           f"{avto_info['yil']}-yil, {avto_info['narh']}$")
-Yuqoridagi funksiyalarga asosiy dasturdan murojat qlishning bir necha usuli bor.
-
-
-**kwargs USULI
-Agar funksiyaga kalit so'z - qiymat ko'rinishidagi argumentlarni uzatish talab qilinsa, va bunday parametrlar soni noma'lum bo'lsa, argument oldidan ikkita yulduzcha qo'yiladi (**kwargs).
-**kwargs — keyword arguments (kalit so'zli argumentlar)
-
-Copy
-def avto_info(kompaniya,model,**malumotlar):
-    """Avto haqidagi ma'lumotlarni lug'at ko'rinishdia qaytaruvchi funksiya"""
-    malumotlar['kompaniya']=kompaniya
-    malumotlar['model']=model
-    return malumotlar
-Yuqoridagi funksiyamiz kompaniya va model degan ikki qiymatni qabul qiladi, undan keyin esa funksiyaga istalgancha parametr uzatish mumkin.  Bunday funksiyaga parametrlar kalitso'z=qiymat ko'rinishida uzatiladi.
-Funksiya ichida avval foydalanuvchi kiritgan qo'shimcha qiymatlardan iborat malumotlar deb nomlangan lug'at shakllantiriladi. Undan keyin esa majburiy parametrlarni lug'atga qo'shamiz. 
-
-Copy
-avto1 = avto_info("GM", "malibu", rang='qora', yil=2018)
-avto2 = avto_info("Kia", "K5", rang='qizil', narh=35000)
-
-Copy
-print(avto2)
-Natija: {'rang': 'qizil', 'narh': 35000, 'kompaniya': 'Kia', 'model': 'K5'}
-
-
-AMALIYOT
-Istalgancha sonlarni qabul qilib, ularning ko'paytmasini qaytaruvchi funksiya yozing
-Talabalar haqidagi ma'lumotlarini lug'at ko'rinishida qaytaruvchi funkisya yozing. Talabaning ismi va familiyasi majburiy argument, qolgan ma'lumotlar esa ixtiyoriy ko'rinishda istalgancha berilishi mumkin bo'lsin.
+    
