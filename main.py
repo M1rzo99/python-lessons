@@ -97,3 +97,34 @@ aim.info_print(avto1)
 # e
 # e (2.71828...)
 # math moduli ichidagi barcha funksiyalar bilan Pythonning rasmiy sahifasida tanishishingiz mumkin.
+
+
+
+# random MODULI
+# Random moduli tasodifiy sonlar bilan ishlash uchun qulay funksiyalarga boy. Keing ulardan ayrimlari bilan tanishamiz.
+# randint(a,b)
+# Bu funksiya a va b oraligi'da tasodifiy butun son qaytaradi. 
+
+# Copy
+# import random as r # random modulini r deb chaqirayapmiz
+
+# son = r.randint(0,100) # 0 va 100 oralig'ida tasodifiy son
+# print(son)
+# choice(x)
+# x ning ichidan tasodifiy qiymatni qaytaruvchi funksiya. Bunda x bir necha elementdan iborat o'zgaruvchi (matn, ro'yxat) bo'lishi kerak.
+
+# Copy
+# ismlar = ['olim','anvar','hasan','husan']
+# ism = r.choice(ismlar) # ismlar dan tasodifiy ism tanlaymiz
+# print(ism)
+# print(r.choice(ism)) # ismdan tasodifiy harf tanlaymiz
+
+# Natija
+
+# Copy
+# x = list(range(0,51,5))
+# print(x)
+# print(r.choice(x))
+
+# Natija
+#  shuffle(x)
