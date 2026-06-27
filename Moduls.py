@@ -94,7 +94,53 @@ print(math.log2(8))
 print(math.log10(100))
 
     
-    
+#math ichidagi ayrim funksiyalar
 
+Funksiya
+Funksiya ta'rifi
+ceil(x)
+x dan katta yoki teng bo'lgan eng kichik butun sonni qaytaradi
+fabs(x)
+x ning absolyut qiymatini qaytaradi
+floor(x)
+x dan kichik yoki teng bo'lgan eng yaqin butun sonni qaytaradi
+exp(x)
+x
+e
+x 
+e
+  ni qaytaruvchi funksiya
+cos(x)
+cos
+⁡
+(
+x
+)
+cos(x) ni qaytaruvchi funksiya
+sin(x)
+sin
+⁡
+(
+x
+)
+sin(x) ni qaytaruvchi funksiya
+tan(x)
+tan
+⁡
+(
+x
+)
+tan(x) ni qaytaruvchi funksiya
+degrees(x)
+x burchakning radian qiymatini darajaga konvertasiya qilish
+radians(x)
+x burchakning daraja qiymatini radianga konvertasiya qilish 
+e
+Matematik konstanta 
+e
+e (2.71828...)
+math moduli ichidagi barcha funksiyalar bilan Pythonning rasmiy sahifasida tanishishingiz mumkin.
+random MODULI
+Random moduli tasodifiy sonlar bilan ishlash uchun qulay funksiyalarga boy. Keing ulardan ayrimlari bilan tanishamiz.
 
 
