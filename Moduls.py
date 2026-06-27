@@ -144,3 +144,11 @@ random MODULI
 Random moduli tasodifiy sonlar bilan ishlash uchun qulay funksiyalarga boy. Keing ulardan ayrimlari bilan tanishamiz.
 
 
+# randint(a,b)
+Bu funksiya a va b oraligi'da tasodifiy butun son qaytaradi. 
+
+Copy
+import random as r # random modulini r deb chaqirayapmiz
+
+son = r.randint(0,100) # 0 va 100 oralig'ida tasodifiy son
+print(son)
