@@ -53,10 +53,46 @@ def info_print(avto_info):
           f"{avto_info['model'].upper()}, {avto_info['korobka']} korobka, "
           f"{avto_info['yil']}-yil, {avto_info['narh']}$")
     
+
     
     
-    
-    
+  #MODULDA O'ZGARUVCHI SAQLASH
+Modullarning ichida nafaqat funksiyalar, balki turli o'zgaruvchilarni ham saqlash mumkin. Modul ichidagi o'zgaruvchilarga ham huddi yuqoridagi usullar bilan murojat qilish mumkin.
+PYTHON MODULLARI
+Python dasturlash tili tayyor modullar bilan keladi, modullarning to'liq ro'yxatini quyidagi bo'glama orqali kirib ko'rishingiz mumkin:
+Logo
+Python Module Index — Python 3.14.6 documentation
+docs.python.org
+Keling ulardan ba'zilari bilan tanishamiz.
+math MODULI
+Bu modulda matematik hisob kitoblarni bajaruvchi funksiyalar va o'zgaruvchilar joylashgan. Keling ularga ba'zi misollarni ko'ramiz.
+sqrt() - qavs ichida berilgan qiymatning kvadrat ildizini qaytaradi
+
+Copy
+import math
+
+x=400
+print(math.sqrt(x))
+Natija: 20.0
+pow(x,y) - x ning y-darajasini qaytaradi
+
+Copy
+print(pow(5,5))
+Natija: 3125
+pi - 
+π
+π ning qiymatini saqlovchi o'zgaruvchi
+
+Copy
+from math import pi
+print(pi)
+Natija: 3.141592653589793
+log2(x) va log10(x) - x ning 2 va 10-lik logorifmini qaytaruvchi funksiyalar
+
+Copy
+print(math.log2(8))
+print(math.log10(100))
+
     
     
 
