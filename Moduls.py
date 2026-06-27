@@ -170,4 +170,16 @@ x = list(range(0,51,5))
 print(x)
 print(r.choice(x))
 
+ #shuffle(x)
+x ichidagi elementlarni tasodifiy tartibda qaytaruvchi funksiya. Bunda x bir necha elementdan iborat o'zgaruvchi (matn, ro'yxat) bo'lishi kerak.
+
+Copy
+x = list(range(11))
+print(x)
+r.shuffle(x)
+print(x)
+
+Natija
+random moduli ichidagi boshqa funksiyalar haqida Python rasmiy sahifasidan ma'lumot olishingiz mumkin.
+
 
