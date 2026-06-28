@@ -44,3 +44,54 @@ kub = daraja(3)
 print(f"3-ning kvadrati {kvadrat(3)} ga, kubi {kub(3)} ga teng")
 Natija: 3-ning kvadrati 9 ga, kubi 27 ga teng
 Lambda funksiyalaridan argument sifatida boshqa funksyani qabul qiluvchi funksiyalar bilan ishlashda ham keng foydalaniladi. Misol uchun map() va filter() funksiyalari.
+
+
+#map() FUNKSIYASI
+Bu funksiya argument sifatida ro'yxat (yoki lug'at) va boshqa bir funksiyani qabul qilib, ro'yxat elementlariga qabul qilingan funksya yordamida ishlov beradi. Tushunarli bo'lish uchun quyidagi misolni ko'ramiz.
+
+Copy
+from math import sqrt
+
+sonlar = list(range(11)) # 0 dan 10 gacha sonlar ro'yxati
+ildizlar = list(map(sqrt,sonlar))
+Yuqoridagi misolda avval 0 dan 10 gacha sonlar ro'yxatini tuzib oldik, keyin esa map funksiyasiga ro'yxat va sqrt funksiyasini uzatib, ro'yxatdagi barcha sonlarning ildizini hisoblab oldik. 
+map() funksiyasi map obyekt qaytargani sababli, qaytgan obyektni ro'yxatga o'tkazib olish uchun list() funksiyasidan foyydalandik.
+Yana bir misol ko'ramiz:
+
+Copy
+sonlar = list(range(11)) # 0 dan 10 gacha sonlar ro'yxati
+
+def daraja2(x):
+    """Berilgan sonning kvadratini qaytaruvchi funksiya"""
+    return x*x
+
+print(list(map(daraja2,sonlar))) # sonlar ning kvadratini hisoblaymiz
+Natija: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+Yuqoridagi misolda biz avval berilgan sonning kvadratini hisoblovchi funksiya yaratib oldik, undan keyin esa map yordamida sonlar ro'yxatidagi elementlarning kvadratini ham hisoblab oldik.
+Endi keling huddi shu misolni lambda yordamida yozamiz:
+
+Copy
+kvadratlar = list(map(lambda x:x*x,sonlar))
+print(kvadratlar)
+Natija: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+Yuqoridagi misolda, endi daraja degan funksiyani yaratib o'tirmasdan, to'g'ridan-to'g'ri map() ni ichiga darajani hisoblovchi lambda funksiya uzatdik.
+map() funksiyasi bo'lmaganida biz bunday dasturlarni for yordamida yozishimiz kerak bo'lar edi:
+
+Copy
+kvadratlar = []
+for son in sonlar:
+    kvadratlar.append(son*son)
+map() funksiyasiga bir nechta ro'yxatlar ham uzatish mumkin:
+
+Copy
+a = [4, 5, 6]
+b = [7, 8, 9]
+a_plus_b = list(map(lambda x,y:x+y,a,b))
+print(a_plus_b)
+Natija: [11, 13, 15]
+map() istalgan ko'rinishdagi ma'lumot turlari bilan ishlaydi:
+
+Copy
+ismlar = ['hasan','husan','olim','umid']
+print(list(map(lambda matn:matn.upper(),ismlar)))
+Natija: ['HASAN', 'HUSAN', 'OLIM', 'UMID']
