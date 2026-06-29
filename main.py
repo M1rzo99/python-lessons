@@ -62,7 +62,10 @@ print(math.sqrt(x))
 print(pow(2,3))
 
 
+# pi - ning qiymarini saqlovchi o'zgaruvchi
 
+from math import pi
+print(pi)
 
 
 
