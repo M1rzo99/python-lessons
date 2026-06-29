@@ -110,6 +110,17 @@ mevalar_b = list(filter(lambda meva:meva.startswith('a'),mevalar))
 print(mevalar_b)
 
 
+# Quyidagi dastur esa mevalar ro'yhatidan nomi 5 yoki undan kam harfdan iborat mevalarni saralab oladi.
+mevalar2 = list(filter(lambda meva:len(meva)<=5,mevalar))
+print(mevalar2)
+
+# Quyidagi funciton esa bosh harfi a va tugash harfi r bo'ladigan mevalarni ko'rsatadi
+mva = list(filter(lambda meva:(meva.startswith('a') and meva.endswith('r')), mevalar))
+print(mva)
+
+
+# SO'NGSO'Z
+#Ushbu darsimiz bilan biz dasturlash asoslarining katta bir qismiga yakun yasadik, navbat Object Oriented Programming va boshqa katta mavzularga. Lekin, bu mavzularga o'tishdan avval, keyingi darslarimizni bir nechta sodda loyihalar qilishga bag'ishlaymiz. 
 
 
 
