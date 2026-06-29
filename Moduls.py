@@ -53,133 +53,25 @@ def info_print(avto_info):
           f"{avto_info['model'].upper()}, {avto_info['korobka']} korobka, "
           f"{avto_info['yil']}-yil, {avto_info['narh']}$")
     
+    
+    
+    
 
     
     
-  #MODULDA O'ZGARUVCHI SAQLASH
-Modullarning ichida nafaqat funksiyalar, balki turli o'zgaruvchilarni ham saqlash mumkin. Modul ichidagi o'zgaruvchilarga ham huddi yuqoridagi usullar bilan murojat qilish mumkin.
-PYTHON MODULLARI
-Python dasturlash tili tayyor modullar bilan keladi, modullarning to'liq ro'yxatini quyidagi bo'glama orqali kirib ko'rishingiz mumkin:
-Logo
-Python Module Index — Python 3.14.6 documentation
-docs.python.org
-Keling ulardan ba'zilari bilan tanishamiz.
-math MODULI
-Bu modulda matematik hisob kitoblarni bajaruvchi funksiyalar va o'zgaruvchilar joylashgan. Keling ularga ba'zi misollarni ko'ramiz.
-sqrt() - qavs ichida berilgan qiymatning kvadrat ildizini qaytaradi
-
-Copy
-import math
-
-x=400
-print(math.sqrt(x))
-Natija: 20.0
-pow(x,y) - x ning y-darajasini qaytaradi
-
-Copy
-print(pow(5,5))
-Natija: 3125
-pi - 
-π
-π ning qiymatini saqlovchi o'zgaruvchi
-
-Copy
-from math import pi
-print(pi)
-Natija: 3.141592653589793
-log2(x) va log10(x) - x ning 2 va 10-lik logorifmini qaytaruvchi funksiyalar
-
-Copy
-print(math.log2(8))
-print(math.log10(100))
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
-#math ichidagi ayrim funksiyalar
-
-Funksiya
-Funksiya ta'rifi
-ceil(x)
-x dan katta yoki teng bo'lgan eng kichik butun sonni qaytaradi
-fabs(x)
-x ning absolyut qiymatini qaytaradi
-floor(x)
-x dan kichik yoki teng bo'lgan eng yaqin butun sonni qaytaradi
-exp(x)
-x
-e
-x 
-e
-  ni qaytaruvchi funksiya
-cos(x)
-cos
-⁡
-(
-x
-)
-cos(x) ni qaytaruvchi funksiya
-sin(x)
-sin
-⁡
-(
-x
-)
-sin(x) ni qaytaruvchi funksiya
-tan(x)
-tan
-⁡
-(
-x
-)
-tan(x) ni qaytaruvchi funksiya
-degrees(x)
-x burchakning radian qiymatini darajaga konvertasiya qilish
-radians(x)
-x burchakning daraja qiymatini radianga konvertasiya qilish 
-e
-Matematik konstanta 
-e
-e (2.71828...)
-math moduli ichidagi barcha funksiyalar bilan Pythonning rasmiy sahifasida tanishishingiz mumkin.
-random MODULI
-Random moduli tasodifiy sonlar bilan ishlash uchun qulay funksiyalarga boy. Keing ulardan ayrimlari bilan tanishamiz.
-
-
-# randint(a,b)
-Bu funksiya a va b oraligi'da tasodifiy butun son qaytaradi. 
-
-Copy
-import random as r # random modulini r deb chaqirayapmiz
-
-son = r.randint(0,100) # 0 va 100 oralig'ida tasodifiy son
-print(son)
-
-
-#choice(x)
-x ning ichidan tasodifiy qiymatni qaytaruvchi funksiya. Bunda x bir necha elementdan iborat o'zgaruvchi (matn, ro'yxat) bo'lishi kerak.
-
-Copy
-ismlar = ['olim','anvar','hasan','husan']
-ism = r.choice(ismlar) # ismlar dan tasodifiy ism tanlaymiz
-print(ism)
-print(r.choice(ism)) # ismdan tasodifiy harf tanlaymiz
-
-Natija
-
-Copy
-x = list(range(0,51,5))
-print(x)
-print(r.choice(x))
-
- #shuffle(x)
-x ichidagi elementlarni tasodifiy tartibda qaytaruvchi funksiya. Bunda x bir necha elementdan iborat o'zgaruvchi (matn, ro'yxat) bo'lishi kerak.
-
-Copy
-x = list(range(11))
-print(x)
-r.shuffle(x)
-print(x)
-
-Natija
-random moduli ichidagi boshqa funksiyalar haqida Python rasmiy sahifasidan ma'lumot olishingiz mumkin.
-
-
+    
+ 
