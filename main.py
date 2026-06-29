@@ -53,19 +53,24 @@ info_print(avto4)
 
 # math Moduli:
 # bu modulda matematik hisob kitoblarni bajaruvchi funkdiyalar va o'zgaruvchilar joylashgan.Keling ularga bazi misollarni ko'ramz
-# sqrt()  - qavs ichidagi qiymatning kvadrat ildizi qaytarilinadi.
+#1. sqrt()  - qavs ichidagi qiymatning kvadrat ildizi qaytarilinadi.
 import math
 x=200
 print(math.sqrt(x))
  
-# pow(x,y) - x ning y- darajasini qaytaradi.
+#2. pow(x,y) - x ning y- darajasini qaytaradi.
 print(pow(2,3))
 
 
-# pi - ning qiymarini saqlovchi o'zgaruvchi
-
+#3. pi -ㅍ ning qiymarini saqlovchi o'zgaruvchi
 from math import pi
 print(pi)
+
+#4.log2(x) va log10(x)  - x ning 2 va 10lik logarifimioni qaytaruvchi functionlar
+print(math.log2(8))
+print(math.log10(100))
+
+
 
 
 
