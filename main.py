@@ -70,6 +70,37 @@ print(pi)
 print(math.log2(8))
 print(math.log10(100))
 
+# random Moduli
+
+#Random Moduli tasodifiy sonlar bn ishlash un qulay functionlarga boy. Keling ularni ayrimlari bn tanishamiz
+
+
+# randit(a,b) - a va b oraligi'idagi tasodifiy butun son qaytaradi.
+import random as r # random Modulini r deb  chaqiramiz
+son =r.randint(0,100) # 0 va  100 oralig'idagi tasodifiy son
+print(son) # har safar son o'zgaruvchisi chaqirilinganda, random son hosil bo'ladi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
