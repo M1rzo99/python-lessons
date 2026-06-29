@@ -75,11 +75,17 @@ print(math.log10(100))
 #Random Moduli tasodifiy sonlar bn ishlash un qulay functionlarga boy. Keling ularni ayrimlari bn tanishamiz
 
 
-# randit(a,b) - a va b oraligi'idagi tasodifiy butun son qaytaradi.
+#5. randit(a,b) - a va b oraligi'idagi tasodifiy butun son qaytaradi.
 import random as r # random Modulini r deb  chaqiramiz
 son =r.randint(0,100) # 0 va  100 oralig'idagi tasodifiy son
 print(son) # har safar son o'zgaruvchisi chaqirilinganda, random son hosil bo'ladi.
 
+#6. choice(x) 
+# x ning ichidan tasodifiy qiymatni qaytaruvchi funksiya. Bunda x bir nechta elementdan iborat o'zgaruvchi (matn,ro'yhat) bog'lishi kerak.
+ismlar = ["Mardon","Mirzo","Munis","Muzaf"]
+ism = r.choice(ismlar) # ismlardan tasodifiy ism tanlaymiz.
+print(ism)
+print(r.choice(ism)) # ismdan tasodifiy harf tanlaymiz.
 
 
 
