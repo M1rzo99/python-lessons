@@ -79,10 +79,16 @@ ismlar=['hasan','husan','ikrom','iqbol']
 print(list(map(lambda matn:matn.upper(),ismlar)))
 
 
+# filter() funksiyasi - argument sifatida ro'yhat va boshqa funksiyalarni qabul qilib oladi va berilgan ro'yhat elementlarini berilgan funklsiya yordamida sralaydi.Bunda argument sifatida uzatilgan funksiya mantiqiy qiymat qaytarishi kk (True yoki False)
 
-
-
-
+import random as r
+sonlar = r.sample(range(100), 10) # 0 dan 99 gacha 10 ta tasodifiy sonlar
+def juftmi(x):
+    """ x juft bo'lsa True, aks holda False qaytaruvchi funksiya"""
+    return x%2==0 # x o'nidagi son 2 ga bo'linganda qoldiq 0 bo'lsa, juft son hisoblanadi
+juft_sonlar = list(filter(juftmi, sonlar))
+print(sonlar)
+print(juft_sonlar)
 
 
 
