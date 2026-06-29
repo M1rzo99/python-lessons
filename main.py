@@ -58,7 +58,8 @@ import math
 x=200
 print(math.sqrt(x))
  
-
+# pow(x,y) - x ning y- darajasini qaytaradi.
+print(pow(2,3))
 
 
 
