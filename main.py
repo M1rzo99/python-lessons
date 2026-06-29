@@ -32,6 +32,12 @@ from Moduls import avto_info,info_print
 avto2=avto_info("BYD","CHAMPION","Seliy","avtomat",2024,19000)
 info_print(avto2)
 
+# Funksiyalarga qisqa nom berish
+# huddi avvalgidek, ko'chirib olgan functionimizga ham qisqa nom berishimiz mn
+from Moduls import avto_info as aInfo, info_print as iPrint
+avto3 = aInfo("Mirzo", "Jumong", "Oqrang", "Mexanik", 1999,20000)
+iPrint(avto3)
+
 
 
 
