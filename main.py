@@ -46,10 +46,18 @@ info_print(avto4)
 
 #Diqqat! Bu usuldan foydalanish bir nechta sabalarga ko'ra tavfsiya ertilmaydi. Katta modullarda yuzlab funksiyalar bo'lishi mn va funksiya nomi sizning dastruingizda boshqa  funksiya yoki o'zgaruvchi bilan bir xil nomga ega bo'lsa, dastur xato ishlashiga olib keladi
 
+# Modulda o'zgruvchi saqlash
 
+# Modullar ichida nafaqat o'zgaruvchilar,balki turli o'zgaruvchilarni ham saqlash mumkin.
+# Modul ichidagi o'zgaruvchilarga ham yuqoridagi usullar bn murojat qilish mn.
 
-
-
+# math Moduli:
+# bu modulda matematik hisob kitoblarni bajaruvchi funkdiyalar va o'zgaruvchilar joylashgan.Keling ularga bazi misollarni ko'ramz
+# sqrt()  - qavs ichidagi qiymatning kvadrat ildizi qaytarilinadi.
+import math
+x=200
+print(math.sqrt(x))
+ 
 
 
 
