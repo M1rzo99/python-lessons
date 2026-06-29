@@ -38,7 +38,13 @@ from Moduls import avto_info as aInfo, info_print as iPrint
 avto3 = aInfo("Mirzo", "Jumong", "Oqrang", "Mexanik", 1999,20000)
 iPrint(avto3)
 
+# Modul ichidagi barcha funksiyalarni ko'chirib olish:
+    
+from Moduls import *
+avto4 = avto_info("GT","Hummer","Black","avtomat",1999,43000)
+info_print(avto4)
 
+#Diqqat! Bu usuldan foydalanish bir nechta sabalarga ko'ra tavfsiya ertilmaydi. Katta modullarda yuzlab funksiyalar bo'lishi mn va funksiya nomi sizning dastruingizda boshqa  funksiya yoki o'zgaruvchi bilan bir xil nomga ega bo'lsa, dastur xato ishlashiga olib keladi
 
 
 
