@@ -87,12 +87,15 @@ ism = r.choice(ismlar) # ismlardan tasodifiy ism tanlaymiz.
 print(ism)
 print(r.choice(ism)) # ismdan tasodifiy harf tanlaymiz.
 
+x=list(range(0,51,5))
+print(x)
+print(r.choice(x))
 
-
-
-
-
-
+#7. shuffle(y) - y ichidagi elementlarni, tasodifiy qaytaruvchi funktsiya. Bunda x bir necha elementdan iborat o'zgaruvchi(matn,ro'yhat) bo'lishi kerak.
+y=list(range(11))
+print(y)
+r.shuffle(y)
+print(y)
 
 
 
