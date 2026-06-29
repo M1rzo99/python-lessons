@@ -91,8 +91,23 @@ print(sonlar)
 print(juft_sonlar)
 
 
+# Keling endi shu dasturni lambda yordamida yozamiz:
+    
+import random as r
+
+sonlar = r.sample(range(100),10) # 0-99 oralig'ida 10 ta tasodifiy sonlar
+juft_sonlar = list(filter(lambda son: son%2==0,sonlar))
+print(sonlar)
+print(juft_sonlar)
 
 
+# Keling endi filter() fuinksiyasi yordamida matnlarni saralashga ham misollar ko'raylik.
+# Quyidagi dastur mevalar ro'yhatidan b harfiga boshlanuvchi mevalarni jaratib oladi.
+#BU yerda biz matnlarga tegishli bo'lgan .startswith() methodidan foydalandik.Bu method, berilgan matn shu harfdan bvoshlanadimi yo'qmi tekshiradi va True yoki False qiymat qaytaradi.
+
+mevalar=['olma','anor','anjir','banan','bodom','shaftoli','behi','nok']
+mevalar_b = list(filter(lambda meva:meva.startswith('a'),mevalar))
+print(mevalar_b)
 
 
 
