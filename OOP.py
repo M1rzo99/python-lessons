@@ -67,3 +67,7 @@ Avval aytganimizdek, dasturimiz yuzlab obyektlardan iborat bo’lishi mumkin. Kl
 Bu xoh dastur interfeysidagi o’nlab turli hil tugmalar bo’lsin, yoki kompyuter o’yinidagi qahramonlar bo’lsin. Har bir tugma yoki o’yin qahramoni va uning harakatlarini qayta-qayta yozmasdan bir martta yaratilgan klassdan nusxa olib, o’nlab obyektlarni yaratishimiz mumkin.
 
 Yagona klassdan yaratilgan obyketlar turli ko'rinishda bo'lishi mumkin
+
+#OOP TAMOYILLARI
+#INKAPSULYATSIYA
+Biz object oriented dasturlash haqida gapira turib, ma’lum bir obyektga tegishli bo’lgan xususiyatlar va metodlarni bitta konteynerga joylaymiz dedik. Bu jarayon inkapsulyatsiya (ya’ni kapsulaga solish) deb ataladi. Inkapsulyatsiya bizga klasslar yaratishga va keyinchalik bu klasslardan boshqa obyektlarni yaratishga yordam beradi.
