@@ -89,4 +89,25 @@ Voris klass super klassdan o’zlashtirilgan metodning nomini saqlagan holda, un
  
 Keling bir misol ko’raylik. Biz kompyuter o’yini yaratish jarayonida o’yin Qahramon uchun super klass yaratamiz. 
 Qahramon bir nechta xususiyatlarga va metodlarga ega. Jumladan attack() ya’ni xujum qilish metodi, qahramonni xujum qilishga undaydi.
- Endi biz bu superklassdan boshqa voris klasslarni yaratamiz. 
+ Endi biz bu superklassdan boshqa voris klasslarni yaratamiz.
+
+
+Ikkinchi qahramonimiz esa Jangchi, va u qurolsiz bo’lgani sababi qo’l va oyoqlari bilan xujum qiladi.
+Uchunchi qahramonimiz pistolet bilan, 
+Oxrigisi esa kamon va yoylar bilan qurollangan.
+To’rttala qahramonimiz ham superklassdan attack() metodini meros oladi, lekin bu metodni biz har bir qahramon uchun turli ko’rinishda yozishimiz va talqin qilishimiz mumkin. Bu esa o’z navbatida bizni turli qahramonlar va turli xujum turlari uchun alohida metodlar yozishdan qutqaradi.
+Mana shular OOPning asosiy tamoyillari ekan. 
+#OOP AFZALLIKLARI VA KAMCHILIKLARI
+Keling darsimiz yakunida OOPning afzalliklari va kamchiliklariga ham to’xtalib o’tsak.
+Afzalliklari
+Parallel dasturlash – bir loyihaning turli qismlari bir vaqtda yaratilishi mumkin
+Vorislik tamoyili klasslardan qayta foydanalish imkonini beradi
+Polimorfizm tamoyili klasslarni moslashuvchan qiladi
+Klasslardan boshqa dastur va loyihalarda qayta-qayta foydalanish mumkin 
+Kamchiliklari
+Dasturlashga yangi qadam qo’yganlar uchun biroz tushunarsiz
+ 
+Har doim ham samarali emas
+Ba’zida dasturimizni haddan tashqari murakkablashtirib yuborishi mumkin
+
+OOP bilan qisqacha tanishuvimiz shundan iborat edi. Endi esa Python OOP bilan tanishuvni boshlasak ham bo'ladi. 
