@@ -83,3 +83,10 @@ Bunda bizning asl klassimiz ota yoki super klass deb ataladi, undan yaratilgan k
  
 
 Voris klasslar ota klassning ba’zi yoki barcha xususiyatlari va metodlariga ega bo’ladi. 
+
+#POLIMORFIZM
+Voris klass super klassdan o’zlashtirilgan metodning nomini saqlagan holda, uning ishlashini o’zgartirishiga polimorfizm deyiladi.
+ 
+Keling bir misol ko’raylik. Biz kompyuter o’yini yaratish jarayonida o’yin Qahramon uchun super klass yaratamiz. 
+Qahramon bir nechta xususiyatlarga va metodlarga ega. Jumladan attack() ya’ni xujum qilish metodi, qahramonni xujum qilishga undaydi.
+ Endi biz bu superklassdan boshqa voris klasslarni yaratamiz. 
