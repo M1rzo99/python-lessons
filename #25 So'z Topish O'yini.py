@@ -26,4 +26,31 @@ def sontop(x=10):# qiymat qabul qiladi va komputer o'ylaydigan sonlarni yuqori c
     return taxminlar
 
 
- 
+def sontop_pc(x=10):
+    input(f"1 dan {x} gacha son o'ylang va istalgan tugmani bosing.Men topaman")
+    quyi = 1
+    yuqori = x
+    taxminlar = 0
+    while True:
+        taxminlar = +1
+        if quyi !=yuqori:
+            taxmin = random.randint(quyi,yuqori)
+        else:
+            taxmin = quyi
+        javob = input(f"Siz {taxmin} sonini o'yladingiz: to'g'ri (t),"
+                      f"Men o'ylagan son bundan kattaroq (+), yoki kichikroq(-)".lower())
+        if javob == "-":
+            yuqori = taxmin - 1
+        elif javob == "+":
+            quyi = taxmin + 1
+        else:
+            break
+    print(f"Men {taxminlar} taxmin orqali topdim!")
+    return taxminlar
+            
+            
+            
+            
+            
+            
+            
