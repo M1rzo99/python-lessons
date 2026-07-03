@@ -32,7 +32,7 @@ def sontop_pc(x=10):
     yuqori = x
     taxminlar = 0
     while True:
-        taxminlar = +1
+        taxminlar += 1
         if quyi !=yuqori:
             taxmin = random.randint(quyi,yuqori)
         else:
@@ -45,12 +45,23 @@ def sontop_pc(x=10):
             quyi = taxmin + 1
         else:
             break
-    print(f"Men {taxminlar} taxmin orqali topdim!")
+    print(f"Men {taxminlar} taxmin orqali topdim!") 
     return taxminlar
+       
+
+def play(x=10):
+    yana = True
+    while yana:
+        taxminlar_user = sontop(x)
+        taxminlar_pc = sontop_pc(x)
+        
+        if taxminlar_user > taxminlar_pc:
+            print("Men Yutdim!")
+        elif taxminlar_user < taxminlar_pc:
+            print("Siz Yutdingiz!")
+        else:
+            print("WOW, Durrang!")
+        yana = int(input("Yana qayta o'ynaysizmi? Ha(1)/Yo'q(0)"))
             
             
-            
-            
-            
-            
-            
+play()
