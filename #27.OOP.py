@@ -59,9 +59,37 @@ Created on Tue Jun 30 23:00:25 2026
 
 
 
+# OOP tamoyillari:
+    #Incapsulation
+# # biz oldinroq malum bir objectga tegishli bo'lgan xususiyatlar va methodlarni bitta konteynerga joylaymiz dedik. Bu jarayon incapsulation(kapsulaga solish) ddi.
+#Incapsulation bizga classslar yaratishga va bu classlardan objectlar yaratishga yordam beradi.
+
+    #Abstraksiya
+    # Abstraksiya yordamida biz codimizning ichki tuziulishini yashiramiz.Tashqaridan qaraganda objectimiz 2ta parametr va 2ta methodan iborat bo'lsihi mn,lekin obyeckt to'g'ri ishlashi un uning ichida o'nlab o'zgaruvchilar va funksiyalar yashirin bo'ladi.
+    # Classlardan foydalanishda objectimizning ichki tuzilishi va qanday ishlashi talab qilinmaydi.
+    # Bu o'zimizga ham boshqa dasturchilarga ham codemizdan foydaslanishda qulayliklar yaratadi
+    
+    
+    # Vorislik
+    # Dasturlash jarayonida bir classdan boshqa class yaratishimiz mn. Misol un bizda transport classi bor, biz bu clasdan Avtomobil,Kema,Poyezd,Motosikl kabi klasslar yaratishimiz mn.
+    # Bunda bizning asl classimiz ota yoki super class ddi,unda yaratilgan classlar esa voris klass ddi.
+    
+# Voris classlar,ota classning bazi yoki barcha xususiyatlari va methodlariga ega bo'ladi.
+
+    # Polimorfizm
+    # Voris class super classdan o'zlashtirgan methodning nomini saqlagan holda,uning ishlashini o'zgartirishga poliformizm ddi.
+    
+    # Keling bir misol ko’raylik. Biz kompyuter o’yini yaratish jarayonida o’yin Qahramon uchun super klass yaratamiz. 
+    #Qahramon bir nechta xususiyatlarga va metodlarga ega. Jumladan attack() ya’ni xujum qilish metodi, qahramonni xujum qilishga undaydi.
+    #Endi biz bu superklassdan boshqa voris klasslarni yaratamiz. 
 
 
-
+#Birinchi qahramonimiz Qilichboz va bu qahramon xujum qilganda qilich bilan xujum qiladi.
+#Ikkinchi qahramonimiz esa Jangchi, va u qurolsiz bo’lgani sababi qo’l va oyoqlari bilan xujum qiladi.
+#Uchunchi qahramonimiz pistolet bilan, 
+#Oxrigisi esa kamon va yoylar bilan qurollangan.
+#To’rttala qahramonimiz ham superklassdan attack() metodini meros oladi, lekin bu metodni biz har bir qahramon uchun turli ko’rinishda yozishimiz va talqin qilishimiz mumkin. Bu esa o’z navbatida bizni turli qahramonlar va turli xujum turlari uchun alohida metodlar yozishdan qutqaradi.
+#Mana shular OOPning asosiy tamoyillari ekan.
 
 
 
