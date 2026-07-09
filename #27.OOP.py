@@ -49,6 +49,33 @@ Created on Tue Jun 30 23:00:25 2026
 #Zamonaviy kompyuter o’yinlari ham minglab obyektlardan iborat. Foydalanuvchi esa virtual o’yin olamida erkin harakat qilishi, istlagan tarafga yurishi, istalgan vaqtda turli obyektlar bilan turli amallar bajarishi mumkin. 
 
 
+#KLASS NIMA?
+
+# Object Orinted Programmingda haqida so'zlar ekanmiz, uning fundamental tushunchalaridan biri Class haqida gapirib o'tmaslikning iloji yo'q.
+# Class bu -object yaratish un shablon yoki qolibdir.
+# Bitta classdan biz istalgancha nusxa olishimiz va yangi object yaratishimiz mn. 
+# Demak, Object bu biror classning xususiy ko'rinishidir.
+# Odatda claslarning nomi o'zgarmas,undan yaratilgan objectlar esa istalgancha nomlarnishi mn.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
