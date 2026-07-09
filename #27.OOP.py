@@ -92,9 +92,18 @@ Created on Tue Jun 30 23:00:25 2026
 #Mana shular OOPning asosiy tamoyillari ekan.
 
 
+#OOP AFZALLIKLARI VA KAMCHILIKLARI:
+    # Afzalliklari
+    #Parallel dasturlash – bir loyihaning turli qismlari bir vaqtda yaratilishi mumkin
+    #Vorislik tamoyili klasslardan qayta foydanalish imkonini beradi
+    #Polimorfizm tamoyili klasslarni moslashuvchan qiladi
+   # Klasslardan boshqa dastur va loyihalarda qayta-qayta foydalanish mumkin
+   
 
-
-
+    #Kamchiliklari
+    #Dasturlashga yangi qadam qo’yganlar uchun biroz tushunarsiz
+    #Har doim ham samarali emas
+    #Ba’zida dasturimizni haddan tashqari murakkablashtirib yuborishi mumkin
 
 
 
