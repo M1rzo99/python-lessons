@@ -45,3 +45,36 @@ class Talaba:
 talaba1 = Talaba("Mirzo","Shomuaratov", 1999)
 talaba2 = Talaba("Latif","Shomuratov", 2005)
 talaba3 = Talaba("Hojiakbar", "Ismoilov", 1992)
+
+  # pass operatori
+  # pythonda hech qnaday vazifani bajarmaydi. Bu operatorda bosh methodlar yaratishda foydalanaish mn.Misol clasimiz un methodlarni bilamiz, lekin method badani hali tayyor emas.
+  # AGar bo'sh qoldirsak, python IndentationError qaytaradi. Shunday haolatlarda funksiya badaniga pass operatorini qo'yib ketishimiz mn.
+
+class User:
+    def __init__ (self,name,username,email):
+        self.name=name
+        self.username=username
+        self.email=email
+    def describe():
+        pass
+    
+    def get_email():
+        pass
+    
+# Yuqoridagi klassimizda describe() va get_email() funksiyalar badani hali tayyor emas,boshliqni toldirish un esa pass operatoridan foydalanamiz.
+# pass operatoridan if-else,for,while operatorlari badanida ham foydalanish mn.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
