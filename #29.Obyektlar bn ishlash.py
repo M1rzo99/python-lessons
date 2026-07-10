@@ -170,3 +170,61 @@
 # print(mat_talabalar)
 # ['Alijon Valiyev. 1-bosqich talabasi ', 'Hasan Alimov. 1-bosqich talabasi ', 'Akrom Boriyev. 1-bosqich talabasi ']
 # Shunday qilib biz ikki bir-biriga bog'liq bo'lmagan obyektlar ustida turli munosabatlar o'rnatishimiz mumkin.
+
+
+
+# OBYEKTNING XUSUSIYATLARI VA METODLARINI KO'RISH
+# Obyektlar bilan ishlaganda, o'z-o'zidan shu obyektga tegishli xususiyatlar va metodlarni bilish talab qilinadi. Agar obyekt tegishli bo'lgan klassni o'zimiz yaratgan bo'lsak, istalgan payt klass ichini ko'rib olishimiz mumkin. Lekin boshqalar yaratgan klass haqida ma'lumot olish talab qilinsa, buning bir nechta yo'li bor.
+# dir() FUNKSIYASI
+# dir() funksiyasi yordamida istalgan obyekt yoki klassning xususiyatlari va metodlarini ko'rib olishimiz mumkin:
+
+
+# >>> dir(Talaba)
+# ['__class__',
+#  '__delattr__',
+#  '__dict__',
+#  '__dir__',
+#  '__doc__',
+#  '__eq__',
+#  '__format__',
+#  '__ge__',
+#  '__getattribute__',
+#  '__gt__',
+#  '__hash__',
+#  '__init__',
+#  '__init_subclass__',
+#  '__le__',
+#  '__lt__',
+#  '__module__',
+#  '__ne__',
+#  '__new__',
+#  '__reduce__',
+#  '__reduce_ex__',
+#  '__repr__',
+#  '__setattr__',
+#  '__sizeof__',
+#  '__str__',
+#  '__subclasshook__',
+#  '__weakref__',
+#  'get_age',
+#  'get_fullname',
+#  'get_info',
+#  'get_lastname',
+#  'get_name',
+#  'set_bosqich',
+#  'update_bosqich']
+# Lekin bunda har bir klass bilan keluvchi maxsus dunder metodlar ham chiqib keldi. Dunder metodlar ikki pastki chiziq (__) bilan boshlanadi va maxsus holatlar uchun saqlab qo'yilgan. Biz hozircha faqat __init__ metodi bilan tanishdik, qolganlari bilan keyingi darslarimizda yana ko'rishamiz. Dunder metodlardan keyin esa biz murojat qilishimiz mumkin bo'lgan metodlar ro'yxati kelgan.
+# Dunder — double underscore (ikki pastki chiziq) so'zlarining qisqartmasi.
+# Keling dunder metodlarni tashlab, bizga kerak metodlarni qaytaruvchi sodda funksiya yozamiz:
+
+
+# def see_methods(klass):
+#     return [method for method in dir(klass) if method.startswith('__') is False]
+
+# print(see_methods(Talaba))
+#  Natija: ['get_age', 'get_fullname', 'get_info', 'get_lastname', 'get_name', 'set_bosqich', 'update_bosqich']
+# Agar dir() funksiyasiga klass emas, obyekt uzatsak metodlardan tashqari xususiyatlar ham chiqib keladi:
+
+
+# print(see_methods(talaba1))
+# Natija: ['bosqich', 'familiya', 'get_age', 'get_fullname', 'get_info', 'get_lastname', 'get_name', 'ism', 'set_bosqich', 'tyil', 'update_bosqich']
