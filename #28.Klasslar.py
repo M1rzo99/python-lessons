@@ -51,15 +51,27 @@ talaba3 = Talaba("Hojiakbar", "Ismoilov", 1992)
   # AGar bo'sh qoldirsak, python IndentationError qaytaradi. Shunday haolatlarda funksiya badaniga pass operatorini qo'yib ketishimiz mn.
 
 class User:
-    def __init__ (self,name,username,email):
+    def __init__(self,name,instaName,email):
         self.name=name
-        self.username=username
+        self.instaName=instaName
         self.email=email
-    def describe():
+        
+    def describe(self):
         pass
     
-    def get_email():
-        pass
+    def get_name(self):
+        return self.name
+      
+    def get_email(self):
+        return self.email
+        
+
+    def get_info(self):
+        return (f"Mening ismim {self.name}, emailim:  {self.email} va Instagram nickim {self.instaName}")
+    
+us1 = User("Mirzo", "M1rzo_99", "accaunoff99@gmail.com")
+us2 = User("NODIR", "nodir", "Nodirbe@gmail.com")
+us3 = User("Nursulton", "nurik", "Nurali@gmail.com")
     
 # Yuqoridagi klassimizda describe() va get_email() funksiyalar badani hali tayyor emas,boshliqni toldirish un esa pass operatoridan foydalanamiz.
 # pass operatoridan if-else,for,while operatorlari badanida ham foydalanish mn.
