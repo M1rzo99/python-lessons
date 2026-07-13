@@ -64,3 +64,48 @@
 # >>>print(talaba.get_age(2021))
 # 21
 # Dastur davomida super klass voris klasslardan avval yozilgan (chaqirilgan) bo'lishi kerak.
+
+
+
+# VORIS KLASSGA XOS XUSUSIYATLAR VA METODLAR
+# Hozirgi ko'rinishda Talaba va Shaxs klasslari o'rtasida hech qanday farq yo'q. Keling Talaba klassimizga o'ziga xos xususiyatlar va metodlar yarataylik. Avvalosiga, talabaning bosqichi va ID raqamini xususiyat sifatida qo'shamiz. Bunda ID raqami obyekt yaratilishida parameter sifatida uzatiladi, bosqich esa standart qiymatga ega.
+
+# Copy
+# class Talaba(Shaxs):
+#     """Talaba klassi"""
+#     def __init__(self, ism, familiya, passport, tyil,idraqam):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familiya, passport, tyil)
+#         self.idraqam = idraqam
+#         self.bosqich = 1
+# Endi yangi, Talaba obyektini yaratishda qo'shimcha idraqam parametrini ham kiritish talab qilinadi:
+
+# Copy
+# talaba = Talaba("Valijon","Aliyev","FA112299",2000,"0000012")
+# So'ngra, bu qiymatlarni qaytaruvchi alohida metodlar yozamiz:
+
+# Copy
+# class Talaba(Shaxs):
+#     """Talaba klassi"""
+#     def __init__(self, ism, familiya, passport, tyil,idraqam):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familiya, passport, tyil)
+#         self.idraqam = idraqam
+#         self.bosqich = 1
+    
+#     def get_id(self):
+#         """Talabaning ID raqami"""
+#         return self.idraqam
+    
+#     def get_bosqich(self):
+#         """Talabaning o'qish bosqichi"""
+#         return self.bosqich
+# Metodlarni tekshirib ko'ramiz:
+
+# Copy
+# >>>print(f"{talaba.get_info()}. ID raqami:{talaba.get_id()}")
+# Valijon Aliyev. Passport:FA112299, 2000-yilda tug`ilgan. ID raqami:0000012
+# >>>print(f"{talaba.get_bosqich()}-bosqich talabasi")
+# 1-bosqich talabasi
+# Shu zayilda yangi klassimizga istalgancha yangi xususiyatlar va metodlar qo'shishimiz mumkin. Bunda, agar yangi xususiyat yoki metod super klassga ham aloqador bo'lsa uni birdan super klassga qo'shish tavsiya qilinadi.
+# Voris klass boshqa klass uchun super klass bo'lishi mumkin.
