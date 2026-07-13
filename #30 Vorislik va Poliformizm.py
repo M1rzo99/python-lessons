@@ -109,3 +109,41 @@
 # 1-bosqich talabasi
 # Shu zayilda yangi klassimizga istalgancha yangi xususiyatlar va metodlar qo'shishimiz mumkin. Bunda, agar yangi xususiyat yoki metod super klassga ham aloqador bo'lsa uni birdan super klassga qo'shish tavsiya qilinadi.
 # Voris klass boshqa klass uchun super klass bo'lishi mumkin.
+
+
+
+# POLIMORFIZM — SUPER KLASS METODLARINI QAYTA YOZISH
+# Voris klassga super klassdan meros qolgan istalgan metodni qayta talqin qilish mumkin. Avvalgi misolimizdagi get_info() super metodini ko'raylik, bu metod talabaning ismi, familiyasi, passport raqami va tug'ilgan yilini qaytaradi:
+
+# Copy
+# >>> print(talaba.get_info())
+# Valijon Aliyev. Passport:FA112299, 2000-yilda tug`ilgan
+# Endiget_info() metodi talabaga mos ma'lumotlar qaytarishi uchun, Talaba klassi ichida huddi shu nomli metodni qayta yozamiz:
+
+# Copy
+# class Talaba(Shaxs):
+#     """Talaba klassi"""
+#     def __init__(self,ism,familiya,passport,tyil,idraqam):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familiya, passport, tyil)
+#         self.idraqam = idraqam
+#         self.bosqich = 1
+    
+#     def get_id(self):
+#         """Talabaning ID raqami"""
+#         return self.idraqam
+    
+#     def get_bosqich(self):
+#         """Talabaning o'qish bosqichi"""
+#         return self.bosqich
+    
+#     def get_info(self):
+#         """Talaba haqida ma'lumot"""
+#         info = f"{self.ism} {self.familiya}. "
+#         info += f"{self.get_bosqich()}-bosqich. ID raqami: {self.idraqam}"
+#         return info
+# Metodni tekshirib ko'ramiz:
+
+# Copy
+# >>> print(talaba.get_info())
+# Valijon Aliyev. 1-bosqich. ID raqami: 0000012
