@@ -36,3 +36,31 @@
 # inson = Shaxs("Hasan","Alimov","FB001122",1995)
 # print(f"{inson.get_info()}. {inson.get_age(2021)} yoshda.")
 # Natija: Hasan Alimov. Passport:FB001122, 1995-yilda tug`ilgan. 26 yoshda.
+
+
+
+# VORIS KLASS YARATISH
+# Endi avvalgi darsimizda yaratgan Talaba klassimizni qaytadan yaratamiz. Bu safar, avvalgidan farqli ravishda, Talaba ni yaratishda, Shaxs dan super klass sifatida foydalanamiz:
+
+# Copy
+# class Talaba(Shaxs):
+#     """Talaba klassi"""
+#     def __init__(self, ism, familiya, passport, tyil):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familiya, passport, tyil)
+# Kodimizni tahlil qilaylik:
+# 1-qatorda klass nomidan so'ng, qavs ichida super klass nomini berdik
+# 5-qatorda (def __init__ ichida) klassimiz super klassning xususiyatlarini meros olishini ko'rsatdik 
+# Yangi yaratgan Talaba klassimiz Shaxsning barcha xususiyatlari va metodlariga ega bo'ladi.
+
+# Copy
+# talaba = Talaba("Valijon","Aliyev","FA112299",2000)
+# print(talaba.get_info())
+# Natija: Valijon Aliyev. Passport:FA112299, 2000-yilda tug`ilgan
+# Talaba klassi uchun alohida get_info() metodini yozmagan bo'lsakda, bu metod Talabaga Shaxsdan meros o'tdi.
+# Huddi shu kabi get_age() metodiga ham murojat qilishimiz mumkin:
+
+# Copy
+# >>>print(talaba.get_age(2021))
+# 21
+# Dastur davomida super klass voris klasslardan avval yozilgan (chaqirilgan) bo'lishi kerak.
