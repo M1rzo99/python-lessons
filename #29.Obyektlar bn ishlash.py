@@ -206,6 +206,18 @@ print(talaba1.__dict__)
 #Natijadan faqat kalitlarni ajratib olsak, obyektning xususiyatlari kelib chiqadi
 print(talaba1.__dict__.keys())
 
+# Amaliyot
 
-
-
+#1.  Avto degan yangi klass yarating. Unga avtomobillarga doir bo'lgan bir nechta xususiyatlar (model, rang, korobka, narh va hokazo) qo'shing. Ayrim xususiyatlarga standart qiymat bering (masalan, kilometer=0)
+class Avto:
+    def __init__(self,model,rang,narh,holat):
+        self.model = model
+        self.rang = rang
+        self.narh = narh
+        self.holat = holat
+        self.kilo = 5
+        
+    def get_avtoInfo(self):
+        return f"{self.model} {self.rang}-rang, Narhi {self.narh} so'm.{self.kilo} km yurgan."
+avto1 = Avto("Porsche 911","Grey", "111.000$", "Yangi")
+print(avto1.get_avtoInfo())
