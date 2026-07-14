@@ -184,8 +184,23 @@ talaba3 = Talaba("Eldor", "Quronboyev", 1999)
 print(talaba3.get_age(2026)) 
 print(talaba3.get_fullname()) 
    
-        
+# Obyektning methodlari va xususiyatalarini ko'rish:
+    
+# Obyektlar bn ishlaganda,o'z-oz'idan shu obyektga tegishli xususiyatlar va methodlarni bilish talab qilinadi.Agar Obyektga teishli classni o'zomiz yaratgan bo'lsak, istalgan payt classni ko'rib oishimiz mn.Lekin boshqalar yaratgan class haqida malumot olish talab qilinsa, bir nechta yo'li bor.
+ # dir() funksiyasi.
+ # dir() funkssiyasi yordamida istalgan obyekt yoki classning xususiyatlari va methodlarini bilib olishimiz mn.
 
+ 
+# Har bir class bn keluvchi maxsus Dunder methodlar ham kelib chiqadi.Dunder method ikkita pastki chiziq bn boshlanadi(__) va mahsus holatlar un saqlab qo'yilgan. Biz hozircha faqat __init__ methodi bn tanishdik.
+# Dunder methodidan keyin esa, biz murojat qiilishimiz mn bo'lgan methodlar kelgan.
+
+# Dunder - doubla undercourse(ikki pastgi chiziq) so'zlarining qisqartmasi
+
+# Keling, Dunder methodini olib tashlab, bizga kerak bo'lgan methodlarni qaytaruvci sodda function yaratamiz:
+    
+def see_methods(klass):
+    return [method for method in dir(klass) if method.startswith("__") is False]
+print(see_methods(Talaba))
 
 
 
