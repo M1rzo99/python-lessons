@@ -98,6 +98,40 @@ print(talaba1.get_info())
 
 
 
+# Obyektlar o'rtasidagi munosabatlar:
+#Obyektga yo'nalitirilgan dasturlashning avfzalligi, turli obyektlar o'rtasida o'zaro munosabatlar oson yo'lga qo'yish mnligidair.
+# Buni misol ko'rinishida, yangi Fan degan class yaratamiz va fanimizga talabalar qo'shish imkoniyatini ham yaratamiz (add_student() methodi)
+
+class Fan():
+    def __init__(self,nomi):
+        self.nomi = nomi
+        self.talabalar_soni = 0
+        self.talabalar = []
+    
+    def add_student(self,talaba):
+        """ Fanga talaba q'shish"""
+        self.talabalar.append(talaba)
+        self.talabalar_soni +=1
+        
+    def get_students(self):
+        return [talaba.get_info() for talaba in self.talabalar] # self_talabalar ichidagi har bir talaba un get_info() methodini bajar degan mano kelib ciqadi.Kodni kvadrat qavs ichiga olganimiz un esa, har bir tsikl natijasi vatomat ravishda ro'yhatga qo'shiladi.
+# Fan nomli class faqatgina nomi degan parametrga ega. Qolgan xususiyatlarni esa standart qiymat sifatida berilgan. talabalar soni 0 ga teng, talabalar ro'yhatri esa bo'sh
+# Fanimizga talaba qo'shish un add_student() methodini chaqiramiz. BU method parametr sifatida Talaba obyektini qabul qiladi. Va uni talabalar ro'yhatiga qo'shadi.
+# Shuningdek bu method yangi talaba qo'shilganda talabalar_soni ni1 taga oshiradi.
+
+# Keling  oshlanishiga yangi fan obyektini va bir nechta talabalar yaratamiz:
+matem = Fan("Oliy Matematika")
+talaba1 = Talaba("Alijon","valiyev",2000)
+talaba2 = Talaba("Olimboy", "Pirnafasov", 1990)
+talaba3 = Talaba("Eldor", "Quronboyev", 1999)
+
+matem.add_student(talaba1)
+matem.add_student(talaba2)
+matem.add_student(talaba3)
+print(matem.talabalar_soni)
+
+math_talabalar  = matem.get_students()
+print(math_talabalar)
 
 
 
