@@ -217,7 +217,48 @@ class Avto:
         self.holat = holat
         self.kilo = 5
         
+    def update_km(self,kilo):
+         self.kilo = kilo
+        
     def get_avtoInfo(self):
         return f"{self.model} {self.rang}-rang, Narhi {self.narh} so'm.{self.kilo} km yurgan."
 avto1 = Avto("Porsche 911","Grey", "111.000$", "Yangi")
+avto1.rang = "Qora"
+avto1.model = "Porshe Cayenne"
+avto1.kilo = 0
+avto1.update_km(10)
 print(avto1.get_avtoInfo())
+
+#2.Yangi, Avtosalon degan klass yarating va kerakli xususiyatlar bilan to'ldiring (salon nomi, manzili, sotuvdagi avtomobillar va hokazo)
+
+class Avtosalon():
+    def __init__(self,salon_nomi):
+        self.salon_nomi=salon_nomi
+        self.avtos_num =0
+        self.avtolar = []
+        
+   #3. Avtosalonga yangi avtomobillar qo'shish uchun metod yozing     
+        
+    def add_avtos(self,avto):
+            """ Fanga talaba q'shish"""
+            self.avtolar.append(avto)
+            self.avtos_num +=1
+            
+    def get_avtos(self):
+        return [avto.get_avtoInfo() for avto in self.avtolar]
+
+
+avt=Avtosalon("Avtolar oalmi")
+avt1 = Avto("Porsche 911","Grey", "111.000$", "Yangi")
+avt2 = Avto("Porsche 911","Grey", "111.000$", "Yangi")
+avt3 = Avto("Porsche 911","Grey", "111.000$", "Yangi")
+
+avt.add_avtos(avt1)
+avt.add_avtos(avt2)
+avt.add_avtos(avt3)
+print(avt.avtos_num)
+
+avt_inf = avt.get_avtos()
+print(avt_inf)
+
+
