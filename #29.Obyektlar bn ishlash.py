@@ -237,7 +237,7 @@ class Avtosalon():
         self.avtos_num =0
         self.avtolar = []
         
-   #3. Avtosalonga yangi avtomobillar qo'shish uchun metod yozing     
+   #3. Avtosalonga yangi avtomobillar qo'shish va avtosalondagi avtolarni ko'rish uchun metod yozing     
         
     def add_avtos(self,avto):
             """ Fanga talaba q'shish"""
@@ -261,4 +261,6 @@ print(avt.avtos_num)
 avt_inf = avt.get_avtos()
 print(avt_inf)
 
-
+print(avt1.__dict__)
+#Natijadan faqat kalitlarni ajratib olsak, obyektning xususiyatlari kelib chiqadi
+print(avt.__dict__.keys())
