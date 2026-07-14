@@ -195,16 +195,16 @@ print(talaba3.get_fullname())
 # Dunder methodidan keyin esa, biz murojat qiilishimiz mn bo'lgan methodlar kelgan.
 
 # Dunder - doubla undercourse(ikki pastgi chiziq) so'zlarining qisqartmasi
-
-# Keling, Dunder methodini olib tashlab, bizga kerak bo'lgan methodlarni qaytaruvci sodda function yaratamiz:
-    
+# Keling, Dunder methodini olib tashlab, bizga kerak bo'lgan methodlarni qaytaruvci sodda function yaratamiz: 
 def see_methods(klass):
     return [method for method in dir(klass) if method.startswith("__") is False]
 print(see_methods(Talaba))
 
 
-
-
+# __dict__ methodi - obyektning xususiyatlarini lug'at ko'rinishda qaytaradi.
+print(talaba1.__dict__)
+#Natijadan faqat kalitlarni ajratib olsak, obyektning xususiyatlari kelib chiqadi
+print(talaba1.__dict__.keys())
 
 
 
