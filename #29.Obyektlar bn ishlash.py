@@ -44,8 +44,6 @@ talaba1.ism = "Mirzo"
 print(talaba1.get_info())
 
 # Yana boshqa usuli,obyekt xususiyatlarini yangilovchi method yaratish:
-
-
 class Talaba:
     """ Talaba nomli class Yaratayapmiz"""
     def __init__(self,ism,familya,Tyil):
@@ -65,8 +63,38 @@ talaba1 = Talaba("Jumanazar", "Shokirov", "2002")
 talaba1.set_bosqich(10)
 print(talaba1.get_info())
 
+# Xususiyatlarni yangilashda turli xil usullardan foydalanish mumkin. Misol un talabaning bosqichi odatda + 1 ga  ko'payib boradi yil o'tgan sayin
+# shuning un quyidagi method ham yozishn mumkin
 
+class Talaba:
+    """ Talaba nomli class Yaratayapmiz"""
+    def __init__(self,ism,familya,Tyil):
+        """Talabaning xususiyatlari"""
+        self.ism = ism
+        self.familya = familya
+        self.Tyil = Tyil
+        self.bosqich = 1 # Xususiyatga standart qiymat berish shudir
+    def get_info(self):
+        return f"{self.ism} {self.familya} {self.Tyil}-yil, {self.bosqich}-bosqich talabasi"
+    
+    def set_bosqich(self,bosqich):
+        self.bosqich = bosqich
+        
+        
+    def update_bosqich(self):
+        self.bosqich +=1
+        
+talaba1 = Talaba("Jumanazar", "Shokirov", "2002")
+print(talaba1.get_info())
 
+talaba1.update_bosqich()
+print(talaba1.get_info())
+
+talaba1.update_bosqich()
+print(talaba1.get_info())
+
+talaba1.update_bosqich()
+print(talaba1.get_info())
 
 
 
