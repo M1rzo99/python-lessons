@@ -133,10 +133,58 @@ print(matem.talabalar_soni)
 math_talabalar  = matem.get_students()
 print(math_talabalar)
 
+# Nuqta yoki Method: 
+# pythondagi obyektlarning o'ziga xos xususiyatlaridan biri, obyektning xususiyatlariga nuqta orqlai murojat qilishdir. Misol uchun avval yaratgan talaba1 obyektinign ismini bilish un talaba1.ism deb yozish kifoya
+# BU o'ziga yarasha qulay bo'lsada, bunday usuldan foyalanmagan avfzal. Sababi vaqt o'tib,klassingiz takomillashishi, uning bazi xususiyatlari o'zgarishi, o'chirilishi yoki almashitirilishi mn.
+# SHunday holatlarda nuqta orqali murojat qilish siz kutgan natijani bermasligi va dastur xato ishlashiga olib kelishi mumkin. Bunday holatlarni oldini olish un esa, obyektnig mwthodlarini methodlar orqalu olishni odat qilish tavfsiya etiladi.
+# Huddi shu kabi, obyektning xususiyatlarini yangilsh un ham alohida methodlar yozgan avfzal.
 
+# Dasturchilar  orasida obyektning xususiyatlarini o'zgaritiradigan methodlarni set(o'zgartir) so'zi bn, xususiyatlarni qaytaradigan methodlarni esa get(olish) so'zi bilan boshlash qoida qilib olingan.. Masalan set_name() va get_name() kabi.
+# Yuqoridagi qoidaga amali qilib talaba classimizni yangilaymmiz:
+class Talaba:
+    """ Talaba nomli class Yaratayapmiz"""
+    def __init__(self,ism,familya,Tyil):
+        """Talabaning xususiyatlari"""
+        self.ism = ism
+        self.familya = familya
+        self.Tyil = Tyil
+        self.bosqich = 1 # Xususiyatga standart qiymat berish shudir
+        
+    def set_bosqich(self,bosqich):
+        """Talabaning kursini yangilovchi metod"""
+        self.bosqich  = bosqich
+    
+    def update_bosqich(self):
+        """ Talabaning  bosqichini oshiradigan method"""
+        self.bosqich +=1
+        
+    def get_info(self):
+        """ Talaba haqida ma'luot"""
+        return f"{self.ism} {self.familya} {self.Tyil}-yil, {self.bosqich}-bosqich talabasi"
+    
+    def get_name(self):
+        """Talabaning nomini qaytaradigan method"""
+        return self.ism 
+    
+    def get_lastname(self):
+        """ Talabaning familyasini qaytaradigan method"""
+        return self.familya
+    
+    def get_fullname(self):
+        """ Talabaning ism-familyasini qaytaradigan method"""
+        return f"{self.ism} {self.familya}"
+    
+    def get_age(self,yil):
+        """ Talabaning yoshini qaytaradi"""
+        return yil - self.Tyil
+    
 
+talaba3 = Talaba("Eldor", "Quronboyev", 1999) 
 
-
+print(talaba3.get_age(2026)) 
+print(talaba3.get_fullname()) 
+   
+        
 
 
 
