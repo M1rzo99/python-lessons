@@ -264,3 +264,5 @@ print(avt_inf)
 print(avt1.__dict__)
 #Natijadan faqat kalitlarni ajratib olsak, obyektning xususiyatlari kelib chiqadi
 print(avt.__dict__.keys())
+
+
