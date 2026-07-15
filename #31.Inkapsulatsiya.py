@@ -187,3 +187,21 @@
 # avto3 = Avto("Toyota",'Carolla',"Silver",2018, 45000)
 # print(Avto.num_avto)
 #   Natija: 3
+
+
+
+# KLASSNING XUSUSIYATLARINI INKAPSULYATSIYA QILISH
+# Klassga oid xususiyatlar ham huddi yuoqridagi kabi nomidan avval ikki pastki chiziq qo'shish bilan inkapsulyatsiya qilinadi:
+
+# Copy
+# class Avto:
+#     """Avtomobil klassi"""
+#     __num_avto = 0 # klassga oid xususiyat
+#     def __init__(self,make,model,rang,yil,narh):
+#         """Avtomobilning xususiyatlari"""
+#         self.make = make
+#         self.model = model
+#         self.rang = rang
+#         self.yil = yil
+#         self.narh = narh
+#         Avto.__num_avto += 1
