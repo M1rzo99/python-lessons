@@ -205,3 +205,40 @@
 #         self.yil = yil
 #         self.narh = narh
 #         Avto.__num_avto += 1
+
+
+# KLASSGA OID METODLAR
+# Klasslarning o'ziga xos metodlari ham bo'lishi mumkin. Misol uchun yuqoridagi num_avto xususiyatini ko'rish uchun alohida metod yozishimiz mumkin. Klassga oid metodlar @classmethod dekoratori bilan boshlanadi va obyektga oid metodlardan farqli ravishda self emas cls (class) argumentini qabul qiladi.
+
+# Copy
+# class Avto:
+#     """Avtomobil klassi"""
+#     __num_avto = 0
+#     def __init__(self,make,model,rang,yil,narh,km=0):
+#         """Avtomobilning xususiyatlari"""
+#         self.make = make
+#         self.model = model
+#         self.rang = rang
+#         self.yil = yil
+#         self.narh = narh
+#         self.__km = km
+#         self.__id = uuid4()
+#         Avto.__num_avto += 1
+    
+#     @classmethod
+#     def get_num_avto(cls):
+#         return cls.__num_avto
+# Klass metodlarga klassning nomi orqali murojat qilinadi:
+
+# Copy
+# avto1 = Avto("GM","Malibu","Qora",2020,40000)
+# avto2 = Avto("GM","Lacetti","Oq",2020,20000)
+# avto3 = Avto("Toyota",'Carolla',"Silver",2018, 45000)
+# print(Avto.get_num_avto())
+# Natija: 3
+# @classmethod bu maxsus dekorator. Dekoratorlar bu o'z ichiga funksiya oluvchi funksiyalar. Dekoratorlar haqida keyingi darslarimizning birida batafsil to'xtalamiz.
+
+
+# KLASSLARNI MODULGA AJRATISH
+# Vaqt o'tishi bilan dasturimizda klasslar ko'payib borishi tabiiy. Bizning asosiy dasturimiz uzun va chigal bo'lmasligi uchun klasslarni ham huddi funksiyalar kabi alohida modullarga ajratish maqsadga muvofiq bo'ladi. Dastur davomida kerak bo'ladigan klasslarga esa modulni chaqirish (import) orqali murojat qilishimiz mumkin. Bunda, bir-biriga bog'liq klasslarni bitta faylga joylashimiz mumkin. 
+# Misol uchun, biz Talaba, Professor, Foydalanuvchi va Shaxs degan klasslarni bitta odamlar.py moduliga, Avto, Bus, Train degan klasslarni esa boshqa transport.py moduliga joyladik. Kelajakda biz bu klasslarga import orqali murjat qilishimiz mumkin.
