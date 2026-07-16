@@ -32,3 +32,40 @@ shaxs1 = Shaxs("Mirzo","Shomuaratov","FA0342323", 1999)
 print(shaxs1.get_info())
 print(shaxs1.get_age(2026))
 
+# Voris klass Yaratamiz:
+# Talaba nomli class yaratamiz va oldinigi shaxs nomli classni super class sifatida foydalanamiz.
+
+class Talaba(Shaxs):
+    """Talaba Klassi"""
+    def __init__(self, ism, familya, passport, tyil):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism, familya, passport, tyil)   
+ # Kodni tahlil qilaylik: 
+# 1- qatorda klass nomidan so'ng,qavs ichiga super klass nomini berdik.
+# 3- qatorda def __init__ ichida klassimiz  klass xususiyatlarini meros qilib olishini ko'rsatdik.
+# 5- qatorda super() __init__ super clsssdagi  superformancelarni oladi.
+# bu bizga super classdagi xususiyatlarni qayta yozishdan saqlaydi.
+
+t1 = Talaba("Navro'z","Sobirov", "TA 2131313", 2001)
+print(t1.get_age(2026))
+print(t1.get_info())
+
+# Eslatma: Dastur davomida super class voris klassdan oldin yozilgan bo'lishi kerak.
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
