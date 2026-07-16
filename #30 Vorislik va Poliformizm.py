@@ -35,23 +35,51 @@ print(shaxs1.get_age(2026))
 # Voris klass Yaratamiz:
 # Talaba nomli class yaratamiz va oldinigi shaxs nomli classni super class sifatida foydalanamiz.
 
-class Talaba(Shaxs):
-    """Talaba Klassi"""
-    def __init__(self, ism, familya, passport, tyil):
-        """Talabaning xususiyatlari"""
-        super().__init__(ism, familya, passport, tyil)   
- # Kodni tahlil qilaylik: 
-# 1- qatorda klass nomidan so'ng,qavs ichiga super klass nomini berdik.
-# 3- qatorda def __init__ ichida klassimiz  klass xususiyatlarini meros qilib olishini ko'rsatdik.
-# 5- qatorda super() __init__ super clsssdagi  superformancelarni oladi.
-# bu bizga super classdagi xususiyatlarni qayta yozishdan saqlaydi.
+# class Talaba(Shaxs):
+#     """Talaba Klassi"""
+#     def __init__(self, ism, familya, passport, tyil):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familya, passport, tyil)   
+#  # Kodni tahlil qilaylik: 
+# # 1- qatorda klass nomidan so'ng,qavs ichiga super klass nomini berdik.
+# # 3- qatorda def __init__ ichida klassimiz  klass xususiyatlarini meros qilib olishini ko'rsatdik.
+# # 5- qatorda super() __init__ super clsssdagi  superformancelarni oladi.
+# # bu bizga super classdagi xususiyatlarni qayta yozishdan saqlaydi.
 
-t1 = Talaba("Navro'z","Sobirov", "TA 2131313", 2001)
-print(t1.get_age(2026))
-print(t1.get_info())
+# t1 = Talaba("Navro'z","Sobirov", "TA 2131313", 2001)
+# print(t1.get_age(2026))
+# print(t1.get_info())
 
 # Eslatma: Dastur davomida super class voris klassdan oldin yozilgan bo'lishi kerak.
 
+# VORIS KLASSGA XOS XUSUSIYATLAR VA METODLAR:
+# Hozirgi ko'rinishda Talaba va Shaxs klasaslari o'rtasida hech qanday farq yo'q.
+# Keling Talaba klassimizga o'ziga xos xususiyatlar va methodlar qo'shaylik.
+# Avvalosiga,  talabaninng ID va Bosqichini xususiyat sifatida qo'shamiz
+# Bunda ID raqam, obyekt yaratishda parametr sifatida uzatilinadi,bosqich esa standart qiymatga ega:
+    
+class Talaba(Shaxs):
+    """Talaba klassi"""
+    def __init__(self, ism, familya, passport, tyil,iDraqam):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism, familya, passport, tyil)
+        self.iDraqam = iDraqam
+        self.bosqich =1
+        self.baho = 10
+        
+    def get_bosqich(self):
+        return self.bosqich
+    
+    def get_id(self):
+        return self.iDraqam
+    
+    def get_baho(self):
+        return self.baho
+    
+        
+t1=Talaba("Kamron", "Sobirov", "HG21211212", 2005, "00019785")
+print(f"{t1.get_info()}. ID raqami: {t1.get_id()} va {t1.get_bosqich()}-bosqich Talabasi.Uning bahosi {t1.get_baho()} balldir."
+      
     
     
     
