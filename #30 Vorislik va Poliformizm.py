@@ -91,14 +91,14 @@ class Talaba2(Shaxs):
         self.iDraqam = iDraqam
         self.bosqich = 20
         
-        
+    
     def get_id(self):
         """Talaba ID raqami"""
         return self.iDraqam
     
     def get_bosqich(self):
         """Talaba bosqichi"""
-        return self.boshqich
+        return self.bosqich
     
     def get_info(self):
         """Talaba haqida ma'lumot"""
@@ -106,15 +106,63 @@ class Talaba2(Shaxs):
         info +=f"{self.get_bosqich()}-bosqich. ID raqami: {self.get_id()}"
         return info
     
-talaba1 = Talaba2("Doniyor", "Alimov", "JK2123548","2000", 9034312,1)
+talaba1 = Talaba2("Doniyor", "Alimov", "JK2123548","2000", 9034312,)
 print(talaba1.get_info())    
     
     
     
+    # Obyekt ichida obyekt
+
+# Bazida klassimiz xususiyatlar va ular bn ishlaydigan methodlarga to'lib ketishi, bu esa o'z navbatida obyektlar bn ishlashni qiyinlashtirishi mumkin.SHunday holatlarda ba'zi xususiyatlarni alohida klass ko'rinisihida yozish
+# va keyinchalik bu klassdan obyektni boshqa  obyektning xusussiyati sifatida foydalanish mumkin.
+ 
+# Misol,SHaxs classimizga yana bir manzil degan xususiyat qo'shaylik.odatda manzil bir nechta qismlardan iborat bo'ladi(xonadon,ko'cha,mahalla tuman/shahar,viloyat,indeks va hakazo) va ularning har biri un SHaxs class ichida alohida xususiyat yaratmasdan
+# alohida manzil degan klass yuklash maqsadga muvofiq bo'ladi.
+
+class Manzil:
+    def __init__(self,uy,kocha,tuman,viloyat):
+        self.uy = uy
+        self.kocha = kocha
+        self.tuman = tuman
+        self.viloyat = viloyat
+        
+    def get_manzil(self):
+        """Manzil ko'rish"""
+        manzil = f"{self.viloyat} viloyati, {self.tuman} tumani, "
+        manzil += f"{self.kocha} ko'chasi, {self.uy} uyi. "
+        return manzil
+    
+# Talaba classimizga ham manzil xususiyatini qo'shamiz:
+    
+class Talaba3(Shaxs):
+    """Talaba2 klassi"""
+    def __init__(self, ism, familya, passport, tyil,iDraqam,manzil):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism,familya,passport,tyil)
+        self.iDraqam = iDraqam
+        self.bosqich = 20
+        self.manzil = manzil
+        
+    
+    def get_id(self):
+        """Talaba ID raqami"""
+        return self.iDraqam
+    
+    def get_bosqich(self):
+        """Talaba bosqichi"""
+        return self.bosqich
+    
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        info = f"{self.ism} {self.familya}. "
+        info +=f"{self.get_bosqich()}-bosqich. ID raqami: {self.get_id()}"
+        return info
     
     
-    
-    
+talaba_manzil = Manzil(44,"Rovot", "Urganch", "Xorazm")
+talaba3 = Talaba3("Mirzo1", "Shomuratov", "FG0122345", 1999, "OD:90434321",talaba_manzil) 
+
+print(talaba3.manzil.get_manzil())
     
     
     
