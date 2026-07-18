@@ -78,11 +78,36 @@ class Talaba(Shaxs):
     
         
 t1=Talaba("Kamron", "Sobirov", "HG21211212", 2005, "00019785")
-print(f"{t1.get_info()}. ID raqami: {t1.get_id()} va {t1.get_bosqich()}-bosqich Talabasi.Uning bahosi {t1.get_baho()} balldir."
+print(f"{t1.get_info()}. ID raqami: {t1.get_id()} va {t1.get_bosqich()}-bosqich Talabasi.Uning bahosi {t1.get_baho()} balldir.")
+
+# Poliformizm  - super class methodlarini qayta yozishdir.
       
+# Voris classga super classdan meros qolgan methodni qayta talqin qilish mumkin. Avvalgi misolimizdagi get_info() super methodini ko'raylik,bu method talabaning ismi,familyasi,passport raqami va tugilgan yilini qaytaradi.
+class Talaba2(Shaxs):
+    """Talaba2 klassi"""
+    def __init__(self, ism, familya, passport, tyil,iDraqam):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism,familya,passport,tyil)
+        self.iDraqam = iDraqam
+        self.bosqich = 20
+        
+        
+    def get_id(self):
+        """Talaba ID raqami"""
+        return self.iDraqam
     
+    def get_bosqich(self):
+        """Talaba bosqichi"""
+        return self.boshqich
     
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        info = f"{self.ism} {self.familya}. "
+        info +=f"{self.get_bosqich()}-bosqich. ID raqami: {self.get_id()}"
+        return info
     
+talaba1 = Talaba2("Doniyor", "Alimov", "JK2123548","2000", 9034312,1)
+print(talaba1.get_info())    
     
     
     
