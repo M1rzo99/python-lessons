@@ -98,12 +98,32 @@ for fan in ali.fanlar:
     print(fan.nomi)
     
 
- 
+#5.Yuqoridagi Shaxs klassidan boshqa turli voris klasslar yaratib ko'ring (masalan Professor, Foydalanuvchi, Sotuvchi, Mijoz va hokazo)
 
-
-
-
-
+class Shaxs:
+    """Shaxslar haqida ma'lumot"""
+    def __init__(self,ism,familiya,passport,tyil):
+        self.ism = ism
+        self.familiya = familiya
+        self.passport = passport
+        self.tyil = tyil
+    
+    def get_info(self):
+        """Shaxs haqida ma'lumot"""
+        info = f"{self.ism} {self.familiya}. "
+        info += f"Passport:{self.passport}, {self.tyil}-yilda tug`ilgan"
+        return info
+        
+    def get_age(self,yil):
+        """Shaxsning yoshini qaytaruvchi metod"""
+        return yil - self.tyil
+    
+class Professor(Shaxs):
+    def __init__(self,ism,familiya,passport,tyil):
+        super().__init__(ism,familiya,passport,tyil)
+          
+pr1 = Professor("Mirzo","Kim","FA321112",1999)
+print(pr1.get_info())
 
 
 
