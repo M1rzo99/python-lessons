@@ -33,16 +33,17 @@ print(t1.get_info())
 
 #2.Fan degan yangi klass yarating va bu klassdan turli fanlar uchun alohida obyektlar yarating.
 
-class Fan:
+class Fan(Talaba):
     def __init__(self,fan1,fan2,fan3,fan4):
         self.fan1=fan1
         self.fan2=fan2
         self.fan3=fan3
         self.fan4=fan4
-        self.fanlar=[]
+        super().__init__(fan1,fan2,fan3,fan4)
+        self.fanga_yozildi=[]
         
     def add_fan(self,fan):
-        self.fanlar.append(fan)
+        self.fanga_yozildi.append(fan)
         
     def get_fanlar(self):
         info= f"1-fan:{self.fan1},2-fan:{self.fan2},3-fan:{self.fan3}"
@@ -50,8 +51,44 @@ class Fan:
         return info
 
 fan1 = Fan("Algebra","Ingliz tili","Rus tili","Python")
+fan2 = Fan("Geografiya","Fransuz tili","Arab tili","Java SCript")
+fan3 = Fan("Tasviriy Sanat","Nemis tili","Uyg'ur tili","PHP")
 fan1.add_fan("Jumavoy tili")
 print(fan1.get_fanlar())
+
+
+#3.Talaba klassiga fanga_yozil() degan yangi metod yozing. Bu metod parametr sifatida Fan klassiga tegishli obyektlarni qabul qilib olsin va talabaning fanlar ro'yxatiga qo'shib qo'ysin.
+
+class Fan1:
+    def __init__(self,nomi):
+        self.nomi = nomi
+    
+algebra =Fan1("1-Algebra")
+geometriya =Fan1("2-Geometriya")
+tarix = Fan1("Tarix")
+ 
+class Tal2():
+    def __init__(self,ism,fam):
+        self.ism=ism
+        self.fam=fam
+        self.fanlar = []
+        
+    def get_info(self):
+        info=f"{self.ism} {self.fam}"
+        return info
+    
+    def fanga_yozil(self,fan):
+        self.fanlar.append(fan)
+
+ali = Tal2("Mirzo","SHomuratov")
+ali.fanga_yozil(algebra)
+ali.fanga_yozil(tarix)
+
+for fan in ali.fanlar:
+    print(fan.nomi)
+    
+
+ 
 
 
 
