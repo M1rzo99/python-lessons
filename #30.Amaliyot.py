@@ -79,18 +79,26 @@ class Tal2():
     
     def fanga_yozil(self,fan):
         self.fanlar.append(fan)
+        
+#4.Talabaning fanlari ro'yxatidan biror fanni o'chirib tashlash uchun remove_fan() metodini yozing. Agar bu metodga ro'yxatda yo'q fan uzatilsa "Siz bu fanga yozilmagansiz" xabarini qaytarsin.
 
+    def remove_fan(self,fan):
+        if fan in self.fanlar:
+            self.fanlar.remove(fan)
+            return f"{fan.nomi} fani muvofaqqiyatli o'chirildi!"
+        else:
+            return f"Siz {fan.nomi} faniga yozilmagansiz!"
+    
 ali = Tal2("Mirzo","SHomuratov")
 ali.fanga_yozil(algebra)
 ali.fanga_yozil(tarix)
+print(ali.remove_fan(tarix))
 
 for fan in ali.fanlar:
     print(fan.nomi)
     
 
  
-
-
 
 
 
