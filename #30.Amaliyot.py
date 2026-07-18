@@ -24,10 +24,57 @@ class Talaba:
         info = f"{self.ism} {self.fam}, "
         info += f"{self.yosh} yoshda va {self.kasbi}. "
         info += f"Quyidagi fanlarni yoqtiradi: {', '.join(self.fanlar)}"
-        return info
+        return info 
     
 t1=Talaba("Mirzo", "SHomuratov", 27, "Student")
-
 t1.fan_qosh("Python")
 t1.fan_qosh("Java Script")
 print(t1.get_info())
+
+#2.Fan degan yangi klass yarating va bu klassdan turli fanlar uchun alohida obyektlar yarating.
+
+class Fan:
+    def __init__(self,fan1,fan2,fan3,fan4):
+        self.fan1=fan1
+        self.fan2=fan2
+        self.fan3=fan3
+        self.fan4=fan4
+        self.fanlar=[]
+        
+    def add_fan(self,fan):
+        self.fanlar.append(fan)
+        
+    def get_fanlar(self):
+        info= f"1-fan:{self.fan1},2-fan:{self.fan2},3-fan:{self.fan3}"
+        info +=f"4-fan:{self.fan4}. Va qo'shimcha fanlar: {','.join(self.fanlar)}"
+        return info
+
+fan1 = Fan("Algebra","Ingliz tili","Rus tili","Python")
+fan1.add_fan("Jumavoy tili")
+print(fan1.get_fanlar())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
