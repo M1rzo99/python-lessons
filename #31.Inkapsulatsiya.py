@@ -271,3 +271,15 @@ shaxs = Shaxs("Hasan","Husanov","FB0011223")
 import odamlar
 talaba = odamlar.Talaba("Alijon","Valiyev","FA010101","N00022")
 shaxs = odamlar.Shaxs("Hasan","Husanov","FB0011223")
+
+
+# MODULDAGI BARCHA KLASSLARNI IMPORT QILISH
+#Moduldagi barcha klasslar quyidagicha import qilinadi: from modul import *. Bunda modul ichidagi istalgan klassga to'g'ridan-to'g'ri uning nomi bilan murojat qilinadi. 
+
+from odamlar import *
+talaba = Talaba("Alijon","Valiyev","FA010101","N00022")
+shaxs = Shaxs("Hasan","Husanov","FB0011223")
+# Bu usul 2 sababga ko'ra tavsiya qilinmaydi:
+# Dasturni kelajakda qayta ochganimizda, dastur davomida moduldagi aynan qaysi klasslardan foydalanganimizni bir qarashda bilib bo'lmaydi
+# Agar modul juda katta bo'lsa, uning ichidagi ba'zi klasslar biz o'zimiz yaratgan klasslar bilan nomi bir hil bo'lib qolish ehtimoli bor. Bu esa o'z navbatida dastrumiz xato ishlashiga olib keladi.
+# Modul ichiga boshqa modulni ham import qilish mumkin. Masalan modul ichidagi ba'zi klasslar to'g'ri ishlashi uchun boshqa modul talab qilingan vaqtlarda.
