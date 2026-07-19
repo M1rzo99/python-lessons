@@ -253,3 +253,13 @@ from transport import Avto
 
 talaba = Talaba("Alijon","Valiyev","FA010101","N00022")
 avto = Avto("GM","Malibu","Qora",2020,40000)
+
+
+# BIR NECHTA KLASSLARNI IMPORT QILISH
+#Moduldan bir nechta klass chaqirish talab qilinsa, import so'zidan so'ng klasslar ketma-ket vergul bilan ajratib yoziladi:
+
+
+from odamlar import Talab, Shaxs
+
+talaba = Talaba("Alijon","Valiyev","FA010101","N00022")
+shaxs = Shaxs("Hasan","Husanov","FB0011223")
