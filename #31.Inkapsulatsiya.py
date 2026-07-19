@@ -263,3 +263,11 @@ from odamlar import Talab, Shaxs
 
 talaba = Talaba("Alijon","Valiyev","FA010101","N00022")
 shaxs = Shaxs("Hasan","Husanov","FB0011223")
+
+
+#MODULNI O'ZINI CHAQIRISH
+#Modulni to'liq import qilish uchun import modul ifodasidan foydalanamiz. Bunda modul ichidagi klasslarga modul nomi va nuqta orqali murojat qilinadi:
+
+import odamlar
+talaba = odamlar.Talaba("Alijon","Valiyev","FA010101","N00022")
+shaxs = odamlar.Shaxs("Hasan","Husanov","FB0011223")
