@@ -242,3 +242,14 @@
 # KLASSLARNI MODULGA AJRATISH
 # Vaqt o'tishi bilan dasturimizda klasslar ko'payib borishi tabiiy. Bizning asosiy dasturimiz uzun va chigal bo'lmasligi uchun klasslarni ham huddi funksiyalar kabi alohida modullarga ajratish maqsadga muvofiq bo'ladi. Dastur davomida kerak bo'ladigan klasslarga esa modulni chaqirish (import) orqali murojat qilishimiz mumkin. Bunda, bir-biriga bog'liq klasslarni bitta faylga joylashimiz mumkin. 
 # Misol uchun, biz Talaba, Professor, Foydalanuvchi va Shaxs degan klasslarni bitta odamlar.py moduliga, Avto, Bus, Train degan klasslarni esa boshqa transport.py moduliga joyladik. Kelajakda biz bu klasslarga import orqali murjat qilishimiz mumkin.
+
+
+# BITTA KLASSNI IMPORT QILISH
+#Moduldan bitta klass import qilish uchun from modul import klass ifodasidan foydalanamiz:
+
+
+from odamlar import Talaba
+from transport import Avto
+
+talaba = Talaba("Alijon","Valiyev","FA010101","N00022")
+avto = Avto("GM","Malibu","Qora",2020,40000)
