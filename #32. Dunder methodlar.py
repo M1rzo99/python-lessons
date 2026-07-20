@@ -163,3 +163,90 @@ print(avto1==avto3)
 Natija: True
 
 
+
+#OBYEKT UZUNLIGI
+Pythonda len() funksiyasi yordamida turli obyektlarning uzunligini bilishimiz mumkin, misol uchun matn, ro'yxat, lug'at, set va hokazo.
+
+
+matn = 'hello world'
+print(len(matn))
+Natija: 11
+
+
+sonlar = [12, 34, 56, 66]
+print(len(sonlar))
+Natija: 4
+Biz len() funksiyasiga murojat qilganimizda, Python funksiyaga uzatilgan obyektning ichidagi maxsus __len__ metodiga murojat qiladi. Agar bu metod mavjud bo'lmasa dasturimiz xato qaytaradi.
+
+
+len(avto1)
+Natija: TypeError: object of type 'Avto' has no len()
+Misol uchun, bizning Avto klassimizda bu metod yozilmagan, shuning uchun Python TypeError xatosini qaytardi.
+Kelin endi __len__metodini qanday ishlatishga ham misol ko'raylik.
+Boshlanishiga, yangi, AvtoSalon degan klass yaratamiz. Bu klassimiz 2 ta xususiyatga ega: salon nomi (name) va salondagi mashinalar (avtolar).
+
+
+class AvtoSalon:
+    """Avtosalon klassi"""
+    def __init__(self,name):
+        self.name = name
+        self.avtolar = []
+
+    def __repr__(self):
+        return f"{self.name} avtosaloni"
+Yuqoridagi klassdan yangi obyekt yaratamiz:
+
+salon1 = AvtoSalon("MaxAvto")
+print(salon1)
+Natija: MaxAvto avtosaloni
+AvtoSalon klassimizga __repr__metodini qo'shganimiz uchun natijamiz chiroyli ko'rinishda chiqdi.
+Keling endi salonga avtomobil qo'shish uchun yangi add_avto() metodini yozamiz. Bu metodimiz Avto klassiga oid obyektlarni qabul qilishi kerak. add_avto() ga uaztilgan parametr Avto klassiga tegishli yoki yo'qligini tekshirish uchun maxsus isinstance() funksiyasidan foydalanamiz.
+Bu funksiya biror obyekt ma'lum klassga tegishli ekanligini tekshirish uchun ishlatiladi:
+
+
+>>> isinstance("salom",str)
+True # "salom" bu str
+>>> isinstance(9.5,int)
+False # 9.5 int (butun son) emas
+>>> isinstance(avto1,Avto)
+True # avto1 Avto klassiga tegishli
+add_avto() metodiga qaytamiz:
+
+
+class AvtoSalon:
+    """Avtosalon klassi"""
+    def __init__(self,name):
+        self.name = name
+        self.avtolar = []
+
+    def __repr__(self):
+        return f"{self.name} avtosaloni"
+    
+    def add_avto(self,avto):
+        if isinstance(avto,Avto): # agar avto Avto klassidan bo'lsa
+            self.avtolar.append(avto)
+        else:
+            print("Avto obyketini kiriting")
+Metodimizni tekshirib ko'ramiz:
+
+
+# Avto obyektlarini yaratamiz
+avto1 = Avto("GM","Malibu","Qora",2020,40000)
+avto2 = Avto("GM","Lacetti","Oq",2020,20000)
+avto3 = Avto("Toyota",'Carolla',"Silver",2018, 45000)
+
+# Yuqoridagi obyektlarni salon1 ga qo'shamiz
+for avto in [avto1, avto2, avto3]: 
+    salon1.add_avto(avto)
+Mana navbat __len__ metodiga. Biz bu metod yordamida len() funksiyasi salonimizdagi avtomobillar sonini qaytaradigan qilamiz. Buning uchun yuqoridagi AvtoSalon klassiga __len__ funksiyani ham qo'shamiz va uni obyekt ichidagi avtolar ro'yxatyining uzunligini qaytaradigan qilamiz:
+
+
+    def __len__(self):
+        return len(self.avtolar)
+Mana endi bizning AvtoSalon klassimizga oid obyektlar uchun ham len() funksiyasini qo'llasak bo'ladi:
+
+
+>>> print(len(salon1))
+3 # Salonimizda 3 ta moshina bor
+
+
