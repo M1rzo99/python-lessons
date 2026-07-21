@@ -163,6 +163,9 @@ talaba_manzil = Manzil(44,"Rovot", "Urganch", "Xorazm")
 talaba3 = Talaba3("Mirzo1", "Shomuratov", "FG0122345", 1999, "OD:90434321",talaba_manzil) 
 
 print(talaba3.manzil.get_manzil())
+
+
+
     
     
     
