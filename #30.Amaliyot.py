@@ -127,9 +127,14 @@ print(pr1.get_info())
 
 
 
+#6. Yuqoridagi Shaxs klassidan boshqa turli voris klasslar yaratib ko'ring (masalan Professor, Foydalanuvchi, Sotuvchi, Mijoz va hokazo)
 
-
-
+class Sotuvchi(Shaxs):
+    def __init__(self,ism,familiya,passport,tyil):
+        super().__init__(ism,familiya,passport,tyil)
+          
+pr1 = Sotuvchi("Ganisher","hyuk","TR6787878",1980)
+print(pr1.get_info())
 
 
 
