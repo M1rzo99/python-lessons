@@ -136,6 +136,33 @@ class Sotuvchi(Shaxs):
 pr1 = Sotuvchi("Ganisher","hyuk","TR6787878",1980)
 print(pr1.get_info())
 
+#7.Har bir klassga o'ziga hoz xususiyatlar va metodlar yuklang.
+class Foydalanuvchi(Shaxs):
+    def __init__(self,ism,familiya,passport,tyil,yangi_foyda):
+        super().__init__(ism,familiya,passport,tyil)
+        self.yangi_foyda = yangi_foyda
+        
+    def get_foydalanuchi(self):
+        return self.yangi_foyda
+          
+pr1 = Foydalanuvchi("Ganisher","hyuk","TR6787878",1980,"Bu kishi Yangi foydalanuvchi,")
+print(pr1.get_foydalanuchi())
+
+
+class Mijoz(Shaxs):
+    def __init__(self,ism,familiya,passport,tyil,ol_pul):
+        super().__init__(ism,familiya,passport,tyil)
+        self.ol_pul ="Ha Pulini oldim"
+        
+    def get_pul(self):
+        return self.ol_pul
+          
+pr1 = Mijoz("Ganisher","hyuk","TR6787878",1980,"ha")
+print(pr1.get_pul())
+
+
+
+
 
 
 
