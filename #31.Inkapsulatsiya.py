@@ -87,7 +87,27 @@ print(avto11.num_avto)#  Natija 4, chunki 4 ta obyekt yaratdik va 4 marta chaqir
 
 
 
+# Klassning xususiyatlarini inkapsulyatsiya qilish
+# klassning xususiyatlari ham yuqoridagi kabi pastki ikki chiziq bn inkapsulyatsiya qilinadi:
+    
+class Avto:
+    """Avtomobil klassi"""
+    __num_avto = 0 # klassga oid xususiyat
+    def __init__(self,make,model,rang,yil,narh):
+        """Avtomobilning xususiyatlari"""
+        self.make = make
+        self.model = model
+        self.rang = rang
+        self.yil = yil
+        self.narh = narh
+        Avto.__num_avto += 1
+        
+    def get_num(self):
+        return self.__num_avto
+        
+avto44 = Avto("Hyundai", "Grande", "Blue", 2021, 30000)
 
+print(avto44.get_num())#
 
 
 
