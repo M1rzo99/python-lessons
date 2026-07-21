@@ -165,17 +165,20 @@ print(pr1.get_pul())
 
 
 class Admini(Foydalanuvchi):
-    def __init__(self,ism,familiya,passport,tyil,yangi_foyda,admin):
+    def __init__(self,ism,familiya,passport,tyil,yangi_foyda,admin,ban):
         super().__init__(ism,familiya,passport,tyil,yangi_foyda)
         self.admin = admin
+        self.ban=ban
         
     def get_admin(self):
         return self.admin
-        
+#9.Admin klassiga foydalanuvchida yo'q yangi metodlar yozing, masalan, ban_user() metodi konsolga "Foydalanuvchi bloklandi" degan matn chiqarsin.      
    
+    def ban_user(self):
+        return self.ban 
           
-pr1 = Admini("Ganisher","hyuk","TR6787878",1980,"Bu kishi Yangi foydalanuvchi.","Va Yangi admin hamdir.")
-print(pr1.get_admin())
+pr1 = Admini("Ganisher","hyuk","TR6787878",1980,"Bu kishi Yangi foydalanuvchi.","Va Yangi admin hamdir.","Foydalanuvchi bloklandi!")
+print(pr1.ban_user())
 
 
 
