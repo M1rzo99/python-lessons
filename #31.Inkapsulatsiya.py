@@ -21,5 +21,49 @@ class Avto:
 
     def get_id(self):
         return self.__id
-avto1 = Avto("GM","Malibu","Qora",2020,40000,100000)
-avto1.get_id()
+    
+#Bunday yopiq xususiyatlarni o'zgartirsh ham methodlar orqali amalga oshirilioshi kerak.Misol un mashinaning necha km yurganini o'zgartirish un klassimizga quyidagi methodni qo'shamiz:
+    def add_km(self,km):
+        """Mashinaning km siga yana km qo'shamiz"""
+        if km>=0:
+            self.__km +=km
+        else:
+            print("Mashinaning km sini kamaytirib bo'lmaydi!")
+    
+
+avto1 = Avto("GM","Malibu","Qora",2020,40000,1000)
+
+# Yopiq xususiyatlarni ko'rish uchun esa alohida metodlar yozish maqsadga muvofiq bo'ladi (get_km() va get_id()):
+print(f"ID: {avto1.get_id()}")
+print(f"KM: {avto1.get_km()}")
+
+avto1.add_km(-1000)
+print(avto1.get_km())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
