@@ -161,7 +161,21 @@ pr1 = Mijoz("Ganisher","hyuk","TR6787878",1980,"ha")
 print(pr1.get_pul())
 
 
+# 8.Voris klasslardan yana boshqa voris klass yaratib ko'ring. Misol uchun Foydalanuvchi klassidan Admin klassini yarating. 
 
+
+class Admini(Foydalanuvchi):
+    def __init__(self,ism,familiya,passport,tyil,yangi_foyda,admin):
+        super().__init__(ism,familiya,passport,tyil,yangi_foyda)
+        self.admin = admin
+        
+    def get_admin(self):
+        return self.admin
+        
+   
+          
+pr1 = Admini("Ganisher","hyuk","TR6787878",1980,"Bu kishi Yangi foydalanuvchi.","Va Yangi admin hamdir.")
+print(pr1.get_admin())
 
 
 
