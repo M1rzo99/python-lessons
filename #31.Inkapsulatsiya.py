@@ -107,7 +107,62 @@ class Avto:
         
 avto44 = Avto("Hyundai", "Grande", "Blue", 2021, 30000)
 
-print(avto44.get_num())#
+print(avto44.get_num()) # inkapsulyatsiya qilindi va count 1 bo'ldi
+
+
+
+# KLASSGA OID METODLAR
+
+# Klasslarning o'ziga xos methodlari ham bo'lishi mumkin.Misol un yuqoridagi num_avto
+# xususiyatlarini ko'rish un alohida method yozishimiz mumkin.
+# Klassga oid methodlar esa @classmethod dekaratori bn boshlanadi
+# Va obj ga oid methofdlardan farqli ravishda self emas cls(class) argumentini qabul qiladi
+
+class Avto:
+    """Avtomobil klassi"""
+    __num_avto = 0
+    def __init__(self,make,model,rang,yil,narh,km=0):
+        """Avtomobilning xususiyatlari"""
+        self.make = make
+        self.model = model
+        self.rang = rang
+        self.yil = yil
+        self.narh = narh
+        self.__km = km
+        self.__id = uuid4()
+        Avto.__num_avto += 1
+        
+    @classmethod      
+    def get_num_avto(cls):
+        return cls.__num_avto
+    
+    # va Class methodlarga class nomi orqali murojat qilinadi:
+avto1 = Avto("GM","Malibu","Qora",2020,40000)
+avto2 = Avto("GM","Lacetti","Oq",2020,20000)
+avto3 = Avto("Toyota",'Carolla',"Silver",2018, 45000)
+print(Avto.get_num_avto())
+
+# @classmethod bu maxsus dekorator. Dekoratorlar bu o'z ichiga funksiya oluvchi funksiyalar. Dekoratorlar haqida keyingi darslarimizning birida batafsil to'xtalamiz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
