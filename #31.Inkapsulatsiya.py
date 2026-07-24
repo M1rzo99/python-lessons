@@ -2,35 +2,9 @@
 # Obyektaga yo'naltirilgan  Dasturlashning xususiyatlarida biri bu INKAPSULYATSIYA, ya'ni obyektning 
 #xususiyatlariga to'g'ridan-to'g'ri (yani nuqta orqali) murojat qilishni va ularning qiymatini taqiqlab qoyish. 
 # Pythonda bunday yopiq xususiyatlarning nomi ikki pastgi chiziq bn boshlanadi:
-
-from uuid import uuid4 # randaom ID yaratib beradi,xar safar.Har bir foydalanuvchiga
-class Avto:
-    """Avtomabil klassi"""
-    def __init__(self,make,model,rang,yil,narx,km=0):
-        """Avtomobilning xususiyatlari"""
-        self.make= make
-        self.model = model
-        self.rang=rang
-        self.yil=yil
-        self.narx=narx
-        self.__km = km # inkapsulyatsiya - xususiyatni hech kim ko'ra olmaydi va o'zgartira olmaydi,oddiy yo'l bilan
-        self.__id = uuid4() # inkapsulyatsiya
-        
-    def get_km(self):
-        return self.__km #inkapsulyatsiya - bu orqali ko'ra oaldi kmni 
-
-    def get_id(self):
-        return self.__id
+from uuid import uuid4
+from transport import Avto
     
-#Bunday yopiq xususiyatlarni o'zgartirsh ham methodlar orqali amalga oshirilioshi kerak.Misol un mashinaning necha km yurganini o'zgartirish un klassimizga quyidagi methodni qo'shamiz:
-    def add_km(self,km):
-        """Mashinaning km siga yana km qo'shamiz"""
-        if km>=0:
-            self.__km +=km
-        else:
-            print("Mashinaning km sini kamaytirib bo'lmaydi!")
-    
-
 avto1 = Avto("GM","Malibu","Qora",2020,40000,1000)
 
 # Yopiq xususiyatlarni ko'rish uchun esa alohida metodlar yozish maqsadga muvofiq bo'ladi (get_km() va get_id()):
@@ -141,15 +115,20 @@ avto1 = Avto("GM","Malibu","Qora",2020,40000)
 avto2 = Avto("GM","Lacetti","Oq",2020,20000)
 avto3 = Avto("Toyota",'Carolla',"Silver",2018, 45000)
 print(Avto.get_num_avto())
-
+avto = Avto("GM","Malibu","Qora",2020,40000)
 # @classmethod bu maxsus dekorator. Dekoratorlar bu o'z ichiga funksiya oluvchi funksiyalar. Dekoratorlar haqida keyingi darslarimizning birida batafsil to'xtalamiz.
 
 
 
+# KLASSLARNI MODULGA AJRATISH
+
+# Vaqt o'tishi bilan dasturimizda klasslar ko'payib borishi tabiiy. Bizning asosiy dasturimiz uzun va chigal bo'lmasligi uchun klasslarni ham huddi funksiyalar kabi alohida modullarga ajratish maqsadga muvofiq bo'ladi. Dastur davomida kerak bo'ladigan klasslarga esa modulni chaqirish (import) orqali murojat qilishimiz mumkin. Bunda, bir-biriga bog'liq klasslarni bitta faylga joylashimiz mumkin. 
+#Misol uchun, biz Talaba, Professor, Foydalanuvchi va Shaxs degan klasslarni bitta odamlar.py moduliga, Avto, Bus, Train degan klasslarni esa boshqa transport.py moduliga joyladik. Kelajakda biz bu klasslarga import orqali murjat qilishimiz mumkin.
 
 
-
-
+# Bitta classni import qilish: 
+#Moduldan bitta classni import qilish un from modul import klass dan foydalanamiz:
+    
 
 
 
