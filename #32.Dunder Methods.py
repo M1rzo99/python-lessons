@@ -169,11 +169,16 @@ class Avto:
 #Yuqoridagi classdan obyekt yaratamiz va obyekt haqida malumot olish un print() functionini chaqiramiz
 avto1 = Avto("GYM", "Malibu2", "Qora", "2019", 20000)
 avto2 = Avto("KIA", "K5", "Blue", "2010", 30000)
-print(avto1<avto2)
+print(avto1==avto2)
        
-    
-    
+#Obyekt Uzunligi
 
+# Pythonda le() funksiyasi yordamida turli obyrktlarni uzunligini bilishimiz mumkin,misol un matn,ro'yhat,lug'at,set va hakazo
+matn = 'hello market'
+print(len(matn))    
+    
+sonlar = [1,2,3,4,5,6,7]
+print(len(sonlar))
 
 
 
