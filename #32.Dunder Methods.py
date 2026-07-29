@@ -114,7 +114,7 @@ print(x>y)
 # Avto classidan ikkita obyekt yaratamiz va ularni taqqoslab ko'ramiz: 
 avto1 = Avto("GYM", "Malibu2", "Qora", "2019", 20000)
 avto2 = Avto("KIA", "K5", "Blue", "2010", 30000)
-avto1 > avto2
+
 
 # Natija: TypeError: '>' not supported between instances of 'Avto' and 'Avto'
 
@@ -131,6 +131,48 @@ avto1 > avto2
 #x.__eq__(self,y)        x==y
 #x.__ne__(self,y)        x!=y
 
+# Yuqoridagi obyektlarni yarmi un methodlar yozishimiz kifoya.Misol un __lt__ (x,y) metodini yozsak, __gt__(x>y) methodini yozishimiz shart emas, yoki __le__ methodi, __ge__ mothodini ham o'z ichiga oladi.
+
+# Keling Avto classda yaratilgan obyektlarni narhlari bn solishtiramiz:
+    
+    
+    
+class Avto:
+    __num_avto = 0
+    """Avtomobil klassi"""
+    def __init__(self,make,model,rang,yil,narx):
+        """Avtomobilning xususiyatlari"""
+        self.make=make
+        self.model=model
+        self.rang=rang
+        self.yil=yil
+        self.narx=narx
+        Avto.__num_avto +=1
+        
+    def __eq__(self,boshqa_avto):
+        """Tenglik"""
+        return self.narx == boshqa_avto.narx
+    
+    def __lt__(self,boshqa_avto):
+        """Kichik"""
+        return self.narx < boshqa_avto.narx
+    
+    def __le__(self,boshqa_avto):
+        """Kichik yoki teng"""
+        return self.boshqa_avto <= boshqa_avto.narx
+    
+        
+    def __repr__(self):
+        return f"Avto:Rangi {self.rang},Zavod {self.make} va Markasi {self.model}"
+    
+    """ cycle har bir aylanganligini ko'rsatib beradi"""
+#Yuqoridagi classdan obyekt yaratamiz va obyekt haqida malumot olish un print() functionini chaqiramiz
+avto1 = Avto("GYM", "Malibu2", "Qora", "2019", 20000)
+avto2 = Avto("KIA", "K5", "Blue", "2010", 30000)
+print(avto1<avto2)
+       
+    
+    
 
 
 
