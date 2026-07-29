@@ -98,10 +98,53 @@ class Avto:
         
     def __repr__(self):
         return f"Avto:Rangi {self.rang},Zavod {self.make} va Markasi {self.model}"
+    
     """ cycle har bir aylanganligini ko'rsatib beradi"""
 #Yuqoridagi classdan obyekt yaratamiz va obyekt haqida malumot olish un print() functionini chaqiramiz
 avto1 = Avto("GYM", "Malibu2", "Qora", "2019", 20000)
 print(avto1)
+
+# Obyektlarni Taqqoslash
+
+#Taqqoslash operatorlari yordamida biz turli obyektlarni solishitrishimiz mumkin.Taqqoslash natijasi mantiqiy qiymat(True yoki False) ko'rinishida bo'ladi.
+
+x,y = 10,20
+print(x>y)
+
+# Avto classidan ikkita obyekt yaratamiz va ularni taqqoslab ko'ramiz: 
+avto1 = Avto("GYM", "Malibu2", "Qora", "2019", 20000)
+avto2 = Avto("KIA", "K5", "Blue", "2010", 30000)
+avto1 > avto2
+
+# Natija: TypeError: '>' not supported between instances of 'Avto' and 'Avto'
+
+# Xatolik: Demak bu ikki obyektni solishtirb bo'lmas ekan. 
+# Biz taqqoslash operatoriga murojat qilganimizda,Python obyektlar ichida taqqoslash un maxsus methodlarni qidiradi, agar method topilmasa yuqoridagi kabi TypeError qaytaradi.
+
+# TAQQOSLASH METHODLARI QUYIDAGILARDAN IBORAT: 
+
+# Metodva             Operator
+#x.__lt__(self,y   )      x<y
+#x.__le__(self,y)        x<=y
+#x.__gt__(self,y)        x>y
+#x.__ge__(self,y)        x>=y
+#x.__eq__(self,y)        x==y
+#x.__ne__(self,y)        x!=y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
