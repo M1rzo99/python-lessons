@@ -214,7 +214,25 @@ class AvtoSalon:
 
 
 
+#Keling obyekt elementlaridan birini o'zgartirib ko'ramiz:
 
+
+avto4 = Avto("Mazda", "6", 'Qizil',2015,35000)
+#salon1[0]=avto4
+#Natija: TypeError: 'AvtoSalon' object does not support item assignment
+#Y#ana xatolik. Gap shundaki __getitem__ metodi o'z nomi bilan (get) element qaytaruvchi metod. Biror elementni o'zgartirish uchun esa __setitem__metodini ham qo'shishimiz kerak. Bu metodimizga murojat qilinganda ham, yangi qiymat Avto klassiga oid ekanligini tekshirib olish maqsadga muvofiq bo'ladi:
+
+
+#def __setitem__(self,index,value):
+    #    if isinstance(value,Avto):
+    #        self.avtolar[index]=value
+#Qaytadan elementni o'zgartirishga harakat qilib ko'ramiz:
+
+#avto4 = Avto("Mazda", "6", 'Qizil',2015,35000)
+#salon1[0]=avto4
+#print(salon1[0])
+#Natija: Avto: Qizil Mazda 6
+#Kutilgan natija chiqdi
 
 
 
