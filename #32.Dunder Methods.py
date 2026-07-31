@@ -184,6 +184,32 @@ print(len(sonlar))
 
 
 
+#OBYEKT ELEMENTLARIGA MUROJAT QILISH
+#Ba'zi obyektlarning (matn, ro'yxat, lug'at va hokazo) elementlariga alohida murojat qilish mumkin. 
+
+mevalar = ['olma','anor','uzum']
+mevalar[0]
+#Bizning salonimizda ham 3 ta avto bor, ularni ko'rish uchun yuqoridagi kabi element raqami orqali murojat qila olamizmi?
+
+#salon1[0]
+#Natija: TypeError: 'AvtoSalon' object is not subscriptable
+#Afsuski yo'q. Ko'rib turganingizdek bizning obyektimizga bunday murojat qilib bo'lmas ekan. Obyektimizga bu xususiyatni qo'shish uchun __getitem__metodini yozishimiz kerak.
+
+class AvtoSalon:
+    """Avtosalon klassi"""
+    def __init__(self,name):
+        self.name = name
+        self.avtolar = []
+
+    def __repr__(self):
+        return f"{self.name} avtosaloni"
+    
+    def __len__(self):
+        return len(self.avtolar)
+    
+    def __getitem__(self,index):
+        return self.avtolar[index]
+#Endi salon1 obyektimizning elementlariga murojat qilinganda __getitem__metodi obyekt ichidagi avtolar ro'yxatidan ko'rsatilgan element (avtomobilni) qaytaradi.
 
 
 
