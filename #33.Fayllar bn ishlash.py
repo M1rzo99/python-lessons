@@ -48,8 +48,15 @@ fayl.close()
 #Shuning uchun open() funksiyasiga with orqali murojat qilganimizda, faylimiz with blokining oxirigacha ochiq turadi, va with tugashi bilan, fayl ham yopiladi. Demak fayl ustidagi amallarni biz with bloki ichida bajarib olishimiz kerak.    
     
     
-    
-    
+print(pi)
+
+# Matn faylda qanday saqalangan bo'lsa, huddi shu ko'rinnishda consolega chiqadi.Saqlangan ma'lummotlar son bo'lsa,faylda o'qiganimizda qaytgan qiymat string(matn) ko'rinishida bo'ladi. Matnni songa o'tkazish un biroz ishlov beramiz.
+
+pi=pi.rstrip() # qator ohiridagi bo'shliqlarni olib tashlalymiz
+pi=pi.replace("\n", "")# qator tashlash belgisini almashtiramiz
+pi=float(pi) # matnni float(o'nlik) songa o'tkazamiz
+print(pi)    
+type(pi)
     
     
     
