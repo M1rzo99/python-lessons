@@ -33,3 +33,25 @@ print(pi)
 #3. 2- qatorda esa .read() methodi yordamida fayl obyektining tarkibifan bizga kerakli matnni olib,yangi PI o'zgaruvchisiga yuklayabmiz.
 
 #4. with operatorining vazifasi biz fayl bn ishlab bo'lganmizdan so'ng,faylni yopish. Yuqoridagi misolda,2-qatordan so'ng fayl zudlik bn yopilgan.
+
+
+#Yuqorida ko'rgan usulimiz fayl bilan ishlashning eng xavfsiz usuli. Aslida biz fayllarni to'g'ridan-to'g'ri fayl=open('pi.txt') yordamida ochishimiz, fayl bilan ishlab bo'lgandan so'ng esa fayl.close() komandasi yordamida faylni yopishimiz ham mumkin edi:
+    
+fayl = open('pi.txt') 
+PI = fayl.read()
+print(pi)
+fayl.close() 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
