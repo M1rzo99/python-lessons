@@ -58,7 +58,7 @@ pi=float(pi) # matnni float(o'nlik) songa o'tkazamiz
 print(pi)    
 type(pi)
     
-    
+    #.replace() metodi matn tarkibidagi biror harf yoki belgini boshqa harf yoki belgi bilan almashtirish uchun ishlatiladi.
     
     
     
