@@ -61,6 +61,18 @@ type(pi)
     #.replace() metodi matn tarkibidagi biror harf yoki belgini boshqa harf yoki belgi bilan almashtirish uchun ishlatiladi.
     
     
-    
+  # PAPKA ICHIDAGI FAYLLARNI OCHISH
+#Agar siz ochayotgan fayl dasturimiz bilan bir papkada emas, shu papka ichidagi papkada joylashgan boʻlsa, fayl nomidan avval papka nomi yoziladi:
+
+
+with open('data/pi.txt') as fayl:
+    pi = fayl.read()
+#Agar papkalar bir necha qavat boʻlsa, fayl nomini va ungacha boʻlgan papkalarni alohida yozib olgan afzal:
+
+
+faylnomi = 'data/math/numbers/pi.txt'
+with open(faylnomi) as fayl:
+    pi = fayl.read()
+#Windowsda papkalar orasida "\" belgisi ishlatilsada, Pythonda "/" belgisini ishlataveramiz. Agar \ belgisini ishlatishni istasangiz, bu belgini 2 marta yozing: C:\\python\\darslar\\data 
     
     
