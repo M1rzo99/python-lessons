@@ -75,4 +75,28 @@ with open(faylnomi) as fayl:
     pi = fayl.read()
 #Windowsda papkalar orasida "\" belgisi ishlatilsada, Pythonda "/" belgisini ishlataveramiz. Agar \ belgisini ishlatishni istasangiz, bu belgini 2 marta yozing: C:\\python\\darslar\\data 
     
-    
+    #FAYLNI QATORMA-QATOR OʻQISH
+#Baʻzida faylni toʻliqligicha emas, qatorma-qator oʻqish talab qilinishi mumkin. Masalan, faylda talabalrning ismi yoki kundalik ob-havo maʻlumotlari saqlangdanda va hokazo. Bunday hollarda for tsiklidan foydalanamiz:
+
+
+filename = 'data/talabalar.txt'
+with open(filename) as file:
+    for line in file:
+        print(line)
+# Natija: 
+# alijon valiyev
+# hasan olimov
+# rahima muminova
+#Qatorlarni ro'yxat ko'rinishida saqlab olish uchun, .readlines() metodidan foydalanamiz.
+
+
+with open(filename) as file:
+    talabalar = file.readlines()
+
+print(talabalar)
+#Natija: ['alijon valiyev\n', 'hasan olimov\n', 'rahima muminova\n', 'hamida oqilova']
+#E'tibor bering, har bir talaba ismidan so'ng qator tashlah belgisi (\n) tushib qolgan. Biz bu belgilarni .rstrip() metodi yordamida olib tashlashimiz mumkin:
+
+
+talabalar = [talaba.rstrip() for talaba in talabalar]
+print(talabalar)
