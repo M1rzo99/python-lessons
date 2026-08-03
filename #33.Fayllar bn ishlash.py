@@ -67,14 +67,20 @@ with open("data/pi.txt") as fayl :
     pi=fayl.read() # read orqali malumotni faqat o'iy olamiz
     
 # Agar papkalar bir nechta qavat bo'lsa,fayl nomi va ungacha bo'lgan papkalarni alohida yozib olgan avfzal:
-faylnomi = "data/math/numbers/pi.txt"
-with open(faylnomi) as fayl:
-    pi=fayl.read()
+# faylnomi = "data/math/numbers/pi.txt"
+# with open(faylnomi) as fayl:
+#     pi=fayl.read()
 
 
 # Windowsda papkalar orasida \ belgisi ishlatilsa,Pythonda / belgisini ishlatavering.Agar \ belgisini ishlatsangiz, bu belgini 2 marta yozing: C\\Pyton\\darslar\\data
 
+# Faylni qatorma-qator o'qish:
+# Ba'zida faylni to'liqligicha emas,qatorma-qator o'qish talab qilinishi mumkin.masalan faylda talabalatning ismi yoki kundalik ob-havo ma'lumotlari saqlanganda va hakazo.Bunday hollarda  for tsiklidan foydalanamiz:
 
+filename = "data/talabalar.txt"
+with open(filename) as file:
+    for line in file:
+        print(line)
 
 
 
