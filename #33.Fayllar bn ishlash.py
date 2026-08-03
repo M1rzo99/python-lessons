@@ -199,8 +199,35 @@ with open("family.txt") as fayl:
     print(allFam)
 # agarda biz ochayotgan fayl mavjud bo'lmasa,python yangi fayl yaratadi.
 
+# O'zgaruvchilarni faylda saqlash
+
+# Yuqorida biz ma'lumotlarni matn ko'rinishida saqlashni ko'rdik.Agar dastur davomida turli o'zgaruvchilarni faylda saqlash talab qilinsa,pickle modulidan foydalanamiz.Pickle malumotlarini biz qanday ko'rinishdia bersak,shunday ko'rinishda faylga  yozadi.Yuqoridagi usuldan farqli ravishda,pickle yordamida yozilgan fayllarning tarkibini Pythondan tashqarida ko'rib bo'lmaydi.
+
+# Pickle faylga yozish
+# Pickledan foydalanish un biz avval bu modulni import qilamiz
+# Faylni ochishda esa,open() funksiyasiga ikkinchi argument sifatida "wb"(write binary) beramiz,ya'ni ikkilik sanoq sistemasida yozishni ko'rsatamiz.Faylga yozish un esa pickle.dump() methodidan foydalanamiz:
+
+import pickle
+
+talaba1 = {"ism":"Mirzo","familya":"Shomuratov","tyil":1999}
+talaba2 = {"ism":"Sherzod","familya":"Nurmetov","tyil":2003}
+
+with open('info.dat','wb') as file: # bu yerda fayl nomini o'zimiz hoxlagancha qoyishimiz mn,keyinchalik adashib ketmaslik un 
+    pickle.dump(talaba1, file)
+    pickle.dump(talaba2, file)
+
+    
 
 
 
+
+
+
+
+
+
+
+
+   
 
 
