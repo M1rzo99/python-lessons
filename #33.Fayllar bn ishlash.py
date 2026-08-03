@@ -121,10 +121,16 @@ print(talabalar)
 
 
 
+# Yangi faylga yozish
 
+# Yangi faylga ma'lumot yozish un open() funksiyasi chaqirishda "w"(write) argumentidan foydalanamiz.Ochilgan faylga ma'lumot qoshish un esa .write()
+# methodini chaqiramiz.
 
-
-
-
-
+faylnomi = "ustozlar.txt" # Yaratilgan fayl nomi
+with open(faylnomi,"w") as fayl:
+    fayl.write("Anvar Narzullayev") # Faylga yozilgan ma'lumot
+    
+with open("ustozlar.txt") as fayl:
+    UstozName = fayl.read()
+print(UstozName)
 
