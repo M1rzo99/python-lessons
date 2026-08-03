@@ -81,11 +81,18 @@ filename = "data/talabalar.txt"
 with open(filename) as file:
     for line in file:
         print(line)
+        
+# Qatorlarni ro'yhat ko'rinishida saqlab olish un esa, readlines() methodidan foydalanamiz
 
+with open(filename) as file:
+    talabalar = file.readlines()
+print(talabalar)
 
+# E'tibor bersak, har bir talabaning ismidn keyin qator tashlash belgisi (\n) tushib qolgan.
+# Bu belgilarni .rstrip() methodi yordamida olib tashlashimiz mn.
 
-
-
+talabalar = [talaba.rstrip() for talaba in talabalar]
+print(talabalar)
 
 
 
