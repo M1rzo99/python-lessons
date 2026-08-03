@@ -95,7 +95,29 @@ talabalar = [talaba.rstrip() for talaba in talabalar]
 print(talabalar)
 
 
+# Faylga yozish
 
+# Malumotlarni saqlashning eng qulay usuli faylga yozish.Dasturimi zbajarilishidan to'xtagaidan so'ng,xotiradagi ma'lumotlar o'chib ketishi mumkin.
+#Lekin faylga yozilgan malumotlar saqlanib turaveradi.fayllarni kelajakda qaytadan xotiraga yuklab,dasturimizni to'xtagan joyidan davom ettirishiumiz mn.
+
+# Yuqoridagi faylni ochishda open() funksiyasidan foydalandik, va yagona argument sifatida fayl nomini berdik.Bunda fayl faqatgina o'qish un ochiladi,unga yozib bo'lmaydi.Faylga ma'lumot yozish un open() funksiyasiga murojat qilishda fayl nomidan tashqari yana bir argument beramiz.
+# Ikkinchi argument faylni aynana nima maqsadda ochishimizni bildiradi. argumentlar quyidagilardan iborat:
+
+#  Argument
+# Qoʻllanilishi
+# Mazmuni
+# 'w'    =    open('file.txt','w')
+# Faylni yozish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi. Fayl mavjud bo'lsa tarkibi o'chib ketadi
+# 'r' ==    open('file.txt','r')
+# Faylni faqat o'qish uchun ochish (yozib bo'lmaydi)
+# 'w+'   =     open('file.txt','w+')
+# Faylni o'qish va yozish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi. Fayl mavjud bo'lsa tarkibi o'chib ketadi. 
+# 'r+'   =    open('file.txt','r+')
+# Faylni o'qish va yozish uchun ochish.
+# 'a'  =    open('file.txt','a')
+# Faylga ma'lumot qo'shish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi.
+# 'a+'   =    open('file.txt','a+')
+# Faylga ma'lumot qo'shish va o'qish uchun yozish. Fayl mavjud bo'lmasa yangi fayl yaratiladi.     
 
 
 
