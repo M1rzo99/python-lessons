@@ -134,3 +134,65 @@ with open("ustozlar.txt") as fayl:
     UstozName = fayl.read()
 print(UstozName)
 
+
+# Diqqat!!! open() funksiyasini 'w' argumenti bilan chaqirganimizda ehtiyot bo'lishimiz kerak, sababi agar bunday fayl mavjud bo'lsa, uning ichidagi barcha ma'lumotlar o'chib ketadi
+
+# Faylga yozayotgan ma'lumotlarimiz matn ko'rinishida bo'lisihi kerak,aks holda dasturimiz xato beradi.
+faylnomi = "new_file.txt"
+ism="Mirzo Shomuratov"
+tyil =1999
+with open(faylnomi,"w") as fayl:
+    fayl.write(ism)
+    fayl.write(str(tyil))
+
+
+    
+# Natija: TypeError: write() argument must be str, not int
+
+# Xatolikni oldini olish un sonlarni avval str() funksiyasi yordamida matnga keltirib olamiz
+
+
+# faylnom = "family.txt"
+# father = "Sultonov Maqsudbek"
+# mother = "Saparova Hamidaxon"
+# Sister = "Shomuratova Iroda"
+
+# with open(faylnom,"w") as fayl:
+#     fayl.write(father)
+#     fayl.write(mother)
+#     fayl.write(Sister)
+    
+# with open("family.txt") as fayl:
+#     allFam = fayl.read()
+# print(allFam)
+
+
+# Fayllar matn formatida yoziladi va biz uni istalgan matn muhariri yordamida ochib ko'rishimiz mn.
+
+# Afsuski, faylga bir nechta ma'luot yozganimizda, ma'luotlaralohida qatordan emas, bir qatorda bir-biriga qo'shib yoziladi.
+# Buning oldini olishimiz un matn so'ngida \n belgisini qo'shib ketishimiz kk bo'ladi.
+
+faylnom = "family.txt"
+father = "Sultonov Maqsudbek"
+mother = "Saparova Hamidaxon"
+Sister = "Shomuratova Iroda"
+
+with open(faylnom,"w") as fayl:
+    fayl.write(father+ '\n')
+    fayl.write(mother+ '\n')
+    fayl.write(Sister+ '\n')
+    
+with open("family.txt") as fayl:
+    allFam = fayl.read()
+print(allFam)
+
+
+
+
+
+
+
+
+
+
+
