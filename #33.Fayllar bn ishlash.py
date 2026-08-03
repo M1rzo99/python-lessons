@@ -184,12 +184,20 @@ with open(faylnom,"w") as fayl:
     
 with open("family.txt") as fayl:
     allFam = fayl.read()
-print(allFam)
+    print(allFam)
 
 
+# Faylga ma'lumot qo'shish
 
-
-
+# Agar mavjud faylga ma'luot qo'shish talab qilinsa, open() funksiyasiga murojat qilishda "a" (append) argumentidan foyfadladnamiz.Bunda Yangi qo'shilgan ma'luotlar faylning oxiriga qo'shiladi.
+with open(faylnom,'a') as fayl:
+    fayl.write("Latifbek Shomuratov\n")
+    fayl.write("2005")
+    
+with open("family.txt") as fayl:
+    allFam = fayl.read()
+    print(allFam)
+# agarda biz ochayotgan fayl mavjud bo'lmasa,python yangi fayl yaratadi.
 
 
 
