@@ -43,10 +43,18 @@ with open("pi.dat", "rb") as file:
 
 print(yangi_pi)
 print(type(yangi_pi))
-    
+   
 
-    
-    
+#5.Foydalanuvchidan turli hil ma'lumotlarni so'rab, har bir kiritilgan ma'lumotni yangi qatordan faylga yozib boruvchi dastur tuzing. Dastur qayta chaqirilganida yangi ma'lumotlar fayl oxiridan qo'shilib borsin (yangi faylga emas). 
+malumot = input("Ism va familiyangizni kiriting: ")
+with open("info.txt", "a") as fayl:
+    fayl.write(malumot + "\n")
+
+print("Ma'lumot saqlandi.")
+
+with open("info.txt") as file:
+    allInfo = file.read()
+print(allInfo)
     
     
     
