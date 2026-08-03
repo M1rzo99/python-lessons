@@ -60,50 +60,33 @@ type(pi)
     
     #.replace() metodi matn tarkibidagi biror harf yoki belgini boshqa harf yoki belgi bilan almashtirish uchun ishlatiladi.
     
+# Papka ichidagi fayllarni ochish
+# Agar bzi ochayotgan fayl dasturimiz bn bir papkada emas bo'lsa,shu papka ichidagi papkada joylashgan bo'lsa,fayl nomidan oldin papka nomi yoziladi
+
+with open("data/pi.txt") as fayl :
+    pi=fayl.read() # read orqali malumotni faqat o'iy olamiz
     
-  # PAPKA ICHIDAGI FAYLLARNI OCHISH
-#Agar siz ochayotgan fayl dasturimiz bilan bir papkada emas, shu papka ichidagi papkada joylashgan boʻlsa, fayl nomidan avval papka nomi yoziladi:
-
-
-with open('data/pi.txt') as fayl:
-    pi = fayl.read()
-#Agar papkalar bir necha qavat boʻlsa, fayl nomini va ungacha boʻlgan papkalarni alohida yozib olgan afzal:
-
-
-faylnomi = 'data/math/numbers/pi.txt'
+# Agar papkalar bir nechta qavat bo'lsa,fayl nomi va ungacha bo'lgan papkalarni alohida yozib olgan avfzal:
+faylnomi = "data/math/numbers/pi.txt"
 with open(faylnomi) as fayl:
-    pi = fayl.read()
-#Windowsda papkalar orasida "\" belgisi ishlatilsada, Pythonda "/" belgisini ishlataveramiz. Agar \ belgisini ishlatishni istasangiz, bu belgini 2 marta yozing: C:\\python\\darslar\\data 
-    
-    #FAYLNI QATORMA-QATOR OʻQISH
-#Baʻzida faylni toʻliqligicha emas, qatorma-qator oʻqish talab qilinishi mumkin. Masalan, faylda talabalrning ismi yoki kundalik ob-havo maʻlumotlari saqlangdanda va hokazo. Bunday hollarda for tsiklidan foydalanamiz:
+    pi=fayl.read()
 
 
-filename = 'data/talabalar.txt'
-with open(filename) as file:
-    for line in file:
-        print(line)
-# Natija: 
-# alijon valiyev
-# hasan olimov
-# rahima muminova
-#Qatorlarni ro'yxat ko'rinishida saqlab olish uchun, .readlines() metodidan foydalanamiz.
+# Windowsda papkalar orasida \ belgisi ishlatilsa,Pythonda / belgisini ishlatavering.Agar \ belgisini ishlatsangiz, bu belgini 2 marta yozing: C\\Pyton\\darslar\\data
 
 
-with open(filename) as file:
-    talabalar = file.readlines()
-
-print(talabalar)
-#Natija: ['alijon valiyev\n', 'hasan olimov\n', 'rahima muminova\n', 'hamida oqilova']
-#E'tibor bering, har bir talaba ismidan so'ng qator tashlah belgisi (\n) tushib qolgan. Biz bu belgilarni .rstrip() metodi yordamida olib tashlashimiz mumkin:
 
 
-talabalar = [talaba.rstrip() for talaba in talabalar]
-print(talabalar)
 
-#FAYLGA YOZISH
-#Ma'lumotlarni saqlashning eng qulay usuli bu faylga yozish. Dasturimiz bajarilishdan to'xtaganidan so'ng, xotiradagi ma'lumotlar o'chib ketishi mumkin, lekin faylga yozilgan ma'lumotlar saqlanib turaveradi. Fayllarni kelajakda qaytdan xotiraga yuklab, dasturimizni to'htagan joyidan davom etishimiz mumkin. 
-#Yuqorida biz faylni ochishda open() funksiyasidan foydalandik, va yagona argument sifatida fayl nomini berdik. Bunda fayl faqatgina o'qish uchun ochiladi, unga yozib bo'lmaydi. Faylga ma'lumot yozish uchun open() funksiyasiga murojat qilishda fayl nomidan tashqari yana bir argument beramiz. Ikkinchi argument faylni aynan nima maqsadda ochishimizni bildiradi. 
+
+
+
+
+
+
+
+
+
 
 
 
