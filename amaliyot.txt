@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug  3 17:10:05 2026
+
+@author: abcd
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug  1 19:52:52 2026
+
+@author: Mirzo
+"""
+# Fayllar bn ishlash: Kirish
+# Ushbu bo'limda katta hajmdagi ma;lumoitlarni fayldan yuklab olish va dastur yakunida kerakli ma'lumotlarni va dastur natijasini faylga saqlashni o'rganamiz.
+# Fayllar bn ishlash dastur foydalanuvchilariga ha dasturga o'zlari istagan ma'lumotlarni yuklash imklonini beradi.
+
+
+# Fayldan o'qish: 
+#Komputerimizda aksar ma'lumlotlar fayl ko'rinishida bo'ladi. Bu xoh matn bo'lsin,xoh jadval,xoh rasm,xoh video. Fayllarda turli ma'lumotlar  saqlanishi mumkin.
+# ob-havo ma'lumotlari,yillik hisobotlar,mijozlarning telefon raqamlari,talabalarning ro'yhati va hkz.
+#  Ko'pgina holatlarda katta ma'lumotlarni aynan fayllardaan o'qish talab qilinadi.Ayniqsa,tahliiy dasturlarda fayl ko'rinishida saqlangan, katta hajmdagi jadvallar bn ishlash tabiiy.
+# LEKIN FAYLLAR BN ISHLASH BOSHQA HOLATLARDA HAM ASQOTADI.MISOL: ODDIY MATNNI HTML KO'RINISHIDA O'TKAZISHNI AVTOMATLASHTIRUVCHI DASTUR YOZISHDA.
+
+# Faylni to'liqligicha o'qish:
+    
+with open('pi.txt') as fayl:
+    pi=fayl.read()
+    
+print(pi)
+
+# Kodni tahlil qilamiz:
+    
+#1. 1- Qatorda open() funksiyasi yordamida faylni ochayapmiz.Bunda funlksiya argument sifatida fayl nomini berayapmiz. 
+#BU yerda biz ochayotgan fayl va dasturimiz bir papkada bo'lishi muhim.
+
+# 2. Open()  funksiyasi faylni obyekt sifatida qaytaradi,as operatori yordamida esa biz objectimizga fayl deb nom berayapmiz.
+
+#3. 2- qatorda esa .read() methodi yordamida fayl obyektining tarkibifan bizga kerakli matnni olib,yangi PI o'zgaruvchisiga yuklayabmiz.
+
+#4. with operatorining vazifasi biz fayl bn ishlab bo'lganmizdan so'ng,faylni yopish. Yuqoridagi misolda,2-qatordan so'ng fayl zudlik bn yopilgan.
+
+
+#Yuqorida ko'rgan usulimiz fayl bilan ishlashning eng xavfsiz usuli. Aslida biz fayllarni to'g'ridan-to'g'ri fayl=open('pi.txt') yordamida ochishimiz, fayl bilan ishlab bo'lgandan so'ng esa fayl.close() komandasi yordamida faylni yopishimiz ham mumkin edi:
+    
+fayl = open('pi.txt') 
+PI = fayl.read()
+print(pi)
+fayl.close() 
+    
+    
+# Etiborli jihat!
+#Lekin, bu usul xavfli hisoblanadi va tavsiya qilinmaydi. Gap shundaki, open() funksiyasi yordamida faylni ochganimizdan keyin, toki close() metodini chaqirgunga qadar faylimiz ochiq holatda turadi. Agar, faylni vaqtida yopmasak, yoki fayl yopilmasidan avval dasturimiz to'xtab qolsa fayl tarkibiga ziyon yetishi, ma'lumotlar yo'qotilishi mumkin. Misol uchun, boshqa dasturlarda ham (masalan Microsoft Word) faylni yopmasdan oldin kompyuteringiz o'chib qolsa, yoki dastur behosdan yopilib ketsa faylingizga ziyon yetkani kabi.
+#Shuning uchun open() funksiyasiga with orqali murojat qilganimizda, faylimiz with blokining oxirigacha ochiq turadi, va with tugashi bilan, fayl ham yopiladi. Demak fayl ustidagi amallarni biz with bloki ichida bajarib olishimiz kerak.    
+    
+    
+print(pi)
+
+# Matn faylda qanday saqalangan bo'lsa, huddi shu ko'rinnishda consolega chiqadi.Saqlangan ma'lummotlar son bo'lsa,faylda o'qiganimizda qaytgan qiymat string(matn) ko'rinishida bo'ladi. Matnni songa o'tkazish un biroz ishlov beramiz.
+
+pi=pi.rstrip() # qator ohiridagi bo'shliqlarni olib tashlalymiz
+pi=pi.replace("\n", "")# qator tashlash belgisini almashtiramiz
+pi=float(pi) # matnni float(o'nlik) songa o'tkazamiz
+print(pi)    
+type(pi)
+    
+    #.replace() metodi matn tarkibidagi biror harf yoki belgini boshqa harf yoki belgi bilan almashtirish uchun ishlatiladi.
+    
+# Papka ichidagi fayllarni ochish
+# Agar bzi ochayotgan fayl dasturimiz bn bir papkada emas bo'lsa,shu papka ichidagi papkada joylashgan bo'lsa,fayl nomidan oldin papka nomi yoziladi
+
+with open("data/pi.txt") as fayl :
+    pi=fayl.read() # read orqali malumotni faqat o'iy olamiz
+    
+# Agar papkalar bir nechta qavat bo'lsa,fayl nomi va ungacha bo'lgan papkalarni alohida yozib olgan avfzal:
+# faylnomi = "data/math/numbers/pi.txt"
+# with open(faylnomi) as fayl:
+#     pi=fayl.read()
+
+
+# Windowsda papkalar orasida \ belgisi ishlatilsa,Pythonda / belgisini ishlatavering.Agar \ belgisini ishlatsangiz, bu belgini 2 marta yozing: C\\Pyton\\darslar\\data
+
+# Faylni qatorma-qator o'qish:
+# Ba'zida faylni to'liqligicha emas,qatorma-qator o'qish talab qilinishi mumkin.masalan faylda talabalatning ismi yoki kundalik ob-havo ma'lumotlari saqlanganda va hakazo.Bunday hollarda  for tsiklidan foydalanamiz:
+
+filename = "data/talabalar.txt"
+with open(filename) as file:
+    for line in file:
+        print(line)
+        
+# Qatorlarni ro'yhat ko'rinishida saqlab olish un esa, readlines() methodidan foydalanamiz
+
+with open(filename) as file:
+    talabalar = file.readlines()
+print(talabalar)
+
+# E'tibor bersak, har bir talabaning ismidn keyin qator tashlash belgisi (\n) tushib qolgan.
+# Bu belgilarni .rstrip() methodi yordamida olib tashlashimiz mn.
+
+talabalar = [talaba.rstrip() for talaba in talabalar]
+print(talabalar)
+
+
+# Faylga yozish
+
+# Malumotlarni saqlashning eng qulay usuli faylga yozish.Dasturimi zbajarilishidan to'xtagaidan so'ng,xotiradagi ma'lumotlar o'chib ketishi mumkin.
+#Lekin faylga yozilgan malumotlar saqlanib turaveradi.fayllarni kelajakda qaytadan xotiraga yuklab,dasturimizni to'xtagan joyidan davom ettirishiumiz mn.
+
+# Yuqoridagi faylni ochishda open() funksiyasidan foydalandik, va yagona argument sifatida fayl nomini berdik.Bunda fayl faqatgina o'qish un ochiladi,unga yozib bo'lmaydi.Faylga ma'lumot yozish un open() funksiyasiga murojat qilishda fayl nomidan tashqari yana bir argument beramiz.
+# Ikkinchi argument faylni aynana nima maqsadda ochishimizni bildiradi. argumentlar quyidagilardan iborat:
+
+#  Argument
+# Qoʻllanilishi
+# Mazmuni
+# 'w'    =    open('file.txt','w')
+# Faylni yozish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi. Fayl mavjud bo'lsa tarkibi o'chib ketadi
+# 'r' ==    open('file.txt','r')
+# Faylni faqat o'qish uchun ochish (yozib bo'lmaydi)
+# 'w+'   =     open('file.txt','w+')
+# Faylni o'qish va yozish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi. Fayl mavjud bo'lsa tarkibi o'chib ketadi. 
+# 'r+'   =    open('file.txt','r+')
+# Faylni o'qish va yozish uchun ochish.
+# 'a'  =    open('file.txt','a')
+# Faylga ma'lumot qo'shish uchun ochish. Fayl mavjud bo'lmasa yangi fayl yaratiladi.
+# 'a+'   =    open('file.txt','a+')
+# Faylga ma'lumot qo'shish va o'qish uchun yozish. Fayl mavjud bo'lmasa yangi fayl yaratiladi.     
+
+
+
+# Yangi faylga yozish
+
+# Yangi faylga ma'lumot yozish un open() funksiyasi chaqirishda "w"(write) argumentidan foydalanamiz.Ochilgan faylga ma'lumot qoshish un esa .write()
+# methodini chaqiramiz.
+
+faylnomi = "ustozlar.txt" # Yaratilgan fayl nomi
+with open(faylnomi,"w") as fayl:
+    fayl.write("Anvar Narzullayev") # Faylga yozilgan ma'lumot
+    
+with open("ustozlar.txt") as fayl:
+    UstozName = fayl.read()
+print(UstozName)
+
+
+# Diqqat!!! open() funksiyasini 'w' argumenti bilan chaqirganimizda ehtiyot bo'lishimiz kerak, sababi agar bunday fayl mavjud bo'lsa, uning ichidagi barcha ma'lumotlar o'chib ketadi
+
+# Faylga yozayotgan ma'lumotlarimiz matn ko'rinishida bo'lisihi kerak,aks holda dasturimiz xato beradi.
+faylnomi = "new_file.txt"
+ism="Mirzo Shomuratov"
+tyil =1999
+with open(faylnomi,"w") as fayl:
+    fayl.write(ism)
+    fayl.write(str(tyil))
+
+
+    
+# Natija: TypeError: write() argument must be str, not int
+
+# Xatolikni oldini olish un sonlarni avval str() funksiyasi yordamida matnga keltirib olamiz
+
+
+# faylnom = "family.txt"
+# father = "Sultonov Maqsudbek"
+# mother = "Saparova Hamidaxon"
+# Sister = "Shomuratova Iroda"
+
+# with open(faylnom,"w") as fayl:
+#     fayl.write(father)
+#     fayl.write(mother)
+#     fayl.write(Sister)
+    
+# with open("family.txt") as fayl:
+#     allFam = fayl.read()
+# print(allFam)
+
+
+# Fayllar matn formatida yoziladi va biz uni istalgan matn muhariri yordamida ochib ko'rishimiz mn.
+
+# Afsuski, faylga bir nechta ma'luot yozganimizda, ma'luotlaralohida qatordan emas, bir qatorda bir-biriga qo'shib yoziladi.
+# Buning oldini olishimiz un matn so'ngida \n belgisini qo'shib ketishimiz kk bo'ladi.
+
+faylnom = "family.txt"
+father = "Sultonov Maqsudbek"
+mother = "Saparova Hamidaxon"
+Sister = "Shomuratova Iroda"
+
+with open(faylnom,"w") as fayl:
+    fayl.write(father+ '\n')
+    fayl.write(mother+ '\n')
+    fayl.write(Sister+ '\n')
+    
+with open("family.txt") as fayl:
+    allFam = fayl.read()
+    print(allFam)
+
+
+# Faylga ma'lumot qo'shish
+
+# Agar mavjud faylga ma'luot qo'shish talab qilinsa, open() funksiyasiga murojat qilishda "a" (append) argumentidan foyfadladnamiz.Bunda Yangi qo'shilgan ma'luotlar faylning oxiriga qo'shiladi.
+with open(faylnom,'a') as fayl:
+    fayl.write("Latifbek Shomuratov\n")
+    fayl.write("2005")
+    
+with open("family.txt") as fayl:
+    allFam = fayl.read()
+    print(allFam)
+# agarda biz ochayotgan fayl mavjud bo'lmasa,python yangi fayl yaratadi.
+
+# O'zgaruvchilarni faylda saqlash
+
+# Yuqorida biz ma'lumotlarni matn ko'rinishida saqlashni ko'rdik.Agar dastur davomida turli o'zgaruvchilarni faylda saqlash talab qilinsa,pickle modulidan foydalanamiz.Pickle malumotlarini biz qanday ko'rinishdia bersak,shunday ko'rinishda faylga  yozadi.Yuqoridagi usuldan farqli ravishda,pickle yordamida yozilgan fayllarning tarkibini Pythondan tashqarida ko'rib bo'lmaydi.
+
+# Pickle faylga yozish
+# Pickledan foydalanish un biz avval bu modulni import qilamiz
+# Faylni ochishda esa,open() funksiyasiga ikkinchi argument sifatida "wb"(write binary) beramiz,ya'ni ikkilik sanoq sistemasida yozishni ko'rsatamiz.Faylga yozish un esa pickle.dump() methodidan foydalanamiz:
+
+import pickle
+
+talaba1 = {"ism":"Mirzo","familya":"Shomuratov","tyil":1999}
+talaba2 = {"ism":"Sherzod","familya":"Nurmetov","tyil":2003}
+
+with open('info.dat','wb') as file: # bu yerda fayl nomini o'zimiz hoxlagancha qoyishimiz mn,keyinchalik adashib ketmaslik un 
+    pickle.dump(talaba1, file)
+    pickle.dump(talaba2, file)
+
+    
+
+# Pickle fayldan o'qish
+
+# Pickle fayldan o'qish un open() funksiyasni "rb" (read binary) argumenti bn chaqiramiz.O'zgaruvchilarni bitta faylga yozganimizda,har bir o'zgaruvchi alohida qatordan yoziladi.Fayldan o'qish un ham, har bir qatorni alohida o'qishimiz kk.
+with open("info.dat","rb") as file:
+    talaba1 = pickle.load(file)
+    talaba2 = pickle.load(file)
+    
+print(talaba1)
+
+# Adashib ketmaslik uchun, alohida o'zgaruvchilarni alohida fayllarga saqlash tavsiya qilinadi.
+
+
+
+
+
+
+
+   
+
+
