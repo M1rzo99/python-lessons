@@ -218,9 +218,16 @@ with open('info.dat','wb') as file: # bu yerda fayl nomini o'zimiz hoxlagancha q
 
     
 
+# Pickle fayldan o'qish
 
+# Pickle fayldan o'qish un open() funksiyasni "rb" (read binary) argumenti bn chaqiramiz.O'zgaruvchilarni bitta faylga yozganimizda,har bir o'zgaruvchi alohida qatordan yoziladi.Fayldan o'qish un ham, har bir qatorni alohida o'qishimiz kk.
+with open("info.dat","rb") as file:
+    talaba1 = pickle.load(file)
+    talaba2 = pickle.load(file)
+    
+print(talaba1)
 
-
+# Adashib ketmaslik uchun, alohida o'zgaruvchilarni alohida fayllarga saqlash tavsiya qilinadi.
 
 
 
