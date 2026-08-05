@@ -78,9 +78,31 @@ print(bemor_json)
 
 
 
+# Json.dump()
+ # Ma'lumotlarni JOSN formatiga o'tkazish va faylga saqlash un json.dump() funksiyasini chaqiramiz.Funksiya parametri sifatida o'zgaruvchi va fayl nomini ko'rsatamiz.
+ # Albatda buning un avval faylni ochgan bo'lishimiz kerak. 
+ 
 
+bemor = {
+  "ism": "Alijon Valiyev",
+  "yosh": 30,
+  "oila": True,
+  "farzandlar": ("Ahmad","Bonu"),
+  "allergiya": None,
+  "dorilar": [
+    {"nomi": "Analgin", "miqdori": 0.5},
+    {"nomi": "Panadol", "miqdori": 1.2}
+  ]
+}
 
+# bemor objectini json formatga o'tkazadi va bemor.json faylg saqlaydi
+with open("bemor.json",'w') as f:
+    json.dump(bemor,f)
 
+# bemor.jsonga asaqlangan faylni o'qiydi.
+with open("bemor.json") as file:
+    info = file.read()
+print(info)
 
 
 
