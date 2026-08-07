@@ -120,7 +120,9 @@ print(type(bemor))
 #Natija: <class 'dict'>
 
 
+#JSON BILAN ISHLASH
 
+#Ko'pincha internet orqali JSON fayllarni qabul qilganimizda ma'lumotlar bir necha qavatli lug'at ko'rinishida bo'ladi. JSON matnidan aynan o'zimizga kerakli ma'lumotni ajratib olish uchun lug'atni biroz tahlil qilish, uning kalitlari va qiymatlarini topish talab qilinishi mumkin. Bu ayniqsa juda uzun JSON fayllarga tegishli. Shuning uchun JSON bilan samarali ishlash uchun lug'atlar bilan ishlashni yana bir bor takrorlab oling.
 
 
 
