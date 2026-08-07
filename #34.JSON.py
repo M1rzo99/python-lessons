@@ -124,9 +124,21 @@ print(type(bemor))
 
 #Ko'pincha internet orqali JSON fayllarni qabul qilganimizda ma'lumotlar bir necha qavatli lug'at ko'rinishida bo'ladi. JSON matnidan aynan o'zimizga kerakli ma'lumotni ajratib olish uchun lug'atni biroz tahlil qilish, uning kalitlari va qiymatlarini topish talab qilinishi mumkin. Bu ayniqsa juda uzun JSON fayllarga tegishli. Shuning uchun JSON bilan samarali ishlash uchun lug'atlar bilan ishlashni yana bir bor takrorlab oling.
 
+#Keling shu ma'lumotlar orasidan tumanning geografik koordinatalrini topamiz. Avvalo, lug'atga ko'z yugurtirib chiqib, bizga kerak ma'lumotlar quyidagi ko'rinishda berilganini ko'rishimiz mumkin:
 
 
+#"location": {
+      #      "lat": 41.3645355,
+   #         "lng": 69.2281531
 
+#Bizga aynan latitude (kenglik) va longitude (uzunlik) qiymatlari kerak. Ular esa "location" kaliti ichidagi lug'atda lat va lng kalitlariga tegishli qiymatlarda joylashgan. location kalitining o'zi ham geometry kaliti ichida joylashganini ko'rishimiz mumkin.
+#Demak, lu'gat ichidan lat va lng qiymatlarini olish uchun quyidagi kodni yozamiz:
+
+
+#kenglik = data['geometry']['location']['lat']
+#uzunlik = data['geometry']['location']['lng']
+#print(f"{kenglik},{uzunlik}")
+#Natija: 41.3645355,69.2281531
 
 
 
