@@ -38,3 +38,20 @@ Created on Sat Aug  8 21:59:45 2026
 
 # Dastur natijasi
 # try-except operatorining afzalliklaridan biri, foydalanuvchiga tushunarsiz xatolar o'rniga, o'zimiz istagan, tushunarliroq matnni ko'rsatishimiz mumkin. Shuningdek, kompleks tizimlarda arzimagan xatoni deb dasturimiz to'xtab qolmaydi.
+
+
+
+
+#3.try-except-else
+# Yuqoridagi kodimizda biz try moduli ichida xato qaytarishi mumkin bo'lgan ifodani ham (tyil = int(tyil)), xato qaytmaganda bajarilishi kerak bo'lgan ifodani ham (print(f"Siz {2021-tyil} yoshdasiz") ) birdan yozib ketayapmiz. Aslida, bunday qilishimiz to'g'ri emas. 
+# To'g'ri usuli, bu avval xatoga tekshirish va xato yuz bermaganda bajariladigan ifodani alohida, else blokida yozish:
+
+# Copy
+# yosh = input("Yoshingizni kiriting: ")
+# try:
+#     yosh = int(yosh)    
+# except:
+#     print("Butun son kiritmadingiz")
+# else:
+#     print(f"Siz {2021-yosh} yilda tug'ilgansiz")
+# Albatta, yuqoridagi usul har doim ham qo'l kelavermaydi.
