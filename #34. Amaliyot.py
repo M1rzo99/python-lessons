@@ -79,4 +79,15 @@ for talaba in talabalar:
 
 
 
+#5.Quyidagi bog'lamaga kirsangiz, Wikipediadagi Python dasturlash tili haqidagi maqolani JSON ko'rinishida ko'rishingiz mumkin. Brauzerda chiqqan ma'lumotni JSON ko'rinishida saqlang (brauzerda Ctrl+S tugmasini bosib). Faylni Pythonda oching va konsolga maqolaning sarlavhasi (title) va qisqa matnini (extract) chiqaring: 
+with open("api.json")  as f:
+    read_api = json.load(f)
+
+maqola = read_api["query"]["pages"]["13801"]
+
+mavzu = maqola["title"]
+matn = maqola['extract']
+
+print(f"Mavzu: {mavzu}")
+print(f"Matn: {maqol}")
 
