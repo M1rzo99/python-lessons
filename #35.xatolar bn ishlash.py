@@ -171,8 +171,19 @@ for filename in files:
         print(talaba["ism"])
         
         
-        
-        
-        
-        
+#XATOLARNING OLDINI OLISH
+# Yuqorida xatolar yuz berganda,ularni ushlashni va dastur top'xtamaligni oldini olisni ko'rdik.
+#Lekin  try-except xatolarni oldini olishda yordam bera olmaydi.
+# Xatolarni oldini olish un esa: while tsikli yoki if-else yordamida oldini olsak bo'ladi.
+
+# Mavu boshidagi misolimizga qaytsak. Biz foydalanuvchi yoshini so'radik, va foydalanuvchi butun son kiritmagani sababli dasturni to'xtatdik. Aslida, while tsikli yordamida toki foydalanuvchi to'g'ri qiymat kritgunga qadar uning yoshini qayta-qayta talab qilishimiz mumkin:      
+while True :
+    yosh = input("Yoshingizni kiritng: ")
+    if yosh.isdigit(): #string ichidagi belgilar faqat raqamlardan iboratmi, shuni tekshiradi.
+        yosh  = int(yosh)
+        break
+print(f"Siz {2026-yosh} yilda tug'ilgansiz")
+  
+
+#Albatta yuqordagi usul barcha xatolar uchun ishlamaydi. Shunday xatolar bo'lishi mumkinki, biz ularni oldindan ko'ra olmasligimiz yoki, oldindan to'g'rila olmasligimiz, yoki xato foydalanuvchiga bog'liq bo'lmasligi mumkin. Shunday holatlarda, try-except operatorlari bizning xaloskorimiz bo'ladi.
         
