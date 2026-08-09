@@ -18,12 +18,40 @@
 
 #Keling,  yuqoridagi try-execpt yordamida xatolik chiqganda dasturimiz to'xtamasdan ishlashini ko'rib chiqamiz
 
+# yosh = input("Yoshingizni kiriting: ")
+
+# try: 
+#     yosh = int(yosh)
+#     print(f"Siz {2026-yosh} yilda tug'ilgansiz")
+# except:
+#     print("Butun son kiritmadingiz!")
+# print("Dastur davom etayapti")
+# print("Dastur tugadi")
+
+# Yuqorida except functioni ishladi va dasturimiz to'xtab qolmadi.Keyingi qismlarga o'tganini console orqali ko'rish mn.
+
+
+# try-except-else
+
+# Yuqoridagi kodimizda biz try moduli ichida xato qaytarishi mumkin bo'lgan ifodani ham (tyil = int(tyil)), xato qaytmaganda bajarilishi kerak bo'lgan ifodani ham (print(f"Siz {2021-tyil} yoshdasiz") ) birdan yozib ketayapmiz. Aslida, bunday qilishimiz to'g'ri emas. 
+# To'g'ri usuli, bu avval xatoga tekshirish va xato yuz bermaganda bajariladigan ifodani alohida, else blokida yozish:
+
 yosh = input("Yoshingizni kiriting: ")
 
 try: 
-    yosh = int(yosh)
-    print(f"Siz {2026-yosh} yilda tug'ilgansiz")
+        yosh = int(yosh)
+
 except:
-    print("Butun son kiritmadingiz!")
-print("Dastur davom etayapti")
-print("Dastur tugadi")
+        print("Butun son kiritmadingiz!")
+
+
+else:
+        print(f"Siz {2026-yosh} yilda tug'ilgansiz")
+        
+print("Dastur tugadi")     
+        
+# Lekin yuqoridagi usul har doim ham qo'l kelavermaydi.
+        
+        
+        
+        
