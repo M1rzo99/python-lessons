@@ -10,3 +10,16 @@ import json
 data = {"Model" : "Malibu", "Rang" : "Qora", "Yil":2020, "Narh":40000}
 data_json = json.dumps(data,indent = 2)
 print(data_json)
+
+#2. Ushbu JSON matnni ko'chirib oling, va talabaning ismi va familiyasini  konsolga chiqaring: 
+    #Buning un oldin
+    #1.Malumotni JOSN formatda filega saqlash kerak 
+    #2.JOSN formatni o'qib olsih lozim va print ga chiqasa bo'ladi.
+talaba_json = {"ism":"Hasan","familiya":"Husanov","tyil":2000}
+ 
+with open("talaba.json","w") as f:
+    json.dump(talaba_json,f)
+    
+with open("talaba.json") as f:
+    talaba  = json.load(f)
+print(talaba['ism'],talaba['familiya'])
