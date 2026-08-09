@@ -122,12 +122,21 @@ except FileNotFoundError:
    
     
    
-    
+ #BIR NECHTA XATOLARNI USHLASH  
+
+   #try-except ketma-ketligida bir nechta except operatorlari ham bo'lishi mumkin. Ularning har biri ma'lum turdagi xatolik uchun javobgar bo'ladi: 
    
     
-   
-    
-   
+n = input("Butun son kiriting: ")
+try:
+    n = int(n)
+    x=20/n
+except ValueError: # agar foydalanuvchi butun son kiritmasa
+    print("Butun son kiritmadingiz")
+except ZeroDivisionError: # agar foydalanuvchi 0 kiritsa
+    print("0 ga bo'lib bo'lmaydi")
+else:
+    print(f"x={x}")
     
    
     
