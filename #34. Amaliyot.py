@@ -15,6 +15,7 @@ print(data_json)
     #Buning un oldin
     #1.Malumotni JOSN formatda filega saqlash kerak 
     #2.JOSN formatni o'qib olsih lozim va print ga chiqasa bo'ladi.
+    
 talaba_json = {"ism":"Hasan","familiya":"Husanov","tyil":2000}
  
 with open("talaba.json","w") as f:
@@ -23,3 +24,40 @@ with open("talaba.json","w") as f:
 with open("talaba.json") as f:
     talaba  = json.load(f)
 print(talaba['ism'],talaba['familiya'])
+
+#3. Yuqoridagi ikki o'zgaruvchini alohida JSON fayllarga saqlang.
+
+# with open("ism.json",'w') as f:
+#     json.dump(talaba_json['ism'],f)
+    
+    
+# with open("familya.json",'w') as f:
+#    json.dump(talaba_json['familiya'],f)
+    
+# with open("familya.json") as f:
+#     fl = json.load(f)
+# print(fl)
+
+
+# with open("ism.json") as t:
+#     tl = json.load(t)
+# print(tl)
+
+
+import json
+
+fayllar = {
+    "ism": "ism.json",
+    "familiya": "familiya.json"
+}
+
+for kalit, fayl_nomi in fayllar.items():
+    with open(fayl_nomi, "w") as f:
+        json.dump(talaba_json[kalit], f)
+
+for kalit, fayl_nomi in fayllar.items():
+    with open(fayl_nomi) as f:
+        malumot = json.load(f)
+    print(malumot)
+
+
