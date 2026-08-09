@@ -98,7 +98,7 @@ key="tel"
 try:
     print(f"Foydalanuvchi: {user[key]}")
 except KeyError:
-    print("Bunday kalit mavjud emas!")
+    print("Bunday kalit mavjud emas!\n")
 
 # FileNotFounder - mavjud bo'lmagan fileni so'raganimizda
 
@@ -112,35 +112,67 @@ except KeyError:
 
 # Tepadagi xatolini ushlab qolish un except FileNotFoundError dan foydalanamiz
 
-filename = "data.txt" #bunday file mavjud emas
-try:
+# filename = "data.txt" #bunday file mavjud emas
+# try:
     
- with  open(filename) as f:
-     text = f.read()
-except FileNotFoundError:
-    print(f"Kechirasiz,{filename} fayli mavjud emas.Boshqa faylni tanlang!")
+#  with  open(filename) as f:
+#      text = f.read()
+# except FileNotFoundError:
+#     print(f"Kechirasiz,{filename} fayli mavjud emas.Boshqa faylni tanlang!")
    
     
    
  #BIR NECHTA XATOLARNI USHLASH  
 
-   #try-except ketma-ketligida bir nechta except operatorlari ham bo'lishi mumkin. Ularning har biri ma'lum turdagi xatolik uchun javobgar bo'ladi: 
+#try-except ketma-ketligida bir nechta except operatorlari ham bo'lishi mumkin.
+#Ularning har biri ma'lum turdagi xatolik uchun javobgar bo'ladi: 
    
     
-n = input("Butun son kiriting: ")
-try:
-    n = int(n)
-    x=20/n
-except ValueError: # agar foydalanuvchi butun son kiritmasa
-    print("Butun son kiritmadingiz")
-except ZeroDivisionError: # agar foydalanuvchi 0 kiritsa
-    print("0 ga bo'lib bo'lmaydi")
-else:
-    print(f"x={x}")
+# n = input("Butun son kiriting: ")
+# try:
+#     n = int(n)
+#     x=20/n
+# except ValueError: # agar foydalanuvchi butun son kiritmasa
+#     print("Butun son kiritmadingiz")
+# except ZeroDivisionError: # agar foydalanuvchi 0 kiritsa
+#     print("0 ga bo'lib bo'lmaydi")
+# else:
+#     print(f"x={x}")
     
-   
-    
-   
+# Xatolarni ko'rsatmay o'tish
 
+#Yuqoridagi misollarda kodimiz xato qaytarganda, dasturimiz foydalanuvchiga qandaydur ma'lumotni ko'rsatayapti:   
+   
+import json
+files = ['talaba1.json','talaba2.json','talaba3.json','talaba4.json']
+for filename in files:
+    try:
+        with open(filename) as f:
+            talaba = json.load(f)        
+    except FileNotFoundError:
+        print(f"{filename} mavjud emas")
+    else:
+        print(talaba['ism'])
+        # fayl ustida turli amallar 
+        
+        
+# Hech qanday ma'lumot ko'rsatmay,dasturni davom ettirsihni istasak pass ooperatoridan foydalanamiz.
+# Odatda pass operatoridan funksiyalar yoki operatorlar badanini "to'ldirib" ketish un ishlatamiz.Ya'ni agar iz except operatori yozsagu, uning badanida hech narsa bajarishni istamasak,pass operatorini ishlatamiz.
+print("\nQuyida pass operatoridan foydalandik. Yuqoridan faqrli o'laroq mavjud bo'lamaganm fillarni ko'rsatmaydi:\n")
+import json
+files=['talaba1.json','t2.json','t3.json','t4.json']   
+for filename in files:
+    try:
+        with open(filename) as f:
+            talaba= json.load(f)
+    except FileNotFoundError:
+        pass
+    else:
+        print(talaba["ism"])
+        
+        
+        
+        
+        
         
         
