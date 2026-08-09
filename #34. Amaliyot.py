@@ -59,5 +59,24 @@ for kalit, fayl_nomi in fayllar.items():
     with open(fayl_nomi) as f:
         malumot = json.load(f)
     print(malumot)
+    
+    
+#4.Quyidagi JSON faylni yuklab oling. Faylda 3 ta talabaning ism va familiyasi saqlangan. Ularning har birini alohida qatordan "Ism Familiya, n-kurs, Fakultet talabasi" ko'rinishida konsolga chiqaring.
+
+with open("students.json") as f:
+    st_tartib = json.load(f)
+print(st_tartib)
+
+talabalar = st_tartib["student"] # BU yerda stundent kalitning qiymatini oladi va talabalar nomli o'zgaruvchiga saqlaydi.
+
+for talaba in talabalar:
+    ism = talaba["name"]
+    familiya = talaba["lastname"]
+    kurs = talaba["year"]
+    fakultet = talaba["faculty"]
+
+    print(f"{ism} {familiya}, {kurs}-kurs, {fakultet} talabasi")
+
+
 
 
