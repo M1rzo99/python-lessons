@@ -10,13 +10,16 @@
 # # Pythonda bu jarayonni osonlashtirish uchun maxsus unittest moduli mavjud. unittest yordamida alohida funksiya, obyekt yoki butun boshli modulni ham tekshirshimiz mumkin. Lekin, tavsiya qilingan usuli bu testni dastavval kichik qismlardan boshlab, kengaytirib borish. 
 
 # Boshlanishiga biror sodda funksiya yozamiz. Quyidagi funksiya foydalanuvchi ismi va familiyasini qabul qiladi, va ism familiyani jamlab qaytaradi:
-def get_full_name(ism, familiya, otasi=''):
-    if otasi:
-        return f"{ism} {otasi} {familiya}".title()   
-    else:
-        return f"{ism} {familiya}".title()
+# def get_full_name(ism, familiya, otasi=''):
+#     if otasi:
+#         return f"{ism} {otasi} {familiya}".title()   
+#     else:
+#         return f"{ism} {familiya}".title()
 
 
 # def get_fam(mo,fa,sis,bro):
 #     return f"{mo},{fa},{sis},{bro}"
 # print(get_fam("hamida","maqsud","iroda","latif"))
+
+# Sonlarni tekshirish
+
