@@ -19,3 +19,10 @@ def eng_katta(a,b,c):
         
     return katta
 print(eng_katta(10,8,7))
+
+#2.Amaliyot
+#Matnlardan iborat ro'yxat qabul qilib, ro'yxatdagi har bir matnning birinchi harfini katta harfga o'zgatiruvchi funksiya
+
+def get_fam(mother,father,brother):
+    return f"{mother},{father},{brother}".title()
+print(get_fam("khamida", "maqsud", 'latif'))
