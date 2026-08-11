@@ -17,4 +17,40 @@ class tubSonTest(unittest.TestCase):
         self.assertFalse(tubSon(20))
 unittest.main()
 
-#Test davomida tubSonmi() funksiyasini bir nechta tub (7, 193, 547) va tub bo'lmagan (6, 265, 489) sonlar bilan chaqirdik. Bunda assertTrue() metodi funksiyamiz haqiqatdan ham True qiymatini qaytarishini, assertFalse() metodi esa funksiyamiz False qiymat qaytarishini tekshiradi.
+#Test davomida tubSonmi() funksiyasini bir nechta tub (7, 193, 547) va tub bo'lmagan (6, 265, 489) sonlar bilan chaqirdik. 
+#Bunda assertTrue() metodi funksiyamiz haqiqatdan ham True qiymatini qaytarishini, assertFalse() metodi esa funksiyamiz False qiymat qaytarishini tekshiradi.
+
+
+#TAQQOSLASH METODLARI
+# TestCase klassi tarkibidagi boshqa taqqoslash metodlari ham mavjud:
+
+# Metod   Nimani taqqoslaydi?
+# assertEqual(a, b) a == b
+# assertNotEqual(a, b) a != b
+# assertTrue(x) x ning qiymati True
+# assertFalse(x) x ning qiymati False
+
+# assertIsNot(a, b)
+# a bu b emas
+#  assertIsNone(x)
+# x ning qiymati None
+#  assertIsNotNone(x)
+# x ning qiymati None emas
+#  assertIn(a, b)
+# a b ning ichida
+#  assertNotIn(a, b)
+# a b ning ichida emas
+#  assertIsInstance(a, b)
+# a b ning vorisi
+#  assertNotIsInstance(a, b)
+# a b ning vorisi emas
+
+
+
+
+
+
+
+
+
+
