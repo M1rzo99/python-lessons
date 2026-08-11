@@ -26,3 +26,27 @@ print(eng_katta(10,8,7))
 def get_fam(mother,father,brother):
     return f"{mother},{father},{brother}".title()
 print(get_fam("khamida", "maqsud", 'latif'))
+
+#3.Amaliyot
+#Berilgan sonlar ro'yxatidan juft sonlarni ajratib oluvchi funksiya
+
+def juftSon(sons):
+    juftlar=[]
+    for son in sons:
+        if son %2 ==0:
+            juftlar.append(son)
+    return juftlar
+
+sons=[1,2,3,4,5,5,6,7,8,9,10]
+print(juftSon(sons))
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
