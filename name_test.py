@@ -1,6 +1,6 @@
 import unittest # unittest modulini import qilamiz va biz modul,function larni test qilishda yordam beradi,
 from name import get_full_name # name nomli module ichidan biz test qilmoqchi bo'lgan functionni import qilamiz
-from name import get_fam
+
 
 # class NameTest(unittest.TestCase): # class ga nom beramiz va unttest niichidagi TestCaase dan foydalanamiz.
 #     def test_toliq_ism(self): #Funksiya yaratamiz
@@ -8,12 +8,12 @@ from name import get_fam
 #         self.assertEqual(formatted_name, "Mirzo Shomuratov")# Va biz kutayaotgan qiymat ni ko'rsatamiz
 # unittest.main()
 
-class My_fam(unittest.TestCase):
-    def test_fam_memebers(self):
-        format_fam_mem = get_fam("hamida",'maqsud','latif','iroda')
-        self.assertEqual(format_fam_mem, "hamida,maqsud,latif,iroda")
+# class My_fam(unittest.TestCase):
+#     def test_fam_memebers(self):
+#         format_fam_mem = get_fam("hamida",'maqsud','latif','iroda')
+#         self.assertEqual(format_fam_mem, "hamida,maqsud,latif,iroda")
                 
-unittest.main()
+# unittest.main()
 
 
 # Dasturni tahlil qilamiz:
@@ -30,3 +30,27 @@ unittest.main()
 
 # OK
 # Natijadan bitta test bajarilganini va va bu test muvaffaqiyatli o'tganini (OK) ko'rishimiz mumkin.
+
+
+
+class NameTest(unittest.TestCase):
+    def test_toliq_ism(self):
+        formatted_name = get_full_name('alijon','valiyev')        
+        self.assertEqual(formatted_name, 'Alijon Valiyev')
+    # def test_toliq_ism_otasi(self):
+    #     name = get_full_name('hasan','olimovich','husanov')
+    #     self.assertEqual(name,'Hasan Olimovich Husanov')
+
+unittest.main()
+            
+
+
+
+
+
+
+
+
+
+
+
