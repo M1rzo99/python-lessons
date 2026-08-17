@@ -90,9 +90,18 @@ unittest.main()
 #Shuning uchun ham, test_create() funksiyasi ichida biz yangi obyekt yaratmasdan, setUp() ichidagi avto1 va avto2 obyektlariga murojat qildik.
 
 
-
-
 # Methodlarni tekshirish
 # Obyektlarimiz bir nechta methodlardan iborat.Ularning har biri un alohida test yozamiz. 
 #Bu methodlarni CarTest ichiga yozishni unutmaymiz.
 
+#Navbat get_info() metodiga. 
+# bu method ham obyektning xususiyatlaridan kelib chiqgan holda 2 xil qiymat qaytarishi mn,demak testimiz bu ikki holatni hisobga olishi kk.
+def test_get_info(self):
+    avto1_info="GM Malibu,2020-yil, 0km yurgan."
+    self.assertEqual(avto1_info,self.avto1.get_info())
+    # avto1 narhi va km o'zgartiramiz
+    self.avto1.set_price(50000)
+    self.avto1.add_km(20000)
+    avto1_info = "GM Malibu,2020-yil,20000km yurgan.Narhi: 50000"
+    self.assertEqual(avto1_info,self.avto1.get_info())
+unittest.main()
