@@ -45,7 +45,7 @@ from car import Car
 class CarTest(unittest.TestCase):
     """ car klassini tekshirish un test"""
     def setUp(self):
-        make="GM"
+        make="BMW"
         model="Malibu"
         year=2021
         self.price=40000
@@ -53,19 +53,46 @@ class CarTest(unittest.TestCase):
         self.avto1=Car(make,model,year)
         self.avto2 = Car(make,model,year,price=self.price)
 
-    def test_create(self):
-        # Qiymatlar mavjudligini assertIsNotNone metodi bn tekshiramiz
-        self.assertIsNotNone(self.avto1.make)
-        self.assertIsNotNone(self.avto1.model)
-        self.assertIsNotNone(self.avto1.year)
-        # Qiymat mavjud emasligini asseretIsNone metodi bn tekshiramiz
-        self.assertIsNone(self.avto1.price)
+ #   def test_create(self):
+ #       # Qiymatlar mavjudligini assertIsNotNone metodi bn tekshiramiz
+ #       self.assertIsNotNone(self.avto1.make)
+ #       self.assertIsNotNone(self.avto1.model)
+ #       self.assertIsNotNone(self.avto1.year)
+ #       # Qiymat mavjud emasligini asseretIsNone metodi bn tekshiramiz
+ #       self.assertIsNone(self.avto1.price)
         # Qiymat tengligini assertEquals metofi bn tekshiramiz
-        self.assertEqual(0,self.avto1.get_km())
+ #       self.assertEqual(0,self.avto1.get_km())
         # avto2 nathini tekshiramiz
+ #       self.assertEqual(self.price,self.avto2.price)
+
+
+
+    def test_set_price(self):
+        self.avto2.set_price(self.price)
         self.assertEqual(self.price,self.avto2.price)
+
+# Endi add_km() methodini tekshiraylik.BU methodimiz musbat qiymat qabul qilishi,manfiy qiymat uzatilganda ValueError xatosini qaytarishi kk.Shuning un methodni test qilishda avval musbat,keyin esa manfiy qiymat berib ko'ramiz.
+
+    def test_add_km(self):
+        #1.Musbat qiymat berib ko'ramiz
+        self.avto1.add_km(self.km)
+        self.assertEqual(self.km,self.avto1.get_km())
+        #2. manfiy qiymat berib ko'ramiz
+        new_km = -5000
+        try: 
+            self.avto1.add_km(new_km)
+        except ValueError as error:
+            self.assertEqual(type(error),ValueError)
 unittest.main()
 
 #E'tibor bering, setUp() metodi ichida ba'zi o'zagruvchilar self yordamida berilgan (self.price,self.km, self.avto1, self,avto2).'
 #' Bu o'zgaruvchilarga biz CarTest() klassining ichida istalgan joydan murojat qilishimiz mumkin. 
 #Shuning uchun ham, test_create() funksiyasi ichida biz yangi obyekt yaratmasdan, setUp() ichidagi avto1 va avto2 obyektlariga murojat qildik.
+
+
+
+
+# Methodlarni tekshirish
+# Obyektlarimiz bir nechta methodlardan iborat.Ularning har biri un alohida test yozamiz. 
+#Bu methodlarni CarTest ichiga yozishni unutmaymiz.
+

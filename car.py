@@ -30,6 +30,6 @@ class Car:
         return self.__km #7. Avtomobil narxini ko'rish un get_km() metodiga murojat qilamiz.
     
 car1= Car("GM","Malibu",2020,10000,25000)
-print(car1.get_km())
+print(car1.get_info())
 
 
