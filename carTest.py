@@ -5,24 +5,24 @@
 import unittest
 from car import Car
 
-class CasrTest(unittest.TestCase):
-    """Car klassini test qilish"""
+#class CasrTest(unittest.TestCase):
+ #   """Car klassini test qilish"""
 
-    def test_create(self):
+ #   def test_create(self):
         # avto1 obyektini km va narhini bilmasdan tekshiramiz
-        avto1 = Car("BMW","camry",2020)
-        # Qiymatlar mavjudligini assertIsNotNone methodi bn tekshiramiz
-        self.assertIsNotNone(avto1.make)
-        self.assertIsNotNone(avto1.model)
-        self.assertIsNotNone(avto1.year)
+ #       avto1 = Car("BMW","camry",2020)
+ #       # Qiymatlar mavjudligini assertIsNotNone methodi bn tekshiramiz
+ #       self.assertIsNotNone(avto1.make)
+ #       self.assertIsNotNone(avto1.model)
+  #      self.assertIsNotNone(avto1.year)
         # Qiymat mavjud emasligini assertIsNone metodi bn tekshiramiz 
-        self.assertIsNone(avto1.price)
+  #      self.assertIsNone(avto1.price)
         # Qiymat tengligini assertEquals metodi bn tekshiramiz
-        self.assertEqual(0,avto1.get_km())
+   #     self.assertEqual(0,avto1.get_km())
         # Yangi Obyekt yaratamiz va narhni ham ko'rsatamiz
-        avto2 = Car("BMW","carmy",2020,price=45000)
-        self.assertEqual(45000,avto2.price)
-unittest.main()
+   #     avto2 = Car("BMW","carmy",2020,price=45000)
+   #     self.assertEqual(45000,avto2.price)
+#unittest.main()
 
 
 # Testimizni tahlil qilamiz. Dastaval biz obyektimiz to'g'ri yaratilayotganini tekshrish uchun avto1 obyektini 3 ta prametr bilan yaratib oldik (make, model, year) va  bu xususiyatlar bo'sh emasligini  assertIsNotNone() metodi bilan tekshirdik. 
@@ -34,3 +34,38 @@ unittest.main()
 #Testlarni yozishni davom etamiz. Navbat obyektga tegishli turli metodlarga.
 
 #Test dasturlarni alohida faylga yozishni unutmang.
+
+
+# setIUp() methodi.
+
+# Yuqoridagi misolda bitta test davomida 2 ta obyekt yaratdik, va obyektning parametrlarini qo'lda yanigdan kiritdik. Agar shu yo'sinda davom etsak,turli testlar un har gal yangi obyekt yaratishimiz, va ularning har biriga xususiyatlarni qayta-qayta kiritishimiz talab qilinadi. 
+# Buning oldini olish un test klassimizning boshida setUp() metofini yaratib, bu method ichida barcha kerakli qiymatlarni va obyektlarni saqlab qo'yishimiz va turli testlarsda shu qiymatlarga murojat qilihimiz mn.
+
+
+class CarTest(unittest.TestCase):
+    """ car klassini tekshirish un test"""
+    def setUp(self):
+        make="GM"
+        model="Malibu"
+        year=2021
+        self.price=40000
+        self.km=10000
+        self.avto1=Car(make,model,year)
+        self.avto2 = Car(make,model,year,price=self.price)
+
+    def test_create(self):
+        # Qiymatlar mavjudligini assertIsNotNone metodi bn tekshiramiz
+        self.assertIsNotNone(self.avto1.make)
+        self.assertIsNotNone(self.avto1.model)
+        self.assertIsNotNone(self.avto1.year)
+        # Qiymat mavjud emasligini asseretIsNone metodi bn tekshiramiz
+        self.assertIsNone(self.avto1.price)
+        # Qiymat tengligini assertEquals metofi bn tekshiramiz
+        self.assertEqual(0,self.avto1.get_km())
+        # avto2 nathini tekshiramiz
+        self.assertEqual(self.price,self.avto2.price)
+unittest.main()
+
+#E'tibor bering, setUp() metodi ichida ba'zi o'zagruvchilar self yordamida berilgan (self.price,self.km, self.avto1, self,avto2).'
+#' Bu o'zgaruvchilarga biz CarTest() klassining ichida istalgan joydan murojat qilishimiz mumkin. 
+#Shuning uchun ham, test_create() funksiyasi ichida biz yangi obyekt yaratmasdan, setUp() ichidagi avto1 va avto2 obyektlariga murojat qildik.
