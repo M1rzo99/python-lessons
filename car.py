@@ -31,3 +31,5 @@ class Car:
     
 car1= Car("GM","Malibu",2020,10000,25000)
 print(car1.get_km())
+
+
