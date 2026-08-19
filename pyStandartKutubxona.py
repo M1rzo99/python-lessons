@@ -102,3 +102,17 @@ math.tan(PI)
 # shuningdek degrees sva radians methodlari yordamida burchakdan radianga va aksincha konvertasiya qilishimiz mn:
 math.degrees(math.pi/2)
 math.radians(90)
+
+#4. Logorifmlar
+# log() va log10() funksiyalari yordamida natural va o'n asosli logarifmlarni hisoblash mn.
+#natural logarifm
+print(math.log(5))
+# 10 asosli logarifm
+print(math.log10(100))
+
+#5. Sonlarni Yaxlitlash
+
+# Sonlarni Yaxlitlashning Pythinda maxsus round() funcsiyasi mavjud. Bunga qo'shimcha,math moduli ichidagi ceil() funksiyasi yordamida berilgan o'nlik sonni keyingi butun songa,floor() yordamida esa quyi butun songa yaqinlashtirish mn.
+x=4.6
+print(math.ceil(x))
+print(math.floor(x))
