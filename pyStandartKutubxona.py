@@ -81,8 +81,11 @@ print(sana_vaqt)
 # bu modul o'z ichida metamatikaga oid turli funksiyalar va o'zgaruvhcilarni saqlaydi.
 # Keling ularni bazilari bn tanishamiz.
 
-# P ning qiymati
-
+#1. P ning qiymati
 import math
 PI = math.pi
 print(f"PI ning qiymati: {PI}")
+
+#2. e - natural logarifm asosi
+E = math.e
+print(f"e ning qiymati: {E}")
