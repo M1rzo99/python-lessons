@@ -86,6 +86,19 @@ import math
 PI = math.pi
 print(f"PI ning qiymati: {PI}")
 
-#2. e - natural logarifm asosi
+#2. e - natural logarifm asosi. e ko'pincha o'sish va kamayish jarayonlarini hisoblashda ishlatilinadi.
+# Misol un: bankdagi foizlar,aholi o'sishi,fizikadaffi jarayonlar,ehtimolli,AI va statistika.
+# Logarifm nima? Qaysi darajaga ko'tarish kerak Ya'ni 2 ni nechanchi darajaga ko'tarsak x(8 )bo'ladi?
+# loga b = c. log2 8 = 3. 2 ning 3 darajasi 8 bo'ladi
+# log10 100=2 -> 10 ning 2 chi darajasi 100 bo'ladi.
 E = math.e
 print(f"e ning qiymati: {E}")
+
+#3. Trigonametriya. Modul tarkibida deyarli barcha trigonometrik funksiyalar mavjud(cos,sin,tangens,across va hkz)
+math.sin(math.pi/2)
+math.cos(0)
+math.tan(PI)
+
+# shuningdek degrees sva radians methodlari yordamida burchakdan radianga va aksincha konvertasiya qilishimiz mn:
+math.degrees(math.pi/2)
+math.radians(90)
