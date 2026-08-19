@@ -74,3 +74,15 @@ print(f"Bugun sana: {sana}")
 # sanani kun/oy/yil koʻrinishida chiqaramiz
 sana_vaqt = hozir.strftime("%d/%m/%Y, %H:%M")
 print(sana_vaqt)
+
+
+# math —MATEMATIK FUNKSIYALAR
+
+# bu modul o'z ichida metamatikaga oid turli funksiyalar va o'zgaruvhcilarni saqlaydi.
+# Keling ularni bazilari bn tanishamiz.
+
+# P ning qiymati
+
+import math
+PI = math.pi
+print(f"PI ning qiymati: {PI}")
