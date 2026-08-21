@@ -142,3 +142,46 @@ with open(filename) as f:
     bemor = json.load(f)
 #print(bemor)
 pprint(bemor)
+
+
+# RegEx - andoza yordamida matn izlash
+#Pythondagi juda foydali modullardan biri bu re (regular expressions) moduli.
+# Bu modul yordamida biror matn berilgan andozaga tushish, tushmalsigini tekshrib ko'rishimiz mumkin. Yoki berilgan andoza asosida matnlar orasidan kerakli matnlarni ajratib olish mumkin.
+
+
+#Keling boshlanishiga sodda misol ko'ramiz. Quyida biz 3 ta so'z va so'zlarni tekshirish uchun andoza yaratdik. 
+# Quyidagi andozamiz т harfidan boshlanuvchi (^т), р harfiga tugovchi (р$), 5 harfdan iborat so'zlarni qidiradi (^т...р$). 
+
+#So'zlarni andozaga solishtirish uchun re.match() funksiyasidan foydalanamiz. 
+# Agar tekshirgan so'zimiz andozaga mosh tushsa, re.match() metodi so'zni o'zini qaytaradi, aks holda None qiymatini qaytaradi.
+
+# import re
+# word1 = "темир"
+# word2 = "томир"
+# word3 = "тулпор"
+#  # Yani bosh harfi T va oxirgi harfi R bn tugaydigan 5 harfdan ibordat so'zni qidiradi,mos kelsa shu so'zni chiqaradi bo'lmasa None qaytaradi.
+# #andoza = "^т...р"
+# print(re.match(andoza,word1))
+# print(re.match(andoza,word2))
+# print(re.match(andoza,word3))
+
+# Keling endi,so'z topish o'yinida ishlatilgan so'zlar ro'yhatidan fiydalanamiz va ro'yhatdan biz bergan andozaga tushuvchi so'zlarni ajratib oalmiz
+import re
+from uzwords import words
+andoza= "^a..a$"
+matches = []
+for word in words:
+    if re.match(andoza,word,re.IGNORECASE):
+        matches.append(word)
+print(matches) 
+
+# https://ihateregex.io/ - tel raqam,email yoki kerakli so'zlarni ajratib olish un andozalar to'plami.
+
+# Pastdagi matndan biror bir email ni ajratib olamiz.
+matn = """Maqolalar  2020-yilning 20-martiga qadar rtmkonferensiya2021@mail.ru elektron pochtasida qabul qilinadi.
+Quyidagi yo'nalishdagi maqolalar qabul qilinadi:
+👉 Aniq va tabiiy fanlarni zamonaviy pedagogik texnologiyalar asosida o‘qitish  metodikasi.
+👉 Umumta’lim  fanlarini o‘qitishda  STEAM yondashuvning o’rni va ahamiyati. """
+andoza = '[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'
+email = re.findall(andoza,matn)
+print(email)
