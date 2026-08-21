@@ -114,5 +114,31 @@ print(math.log10(100))
 
 # Sonlarni Yaxlitlashning Pythinda maxsus round() funcsiyasi mavjud. Bunga qo'shimcha,math moduli ichidagi ceil() funksiyasi yordamida berilgan o'nlik sonni keyingi butun songa,floor() yordamida esa quyi butun songa yaqinlashtirish mn.
 x=4.6
-print(math.ceil(x))
-print(math.floor(x))
+print(math.ceil(x)) # O'nlikdan yuqori butun songa
+print(math.floor(x)) # O'nlikdan past butun songa
+
+#6. Ildiz va daraja.
+# Berilgan sonning kvadrat ildizini hisoblsdh un sqrt(), sonni darajaga oshirish un esa pow() funksiyalariga murojat qilamiz:
+x=81
+# kvadrat ildiz
+print(math.sqrt(x))
+
+print(math.pow(x,3)) # x ning kubi
+print(math.pow(x,5)) # x ning 5-darajasi
+print(math.pow(x,1/3)) # x dan kub ildiz. x ning qiymatini 3 marta o'ziga bo'lish demakdir.
+
+# math moduli tarkibida boshqa funksiyalar ham mavjud. Yuqorida biz ularning ba'zilari bilan tanishdik. Bu modul asosan butun va oʻnlik sonlar bilan ishlashga moʻljallangan. Kompleks sonlar bilan ishlash uchun cmath moduliga murojat qilishingiz mumkin.
+
+
+
+#pprint - CHIROYLI PRINT
+# pprint yordamida turli o'zgaruvchilarni chiroyli ko'rinishda konsolga chiqarishimiz mn.BU bizga uzun lug'atlar,JSON fayllar yoki matnlar bn ishlashda juda asqotadi.
+# Misol un bemor.json faylini yaratamiz, oldin print() keyin pprint() yodamida lug'atga chiqarib, farqini ko'ramiz.
+
+from pprint import pprint
+import json
+filename="bemor.json"
+with open(filename) as f:
+    bemor = json.load(f)
+#print(bemor)
+pprint(bemor)
