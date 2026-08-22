@@ -43,7 +43,6 @@ print(f"Kechki vaqt: {vaqtKeyin} da ko'rishamiz!")
 # ayirish operatori yordamida sanalar va vaqtlar orasidagi farqni hisoblash mn:
 bugun  = dt.date.today()
 ramazon = dt.date(2027,2,8)
-
 farq = ramazon -bugun
 print(farq)
 print(f"Ramazonga {farq.days} kun qoldi.")
@@ -188,7 +187,6 @@ print(email)
 
 # Andoza yordammida foydalanuvhci kiritgan qiymatlarni ham ma'lum shartlarga jb berishini tekshirib olishimmiz mn.
 
-
 # Kuchli parolni tekshirish
 andoza = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$'
 msg = "Yangi parol kiriting"
@@ -201,3 +199,12 @@ while True:
         break
     else:
         print("Maxfiy so'z shartlarga mos kelmadi!")
+
+# Amalaiyot: 
+#1.Bugungi sanadan boshlab 2 hafta farq bilan 10 ta sanani konsolga chiqaring
+#5.Berilgan matndan veb sahifa manzilini ajratib olyuvchi funksiya yozing. Quyidagi matndan namuna sifatida foydalanishingiz mumkin:
+
+matn2 = "Assalom alaykum hurmatli do'stlar. Navbatdagi darsimiz YouTubega yuklandi: https://youtu.be/vsxJPRLXpgIUshbu darsimizda unittest moduli yordamida klasslarning xususiyatlar va metodlarini tekshiruvchi dastur yozishni o'rganamiz. Bugungi dars manzili: https://python.sariq.dev/testing/37-klass-test"
+andoza2 = r"https?://[^\s)\]]+"
+url = re.findall(andoza2,matn2)
+print(url)
