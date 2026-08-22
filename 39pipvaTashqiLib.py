@@ -13,6 +13,30 @@
 from googletrans import Translator
 tarjimon = Translator()
 matn_uz = "Python dunyodagi eng mashhur dasturlash tili"
-tarjima = tarjimon.translate(matn_uz,dest="ru") # Agar ingliz tilidan boshqa tillarga tarjima qilmoqhchi bo'lsak,dest="" shu tilni qisqartmasni berib ketamiz
+tarjima = tarjimon.translate(matn_uz,src="uz",dest="ru") # Agar ingliz tilidan boshqa tillarga tarjima qilmoqhchi bo'lsak,dest="" shu tilni qisqartmasni berib ketamiz
 print(f"Tarjima: {tarjima.text}")
+ # odatda python tarjima qilinishi kerak bo'lgan matnni avtomatik aniqlayti.Lekin matn tilini bildirmoqchi bo'lsaiz, src=" " orqali berib ketish mn.
 
+# Requests
+# pip install requests
+#Bu paket yordamida Pythonda veb sahifalarga murojat qilishimiz (so'rov yuborishimiz) va ulardan qaytgan ma'lumotlar ustida turli amallar bajarishimiz mumkin. 
+# Misol uchun quyida requests yordamida kun.uz sahifasini to'liqligicha toritb olamiz:
+
+# import requests
+# from pprint import pprint
+# url = "https://kun.uz/uz/news/main"
+# r = requests.get(url)
+# pprint(r.text) # r.text orqali sahifadagi barcha matnni olamiz
+
+#NOTE - API bu malum bir web xizmatga so'rov yuborish orqali undan foydalanish.
+#Internetda restcountries.eu sahifasi mavjud. Bu sahifa orqali dunyodagi davlatlar haqida turli maʻlumotlarni olishingiz mumkin.
+#  Sahifadan foydalanish qulay boʻlishi uchun esa, sahifa yaratuvchilari bir nechta tayyor API lar eʻlon qilishgan. Misol uchun Oʻzbekiston haqida maʻlumot olish uchun quyidagi manzilga soʻrov yuborasiz: https://restcountries.eu/rest/v2/name/Uzbekistan
+
+# Internetda restcountries.eu sahifasi mavjud. Bu sahifa orqali dunyodagi davlatlar haqida turli maʻlumotlarni olishingiz mumkin. Sahifadan foydalanish qulay boʻlishi uchun esa, sahifa yaratuvchilari bir nechta tayyor API lar eʻlon qilishgan.
+#  Misol uchun Oʻzbekiston haqida maʻlumot olish uchun quyidagi manzilga soʻrov yuborasiz: https://restcountries.eu/rest/v2/name/Uzbekistan÷
+import requests
+country = "Uzbekistan"
+url = f"'https://api.restcountries.com/countries/v5/codes.alpha_2/CA?pretty=1{country}"
+r = requests.get(url)
+r_json = r.json()[0]
+print(r_json['capital'])
