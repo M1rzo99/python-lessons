@@ -26,6 +26,7 @@ print(f"Tarjima: {tarjima.text}")
 # from pprint import pprint
 # url = "https://kun.uz/uz/news/main"
 # r = requests.get(url)
+
 # pprint(r.text) # r.text orqali sahifadagi barcha matnni olamiz
 
 #NOTE - API bu malum bir web xizmatga so'rov yuborish orqali undan foydalanish.
@@ -49,13 +50,13 @@ print(f"Tarjima: {tarjima.text}")
 
 #Odatda bs4 moduli requests moduli bilan hamkorlikda ishlaydi. Keling, sodda misol kor'amiz. Avvalgi bo'limda, requests yordamida kun.uz sahifasining html kodini olgan edik. Endi esa bs4 yordamida html sahifadan oxirgi yangiliklarning mavzusini ajratib olamiz.
 
-import requests
-from bs4 import BeautifulSoup
-url = "https://kun.uz/uz/news/main"
-r  = requests.get(url)
-soup = BeautifulSoup(r.text,"html.parser")
-news = soup.find_all(class_="news-title") # yangiliklar mavzusini ajratib olamiz.
-print(news[0].text) # Birinchi yangiliklarni konsolga chiqaramiz.
+# import requests
+# from bs4 import BeautifulSoup
+# url = "https://kun.uz/uz/news/main"
+# r  = requests.get(url)
+# soup = BeautifulSoup(r.text,"html.parser")
+# news = soup.find_all(class_="news-title") # yangiliklar mavzusini ajratib olamiz.
+# print(news[0].text) # Birinchi yangiliklarni konsolga chiqaramiz.
 
 
 #  WorldCloud va Matplotib
@@ -71,31 +72,68 @@ print(news[0].text) # Birinchi yangiliklarni konsolga chiqaramiz.
 
 import requests
 
-from bs4 import BeautifulSoup
-from wordcloud import WordCloud 
-import matplotlib.pyplot as plt 
+# from bs4 import BeautifulSoup
+# from wordcloud import WordCloud 
+# import matplotlib.pyplot as plt 
 
 
-sahifa = "https://kun.uz/news/main"
-r = requests.get(sahifa)
+# sahifa = "https://kun.uz/news/main"
+# r = requests.get(sahifa)
 
-soup = BeautifulSoup(r.text, 'html.parser')
-news = soup.find_all(class_="news-title")
-matn=""
-for n in news:
-    matn += n.text
+# soup = BeautifulSoup(r.text, 'html.parser')
+# news = soup.find_all(class_="news-title")
+# matn=""
+# for n in news:
+#     matn += n.text
 
-# kerakmas so'zlar
-stopwords = ["учун","бўйича","лекин","билан","ва","бор","ҳам","хил","йил"]
-# bulutni yaratamiz
-wordcloud = WordCloud(width = 1000, height = 1000, 
-                background_color ='white', 
-                stopwords = stopwords, 
-                min_font_size = 20).generate(matn) 
+# # kerakmas so'zlar
+# stopwords = ["учун","бўйича","лекин","билан","ва","бор","ҳам","хил","йил"]
+# # bulutni yaratamiz
+# wordcloud = WordCloud(width = 1000, height = 1000, 
+#                 background_color ='white', 
+#                 stopwords = stopwords, 
+#                 min_font_size = 20).generate(matn) 
   
-# plot the WordCloud image                        
-plt.figure(figsize = (8, 8), facecolor = None) 
-plt.imshow(wordcloud) 
-plt.axis("off") 
-plt.tight_layout(pad = 0) 
-plt.show() 
+# # plot the WordCloud image                        
+# plt.figure(figsize = (8, 8), facecolor = None) 
+# plt.imshow(wordcloud) 
+# plt.axis("off") 
+# plt.tight_layout(pad = 0) 
+# plt.show() 
+
+
+#pip install opencv-python
+
+#openCV bu kompyuter yordamida rasm va video tasvirlar bilan ishlash uchun maxsus kutubxona. Bugungi kunda sun'iy intellekt yordamida tasvirlar bilan ishlaydigan dasturlarning deyarli barchasi openCV yordamida yaratiladi. 
+
+#Bu dastur yordamida rasm va videolardagi turli obyektlarni "ko'rish", ajratib olish mumkin. Avtomobillar nomerini aniqlash, odamlarning yuzidan tanish, obyektlarni klassifikasiya qilish kabi dasturlarning kasari aynan openCV kutubxonasi yordamida ishlaydi
+
+import cv2
+
+cap = cv2.VideoCapture(0)
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
+
+while True:
+    ret, frame = cap.read()
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 5)
+        roi_gray = gray[y:y+h, x:x+w]
+        roi_color = frame[y:y+h, x:x+w]
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.3, 5)
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 5)
+
+    cv2.imshow('frame', frame)
+
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+# copyright Tim Ruscia aka techwithtim
+# code from https://github.com/techwithtim/OpenCV-Tutorials
